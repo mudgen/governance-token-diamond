@@ -15,9 +15,7 @@ import { IERC165 } from './interfaces/IERC165.sol';
 import { DiamondFacet } from './facets/DiamondFacet.sol';
 import { DiamondLoupeFacet } from './facets/DiamondLoupeFacet.sol';
 
-contract DiamondExample is DiamondStorageContract {
-
-    event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);
+contract DiamondGovernanceToken is DiamondStorageContract {  
     
     constructor() {
         DiamondStorage storage ds = diamondStorage();        
