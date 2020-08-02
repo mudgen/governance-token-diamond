@@ -1,0 +1,883 @@
+{
+  "contractName": "IDiamondLoupe",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "facets",
+      "outputs": [
+        {
+          "internalType": "bytes[]",
+          "name": "",
+          "type": "bytes[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_facet",
+          "type": "address"
+        }
+      ],
+      "name": "facetFunctionSelectors",
+      "outputs": [
+        {
+          "internalType": "bytes",
+          "name": "",
+          "type": "bytes"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "facetAddresses",
+      "outputs": [
+        {
+          "internalType": "bytes",
+          "name": "",
+          "type": "bytes"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes4",
+          "name": "_functionSelector",
+          "type": "bytes4"
+        }
+      ],
+      "name": "facetAddress",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.7.0+commit.9e61f92b\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"bytes4\",\"name\":\"_functionSelector\",\"type\":\"bytes4\"}],\"name\":\"facetAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"facetAddresses\",\"outputs\":[{\"internalType\":\"bytes\",\"name\":\"\",\"type\":\"bytes\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_facet\",\"type\":\"address\"}],\"name\":\"facetFunctionSelectors\",\"outputs\":[{\"internalType\":\"bytes\",\"name\":\"\",\"type\":\"bytes\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"facets\",\"outputs\":[{\"internalType\":\"bytes[]\",\"name\":\"\",\"type\":\"bytes[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"facetAddress(bytes4)\":{\"details\":\"If facet is not found return address(0).\",\"params\":{\"_functionSelector\":\"The function selector.\"},\"returns\":{\"_0\":\"The facet address.\"}},\"facetAddresses()\":{\"returns\":{\"_0\":\"A byte array of tightly packed facet addresses. Example return value: return abi.encodePacked(facet1, facet2, facet3, ...)\"}},\"facetFunctionSelectors(address)\":{\"params\":{\"_facet\":\"The facet address.\"},\"returns\":{\"_0\":\"A byte array of function selectors. The return value is tightly packed. Here is an example: return abi.encodePacked(selector1, selector2, selector3, ...)\"}},\"facets()\":{\"returns\":{\"_0\":\"An array of bytes arrays containing each facet         and each facet's selectors. The return value is tightly packed. Here is the structure of the return value: returnValue = [     abi.encodePacked(facet, sel1, sel2, sel3, ...),     abi.encodePacked(facet, sel1, sel2, sel3, ...),     ... ] facet is the address of a facet. sel1, sel2, sel3 etc. are four-byte function selectors.\"}}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"facetAddress(bytes4)\":{\"notice\":\"Gets the facet that supports the given selector.\"},\"facetAddresses()\":{\"notice\":\"Get all the facet addresses used by a diamond.\"},\"facetFunctionSelectors(address)\":{\"notice\":\"Gets all the function selectors supported by a specific facet.\"},\"facets()\":{\"notice\":\"Gets all facets and their selectors.\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/C/Users/mudge/projects/diamond-governance-token/contracts/interfaces/IDiamondLoupe.sol\":\"IDiamondLoupe\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/mudge/projects/diamond-governance-token/contracts/interfaces/IDiamondLoupe.sol\":{\"keccak256\":\"0x85256f57d649b2be9b6c86c0767350a7061cd03f7c4201fae995afd662e9fd3d\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://f3bb0186c72fc7c2e8c9b6315794c80f3b05fba83a140258182ddd22566fa708\",\"dweb:/ipfs/QmV1xdy4A1xbruaiSe7bguerwWjQ39GqqVspYMNxiN7XgG\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.7.0;\r\npragma experimental ABIEncoderV2;\r\n\r\n// A loupe is a small magnifying glass used to look at diamonds.\r\n// These functions look at diamonds\r\ninterface IDiamondLoupe {\r\n    /// These functions are expected to be called frequently\r\n    /// by tools. Therefore the return values are tightly\r\n    /// packed for efficiency. That means no padding with zeros.\r\n\r\n    /// @notice Gets all facets and their selectors.\r\n    /// @return An array of bytes arrays containing each facet\r\n    ///         and each facet's selectors.\r\n    /// The return value is tightly packed.\r\n    /// Here is the structure of the return value:\r\n    /// returnValue = [\r\n    ///     abi.encodePacked(facet, sel1, sel2, sel3, ...),\r\n    ///     abi.encodePacked(facet, sel1, sel2, sel3, ...),\r\n    ///     ...\r\n    /// ]\r\n    /// facet is the address of a facet.\r\n    /// sel1, sel2, sel3 etc. are four-byte function selectors.\r\n    function facets() external view returns(bytes[] memory);\r\n\r\n    /// @notice Gets all the function selectors supported by a specific facet.\r\n    /// @param _facet The facet address.\r\n    /// @return A byte array of function selectors.\r\n    /// The return value is tightly packed. Here is an example:\r\n    /// return abi.encodePacked(selector1, selector2, selector3, ...)\r\n    function facetFunctionSelectors(address _facet) external view returns(bytes memory);\r\n\r\n    /// @notice Get all the facet addresses used by a diamond.\r\n    /// @return A byte array of tightly packed facet addresses.\r\n    /// Example return value:\r\n    /// return abi.encodePacked(facet1, facet2, facet3, ...)\r\n    function facetAddresses() external view returns(bytes memory);\r\n\r\n    /// @notice Gets the facet that supports the given selector.\r\n    /// @dev If facet is not found return address(0).\r\n    /// @param _functionSelector The function selector.\r\n    /// @return The facet address.\r\n    function facetAddress(bytes4 _functionSelector) external view returns(address);\r\n}",
+  "sourcePath": "C:\\Users\\mudge\\projects\\diamond-governance-token\\contracts\\interfaces\\IDiamondLoupe.sol",
+  "ast": {
+    "absolutePath": "/C/Users/mudge/projects/diamond-governance-token/contracts/interfaces/IDiamondLoupe.sol",
+    "exportedSymbols": {
+      "IDiamondLoupe": [
+        1829
+      ]
+    },
+    "id": 1830,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1798,
+        "literals": [
+          "solidity",
+          "^",
+          "0.7",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:23:5"
+      },
+      {
+        "id": 1799,
+        "literals": [
+          "experimental",
+          "ABIEncoderV2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "58:33:5"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 1829,
+        "linearizedBaseContracts": [
+          1829
+        ],
+        "name": "IDiamondLoupe",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": {
+              "id": 1800,
+              "nodeType": "StructuredDocumentation",
+              "src": "418:536:5",
+              "text": "@notice Gets all facets and their selectors.\n @return An array of bytes arrays containing each facet\n         and each facet's selectors.\n The return value is tightly packed.\n Here is the structure of the return value:\n returnValue = [\n     abi.encodePacked(facet, sel1, sel2, sel3, ...),\n     abi.encodePacked(facet, sel1, sel2, sel3, ...),\n     ...\n ]\n facet is the address of a facet.\n sel1, sel2, sel3 etc. are four-byte function selectors."
+            },
+            "functionSelector": "7a0ed627",
+            "id": 1806,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "facets",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 1801,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "975:2:5"
+            },
+            "returnParameters": {
+              "id": 1805,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1804,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 1806,
+                  "src": "1000:14:5",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_bytes_memory_ptr_$dyn_memory_ptr",
+                    "typeString": "bytes[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 1802,
+                      "name": "bytes",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "1000:5:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes_storage_ptr",
+                        "typeString": "bytes"
+                      }
+                    },
+                    "id": 1803,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "1000:7:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_bytes_storage_$dyn_storage_ptr",
+                      "typeString": "bytes[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "999:16:5"
+            },
+            "scope": 1829,
+            "src": "960:56:5",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": {
+              "id": 1807,
+              "nodeType": "StructuredDocumentation",
+              "src": "1024:305:5",
+              "text": "@notice Gets all the function selectors supported by a specific facet.\n @param _facet The facet address.\n @return A byte array of function selectors.\n The return value is tightly packed. Here is an example:\n return abi.encodePacked(selector1, selector2, selector3, ...)"
+            },
+            "functionSelector": "adfca15e",
+            "id": 1814,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "facetFunctionSelectors",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 1810,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1809,
+                  "mutability": "mutable",
+                  "name": "_facet",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 1814,
+                  "src": "1367:14:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1808,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1367:7:5",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1366:16:5"
+            },
+            "returnParameters": {
+              "id": 1813,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1812,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 1814,
+                  "src": "1405:12:5",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 1811,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1405:5:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1404:14:5"
+            },
+            "scope": 1829,
+            "src": "1335:84:5",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": {
+              "id": 1815,
+              "nodeType": "StructuredDocumentation",
+              "src": "1427:216:5",
+              "text": "@notice Get all the facet addresses used by a diamond.\n @return A byte array of tightly packed facet addresses.\n Example return value:\n return abi.encodePacked(facet1, facet2, facet3, ...)"
+            },
+            "functionSelector": "52ef6b2c",
+            "id": 1820,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "facetAddresses",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 1816,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1672:2:5"
+            },
+            "returnParameters": {
+              "id": 1819,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1818,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 1820,
+                  "src": "1697:12:5",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 1817,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1697:5:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1696:14:5"
+            },
+            "scope": 1829,
+            "src": "1649:62:5",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": {
+              "id": 1821,
+              "nodeType": "StructuredDocumentation",
+              "src": "1719:208:5",
+              "text": "@notice Gets the facet that supports the given selector.\n @dev If facet is not found return address(0).\n @param _functionSelector The function selector.\n @return The facet address."
+            },
+            "functionSelector": "cdffacc6",
+            "id": 1828,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "facetAddress",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 1824,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1823,
+                  "mutability": "mutable",
+                  "name": "_functionSelector",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 1828,
+                  "src": "1955:24:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes4",
+                    "typeString": "bytes4"
+                  },
+                  "typeName": {
+                    "id": 1822,
+                    "name": "bytes4",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1955:6:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes4",
+                      "typeString": "bytes4"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1954:26:5"
+            },
+            "returnParameters": {
+              "id": 1827,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1826,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 1828,
+                  "src": "2003:7:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1825,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2003:7:5",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2002:9:5"
+            },
+            "scope": 1829,
+            "src": "1933:79:5",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 1830,
+        "src": "198:1817:5"
+      }
+    ],
+    "src": "33:1982:5"
+  },
+  "legacyAST": {
+    "absolutePath": "/C/Users/mudge/projects/diamond-governance-token/contracts/interfaces/IDiamondLoupe.sol",
+    "exportedSymbols": {
+      "IDiamondLoupe": [
+        1829
+      ]
+    },
+    "id": 1830,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1798,
+        "literals": [
+          "solidity",
+          "^",
+          "0.7",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:23:5"
+      },
+      {
+        "id": 1799,
+        "literals": [
+          "experimental",
+          "ABIEncoderV2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "58:33:5"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 1829,
+        "linearizedBaseContracts": [
+          1829
+        ],
+        "name": "IDiamondLoupe",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": {
+              "id": 1800,
+              "nodeType": "StructuredDocumentation",
+              "src": "418:536:5",
+              "text": "@notice Gets all facets and their selectors.\n @return An array of bytes arrays containing each facet\n         and each facet's selectors.\n The return value is tightly packed.\n Here is the structure of the return value:\n returnValue = [\n     abi.encodePacked(facet, sel1, sel2, sel3, ...),\n     abi.encodePacked(facet, sel1, sel2, sel3, ...),\n     ...\n ]\n facet is the address of a facet.\n sel1, sel2, sel3 etc. are four-byte function selectors."
+            },
+            "functionSelector": "7a0ed627",
+            "id": 1806,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "facets",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 1801,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "975:2:5"
+            },
+            "returnParameters": {
+              "id": 1805,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1804,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 1806,
+                  "src": "1000:14:5",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_bytes_memory_ptr_$dyn_memory_ptr",
+                    "typeString": "bytes[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 1802,
+                      "name": "bytes",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "1000:5:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes_storage_ptr",
+                        "typeString": "bytes"
+                      }
+                    },
+                    "id": 1803,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "1000:7:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_bytes_storage_$dyn_storage_ptr",
+                      "typeString": "bytes[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "999:16:5"
+            },
+            "scope": 1829,
+            "src": "960:56:5",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": {
+              "id": 1807,
+              "nodeType": "StructuredDocumentation",
+              "src": "1024:305:5",
+              "text": "@notice Gets all the function selectors supported by a specific facet.\n @param _facet The facet address.\n @return A byte array of function selectors.\n The return value is tightly packed. Here is an example:\n return abi.encodePacked(selector1, selector2, selector3, ...)"
+            },
+            "functionSelector": "adfca15e",
+            "id": 1814,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "facetFunctionSelectors",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 1810,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1809,
+                  "mutability": "mutable",
+                  "name": "_facet",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 1814,
+                  "src": "1367:14:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1808,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1367:7:5",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1366:16:5"
+            },
+            "returnParameters": {
+              "id": 1813,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1812,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 1814,
+                  "src": "1405:12:5",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 1811,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1405:5:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1404:14:5"
+            },
+            "scope": 1829,
+            "src": "1335:84:5",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": {
+              "id": 1815,
+              "nodeType": "StructuredDocumentation",
+              "src": "1427:216:5",
+              "text": "@notice Get all the facet addresses used by a diamond.\n @return A byte array of tightly packed facet addresses.\n Example return value:\n return abi.encodePacked(facet1, facet2, facet3, ...)"
+            },
+            "functionSelector": "52ef6b2c",
+            "id": 1820,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "facetAddresses",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 1816,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1672:2:5"
+            },
+            "returnParameters": {
+              "id": 1819,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1818,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 1820,
+                  "src": "1697:12:5",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 1817,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1697:5:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1696:14:5"
+            },
+            "scope": 1829,
+            "src": "1649:62:5",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": {
+              "id": 1821,
+              "nodeType": "StructuredDocumentation",
+              "src": "1719:208:5",
+              "text": "@notice Gets the facet that supports the given selector.\n @dev If facet is not found return address(0).\n @param _functionSelector The function selector.\n @return The facet address."
+            },
+            "functionSelector": "cdffacc6",
+            "id": 1828,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "facetAddress",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 1824,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1823,
+                  "mutability": "mutable",
+                  "name": "_functionSelector",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 1828,
+                  "src": "1955:24:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes4",
+                    "typeString": "bytes4"
+                  },
+                  "typeName": {
+                    "id": 1822,
+                    "name": "bytes4",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1955:6:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes4",
+                      "typeString": "bytes4"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1954:26:5"
+            },
+            "returnParameters": {
+              "id": 1827,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1826,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 1828,
+                  "src": "2003:7:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1825,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2003:7:5",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2002:9:5"
+            },
+            "scope": 1829,
+            "src": "1933:79:5",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 1830,
+        "src": "198:1817:5"
+      }
+    ],
+    "src": "33:1982:5"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.7.0+commit.9e61f92b.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.1.0",
+  "updatedAt": "2020-08-02T19:17:52.643Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "facetAddress(bytes4)": {
+        "details": "If facet is not found return address(0).",
+        "params": {
+          "_functionSelector": "The function selector."
+        },
+        "returns": {
+          "_0": "The facet address."
+        }
+      },
+      "facetAddresses()": {
+        "returns": {
+          "_0": "A byte array of tightly packed facet addresses. Example return value: return abi.encodePacked(facet1, facet2, facet3, ...)"
+        }
+      },
+      "facetFunctionSelectors(address)": {
+        "params": {
+          "_facet": "The facet address."
+        },
+        "returns": {
+          "_0": "A byte array of function selectors. The return value is tightly packed. Here is an example: return abi.encodePacked(selector1, selector2, selector3, ...)"
+        }
+      },
+      "facets()": {
+        "returns": {
+          "_0": "An array of bytes arrays containing each facet         and each facet's selectors. The return value is tightly packed. Here is the structure of the return value: returnValue = [     abi.encodePacked(facet, sel1, sel2, sel3, ...),     abi.encodePacked(facet, sel1, sel2, sel3, ...),     ... ] facet is the address of a facet. sel1, sel2, sel3 etc. are four-byte function selectors."
+        }
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {
+      "facetAddress(bytes4)": {
+        "notice": "Gets the facet that supports the given selector."
+      },
+      "facetAddresses()": {
+        "notice": "Get all the facet addresses used by a diamond."
+      },
+      "facetFunctionSelectors(address)": {
+        "notice": "Gets all the function selectors supported by a specific facet."
+      },
+      "facets()": {
+        "notice": "Gets all facets and their selectors."
+      }
+    },
+    "version": 1
+  }
+}
