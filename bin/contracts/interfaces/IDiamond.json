@@ -1,0 +1,224 @@
+{
+    "contractName": "IDiamond",
+    "abi": [
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "bytes[]",
+                    "name": "_diamondCut",
+                    "type": "bytes[]"
+                }
+            ],
+            "name": "DiamondCut",
+            "type": "event"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "bytes[]",
+                    "name": "_diamondCut",
+                    "type": "bytes[]"
+                }
+            ],
+            "name": "diamondCut",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        }
+    ],
+    "metadata": "{\"compiler\":{\"version\":\"0.7.0+commit.9e61f92b\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"bytes[]\",\"name\":\"_diamondCut\",\"type\":\"bytes[]\"}],\"name\":\"DiamondCut\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"bytes[]\",\"name\":\"_diamondCut\",\"type\":\"bytes[]\"}],\"name\":\"diamondCut\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"diamondCut(bytes[])\":{\"notice\":\"_diamondCut is an array of bytes arrays. This argument is tightly packed for gas efficiency. That means no padding with zeros. Here is the structure of _diamondCut: _diamondCut = [     abi.encodePacked(facet, sel1, sel2, sel3, ...),     abi.encodePacked(facet, sel1, sel2, sel4, ...),     ... ] facet is the address of a facet sel1, sel2, sel3 etc. are four-byte function selectors.\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"c:/Users/mudge/projects/diamond-governance-token/contracts/interfaces/IDiamond.sol\":\"IDiamond\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"c:/Users/mudge/projects/diamond-governance-token/contracts/interfaces/IDiamond.sol\":{\"keccak256\":\"0x5bd24b02815b118dc683bcbc5af793b514bc85ebc98761f37a8163becc294c6d\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://5cea638716e3ef4a5d6d6b98c528bd0269e57265a94a06578305c5d209f8063a\",\"dweb:/ipfs/QmbtRRc9uczJVUYwsC8ZzdeA2uhu9zkdcVirUvVawzuWjp\"]}},\"version\":1}",
+    "bytecode": "",
+    "deployedBytecode": "",
+    "sourceMap": "",
+    "deployedSourceMap": "",
+    "sourcePath": "c:/Users/mudge/projects/diamond-governance-token/contracts/interfaces/IDiamond.sol",
+    "compiler": {
+        "name": "solc",
+        "version": "0.7.0+commit.9e61f92b"
+    },
+    "ast": {
+        "absolutePath": "c:/Users/mudge/projects/diamond-governance-token/contracts/interfaces/IDiamond.sol",
+        "exportedSymbols": {
+            "IDiamond": [
+                2030
+            ]
+        },
+        "id": 2031,
+        "license": "MIT",
+        "nodeType": "SourceUnit",
+        "nodes": [
+            {
+                "id": 2016,
+                "literals": [
+                    "solidity",
+                    "^",
+                    "0.7",
+                    ".0"
+                ],
+                "nodeType": "PragmaDirective",
+                "src": "33:23:5"
+            },
+            {
+                "id": 2017,
+                "literals": [
+                    "experimental",
+                    "ABIEncoderV2"
+                ],
+                "nodeType": "PragmaDirective",
+                "src": "58:33:5"
+            },
+            {
+                "abstract": false,
+                "baseContracts": [],
+                "contractDependencies": [],
+                "contractKind": "interface",
+                "documentation": null,
+                "fullyImplemented": false,
+                "id": 2030,
+                "linearizedBaseContracts": [
+                    2030
+                ],
+                "name": "IDiamond",
+                "nodeType": "ContractDefinition",
+                "nodes": [
+                    {
+                        "body": null,
+                        "documentation": {
+                            "id": 2018,
+                            "nodeType": "StructuredDocumentation",
+                            "src": "121:484:5",
+                            "text": "@notice _diamondCut is an array of bytes arrays.\n This argument is tightly packed for gas efficiency.\n That means no padding with zeros.\n Here is the structure of _diamondCut:\n _diamondCut = [\n     abi.encodePacked(facet, sel1, sel2, sel3, ...),\n     abi.encodePacked(facet, sel1, sel2, sel4, ...),\n     ...\n ]\n facet is the address of a facet\n sel1, sel2, sel3 etc. are four-byte function selectors."
+                        },
+                        "functionSelector": "99f5f52e",
+                        "id": 2024,
+                        "implemented": false,
+                        "kind": "function",
+                        "modifiers": [],
+                        "name": "diamondCut",
+                        "nodeType": "FunctionDefinition",
+                        "overrides": null,
+                        "parameters": {
+                            "id": 2022,
+                            "nodeType": "ParameterList",
+                            "parameters": [
+                                {
+                                    "constant": false,
+                                    "id": 2021,
+                                    "mutability": "mutable",
+                                    "name": "_diamondCut",
+                                    "nodeType": "VariableDeclaration",
+                                    "overrides": null,
+                                    "scope": 2024,
+                                    "src": "631:28:5",
+                                    "stateVariable": false,
+                                    "storageLocation": "calldata",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_array$_t_bytes_calldata_ptr_$dyn_calldata_ptr",
+                                        "typeString": "bytes[]"
+                                    },
+                                    "typeName": {
+                                        "baseType": {
+                                            "id": 2019,
+                                            "name": "bytes",
+                                            "nodeType": "ElementaryTypeName",
+                                            "src": "631:5:5",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_bytes_storage_ptr",
+                                                "typeString": "bytes"
+                                            }
+                                        },
+                                        "id": 2020,
+                                        "length": null,
+                                        "nodeType": "ArrayTypeName",
+                                        "src": "631:7:5",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_array$_t_bytes_storage_$dyn_storage_ptr",
+                                            "typeString": "bytes[]"
+                                        }
+                                    },
+                                    "value": null,
+                                    "visibility": "internal"
+                                }
+                            ],
+                            "src": "630:30:5"
+                        },
+                        "returnParameters": {
+                            "id": 2023,
+                            "nodeType": "ParameterList",
+                            "parameters": [],
+                            "src": "669:0:5"
+                        },
+                        "scope": 2030,
+                        "src": "611:59:5",
+                        "stateMutability": "nonpayable",
+                        "virtual": false,
+                        "visibility": "external"
+                    },
+                    {
+                        "anonymous": false,
+                        "documentation": null,
+                        "id": 2029,
+                        "name": "DiamondCut",
+                        "nodeType": "EventDefinition",
+                        "parameters": {
+                            "id": 2028,
+                            "nodeType": "ParameterList",
+                            "parameters": [
+                                {
+                                    "constant": false,
+                                    "id": 2027,
+                                    "indexed": false,
+                                    "mutability": "mutable",
+                                    "name": "_diamondCut",
+                                    "nodeType": "VariableDeclaration",
+                                    "overrides": null,
+                                    "scope": 2029,
+                                    "src": "693:19:5",
+                                    "stateVariable": false,
+                                    "storageLocation": "default",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_array$_t_bytes_memory_ptr_$dyn_memory_ptr",
+                                        "typeString": "bytes[]"
+                                    },
+                                    "typeName": {
+                                        "baseType": {
+                                            "id": 2025,
+                                            "name": "bytes",
+                                            "nodeType": "ElementaryTypeName",
+                                            "src": "693:5:5",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_bytes_storage_ptr",
+                                                "typeString": "bytes"
+                                            }
+                                        },
+                                        "id": 2026,
+                                        "length": null,
+                                        "nodeType": "ArrayTypeName",
+                                        "src": "693:7:5",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_array$_t_bytes_storage_$dyn_storage_ptr",
+                                            "typeString": "bytes[]"
+                                        }
+                                    },
+                                    "value": null,
+                                    "visibility": "internal"
+                                }
+                            ],
+                            "src": "692:21:5"
+                        },
+                        "src": "676:38:5"
+                    }
+                ],
+                "scope": 2031,
+                "src": "95:622:5"
+            }
+        ],
+        "src": "33:684:5"
+    },
+    "functionHashes": {
+        "diamondCut(bytes[])": "99f5f52e"
+    },
+    "gasEstimates": null
+}

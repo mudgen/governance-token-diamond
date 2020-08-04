@@ -1,6 +1,5 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.7.0;
-pragma experimental ABIEncoderV2;
 
 interface IERC165 {
     /// @notice Query if a contract implements an interface

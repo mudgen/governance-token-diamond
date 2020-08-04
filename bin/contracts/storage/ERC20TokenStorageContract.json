@@ -1,0 +1,462 @@
+{
+    "contractName": "ERC20TokenStorageContract",
+    "abi": [],
+    "metadata": "{\"compiler\":{\"version\":\"0.7.0+commit.9e61f92b\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"c:/Users/mudge/projects/diamond-governance-token/contracts/storage/ERC20TokenStorageContract.sol\":\"ERC20TokenStorageContract\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"c:/Users/mudge/projects/diamond-governance-token/contracts/storage/ERC20TokenStorageContract.sol\":{\"keccak256\":\"0x73f8030f00ba8d409698b13b492ff5eb41e2202cc0a1b15f1d3cff75dbddfb29\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://b5225e09aa055e102e23ed172dabfde5fb47302a8b472437ac59cf3a10c1e2b4\",\"dweb:/ipfs/QmSkGrh5gEzqUvZG99LhyU81UCcXafJkLuBafp2tsU4HRC\"]}},\"version\":1}",
+    "bytecode": "6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea264697066735822122056a39f5628a9cf073a083d6b8920b9c32bcf3ac25b01cad111318f37fda6af9964736f6c63430007000033",
+    "deployedBytecode": "6080604052600080fdfea264697066735822122056a39f5628a9cf073a083d6b8920b9c32bcf3ac25b01cad111318f37fda6af9964736f6c63430007000033",
+    "sourceMap": "60:567:12:-:0;;;;;;;;;;;;;;;;;;;",
+    "deployedSourceMap": "60:567:12:-:0;;;;;",
+    "sourcePath": "c:/Users/mudge/projects/diamond-governance-token/contracts/storage/ERC20TokenStorageContract.sol",
+    "compiler": {
+        "name": "solc",
+        "version": "0.7.0+commit.9e61f92b"
+    },
+    "ast": {
+        "absolutePath": "c:/Users/mudge/projects/diamond-governance-token/contracts/storage/ERC20TokenStorageContract.sol",
+        "exportedSymbols": {
+            "ERC20TokenStorageContract": [
+                2809
+            ]
+        },
+        "id": 2810,
+        "license": "MIT",
+        "nodeType": "SourceUnit",
+        "nodes": [
+            {
+                "id": 2779,
+                "literals": [
+                    "solidity",
+                    "^",
+                    "0.7",
+                    ".0"
+                ],
+                "nodeType": "PragmaDirective",
+                "src": "33:23:12"
+            },
+            {
+                "abstract": false,
+                "baseContracts": [],
+                "contractDependencies": [],
+                "contractKind": "contract",
+                "documentation": null,
+                "fullyImplemented": true,
+                "id": 2809,
+                "linearizedBaseContracts": [
+                    2809
+                ],
+                "name": "ERC20TokenStorageContract",
+                "nodeType": "ContractDefinition",
+                "nodes": [
+                    {
+                        "constant": true,
+                        "id": 2784,
+                        "mutability": "constant",
+                        "name": "ERC20TOKEN_STORAGE_POSITION",
+                        "nodeType": "VariableDeclaration",
+                        "overrides": null,
+                        "scope": 2809,
+                        "src": "115:104:12",
+                        "stateVariable": true,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                            "typeIdentifier": "t_bytes32",
+                            "typeString": "bytes32"
+                        },
+                        "typeName": {
+                            "id": 2780,
+                            "name": "bytes32",
+                            "nodeType": "ElementaryTypeName",
+                            "src": "115:7:12",
+                            "typeDescriptions": {
+                                "typeIdentifier": "t_bytes32",
+                                "typeString": "bytes32"
+                            }
+                        },
+                        "value": {
+                            "argumentTypes": null,
+                            "arguments": [
+                                {
+                                    "argumentTypes": null,
+                                    "hexValue": "676f7665726e616e63652e746f6b656e2e6469616d6f6e642e4552433230546f6b656e",
+                                    "id": 2782,
+                                    "isConstant": false,
+                                    "isLValue": false,
+                                    "isPure": true,
+                                    "kind": "string",
+                                    "lValueRequested": false,
+                                    "nodeType": "Literal",
+                                    "src": "181:37:12",
+                                    "subdenomination": null,
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_stringliteral_6ed1e8b58b8677af52e598804adae6eaacd4c419a6334c92069fde3cd6d8affc",
+                                        "typeString": "literal_string \"governance.token.diamond.ERC20Token\""
+                                    },
+                                    "value": "governance.token.diamond.ERC20Token"
+                                }
+                            ],
+                            "expression": {
+                                "argumentTypes": [
+                                    {
+                                        "typeIdentifier": "t_stringliteral_6ed1e8b58b8677af52e598804adae6eaacd4c419a6334c92069fde3cd6d8affc",
+                                        "typeString": "literal_string \"governance.token.diamond.ERC20Token\""
+                                    }
+                                ],
+                                "id": 2781,
+                                "name": "keccak256",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": -8,
+                                "src": "171:9:12",
+                                "typeDescriptions": {
+                                    "typeIdentifier": "t_function_keccak256_pure$_t_bytes_memory_ptr_$returns$_t_bytes32_$",
+                                    "typeString": "function (bytes memory) pure returns (bytes32)"
+                                }
+                            },
+                            "id": 2783,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "functionCall",
+                            "lValueRequested": false,
+                            "names": [],
+                            "nodeType": "FunctionCall",
+                            "src": "171:48:12",
+                            "tryCall": false,
+                            "typeDescriptions": {
+                                "typeIdentifier": "t_bytes32",
+                                "typeString": "bytes32"
+                            }
+                        },
+                        "visibility": "internal"
+                    },
+                    {
+                        "canonicalName": "ERC20TokenStorageContract.ERC20TokenStorage",
+                        "id": 2797,
+                        "members": [
+                            {
+                                "constant": false,
+                                "id": 2786,
+                                "mutability": "mutable",
+                                "name": "totalSupply",
+                                "nodeType": "VariableDeclaration",
+                                "overrides": null,
+                                "scope": 2797,
+                                "src": "276:18:12",
+                                "stateVariable": false,
+                                "storageLocation": "default",
+                                "typeDescriptions": {
+                                    "typeIdentifier": "t_uint96",
+                                    "typeString": "uint96"
+                                },
+                                "typeName": {
+                                    "id": 2785,
+                                    "name": "uint96",
+                                    "nodeType": "ElementaryTypeName",
+                                    "src": "276:6:12",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_uint96",
+                                        "typeString": "uint96"
+                                    }
+                                },
+                                "value": null,
+                                "visibility": "internal"
+                            },
+                            {
+                                "constant": false,
+                                "id": 2790,
+                                "mutability": "mutable",
+                                "name": "balances",
+                                "nodeType": "VariableDeclaration",
+                                "overrides": null,
+                                "scope": 2797,
+                                "src": "305:33:12",
+                                "stateVariable": false,
+                                "storageLocation": "default",
+                                "typeDescriptions": {
+                                    "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
+                                    "typeString": "mapping(address => uint256)"
+                                },
+                                "typeName": {
+                                    "id": 2789,
+                                    "keyType": {
+                                        "id": 2787,
+                                        "name": "address",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "313:7:12",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_address",
+                                            "typeString": "address"
+                                        }
+                                    },
+                                    "nodeType": "Mapping",
+                                    "src": "305:24:12",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
+                                        "typeString": "mapping(address => uint256)"
+                                    },
+                                    "valueType": {
+                                        "id": 2788,
+                                        "name": "uint",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "324:4:12",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        }
+                                    }
+                                },
+                                "value": null,
+                                "visibility": "internal"
+                            },
+                            {
+                                "constant": false,
+                                "id": 2796,
+                                "mutability": "mutable",
+                                "name": "approved",
+                                "nodeType": "VariableDeclaration",
+                                "overrides": null,
+                                "scope": 2797,
+                                "src": "355:53:12",
+                                "stateVariable": false,
+                                "storageLocation": "default",
+                                "typeDescriptions": {
+                                    "typeIdentifier": "t_mapping$_t_address_$_t_mapping$_t_address_$_t_uint256_$_$",
+                                    "typeString": "mapping(address => mapping(address => uint256))"
+                                },
+                                "typeName": {
+                                    "id": 2795,
+                                    "keyType": {
+                                        "id": 2791,
+                                        "name": "address",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "363:7:12",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_address",
+                                            "typeString": "address"
+                                        }
+                                    },
+                                    "nodeType": "Mapping",
+                                    "src": "355:44:12",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_mapping$_t_address_$_t_mapping$_t_address_$_t_uint256_$_$",
+                                        "typeString": "mapping(address => mapping(address => uint256))"
+                                    },
+                                    "valueType": {
+                                        "id": 2794,
+                                        "keyType": {
+                                            "id": 2792,
+                                            "name": "address",
+                                            "nodeType": "ElementaryTypeName",
+                                            "src": "382:7:12",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_address",
+                                                "typeString": "address"
+                                            }
+                                        },
+                                        "nodeType": "Mapping",
+                                        "src": "374:24:12",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
+                                            "typeString": "mapping(address => uint256)"
+                                        },
+                                        "valueType": {
+                                            "id": 2793,
+                                            "name": "uint",
+                                            "nodeType": "ElementaryTypeName",
+                                            "src": "393:4:12",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_uint256",
+                                                "typeString": "uint256"
+                                            }
+                                        }
+                                    }
+                                },
+                                "value": null,
+                                "visibility": "internal"
+                            }
+                        ],
+                        "name": "ERC20TokenStorage",
+                        "nodeType": "StructDefinition",
+                        "scope": 2809,
+                        "src": "232:192:12",
+                        "visibility": "public"
+                    },
+                    {
+                        "body": {
+                            "id": 2807,
+                            "nodeType": "Block",
+                            "src": "513:107:12",
+                            "statements": [
+                                {
+                                    "assignments": [
+                                        2803
+                                    ],
+                                    "declarations": [
+                                        {
+                                            "constant": false,
+                                            "id": 2803,
+                                            "mutability": "mutable",
+                                            "name": "position",
+                                            "nodeType": "VariableDeclaration",
+                                            "overrides": null,
+                                            "scope": 2807,
+                                            "src": "524:16:12",
+                                            "stateVariable": false,
+                                            "storageLocation": "default",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_bytes32",
+                                                "typeString": "bytes32"
+                                            },
+                                            "typeName": {
+                                                "id": 2802,
+                                                "name": "bytes32",
+                                                "nodeType": "ElementaryTypeName",
+                                                "src": "524:7:12",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_bytes32",
+                                                    "typeString": "bytes32"
+                                                }
+                                            },
+                                            "value": null,
+                                            "visibility": "internal"
+                                        }
+                                    ],
+                                    "id": 2805,
+                                    "initialValue": {
+                                        "argumentTypes": null,
+                                        "id": 2804,
+                                        "name": "ERC20TOKEN_STORAGE_POSITION",
+                                        "nodeType": "Identifier",
+                                        "overloadedDeclarations": [],
+                                        "referencedDeclaration": 2784,
+                                        "src": "543:27:12",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_bytes32",
+                                            "typeString": "bytes32"
+                                        }
+                                    },
+                                    "nodeType": "VariableDeclarationStatement",
+                                    "src": "524:46:12"
+                                },
+                                {
+                                    "AST": {
+                                        "nodeType": "YulBlock",
+                                        "src": "590:23:12",
+                                        "statements": [
+                                            {
+                                                "nodeType": "YulAssignment",
+                                                "src": "592:19:12",
+                                                "value": {
+                                                    "name": "position",
+                                                    "nodeType": "YulIdentifier",
+                                                    "src": "603:8:12"
+                                                },
+                                                "variableNames": [
+                                                    {
+                                                        "name": "ds.slot",
+                                                        "nodeType": "YulIdentifier",
+                                                        "src": "592:7:12"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    "evmVersion": "istanbul",
+                                    "externalReferences": [
+                                        {
+                                            "declaration": 2800,
+                                            "isOffset": false,
+                                            "isSlot": true,
+                                            "src": "592:7:12",
+                                            "valueSize": 1
+                                        },
+                                        {
+                                            "declaration": 2803,
+                                            "isOffset": false,
+                                            "isSlot": false,
+                                            "src": "603:8:12",
+                                            "valueSize": 1
+                                        }
+                                    ],
+                                    "id": 2806,
+                                    "nodeType": "InlineAssembly",
+                                    "src": "581:32:12"
+                                }
+                            ]
+                        },
+                        "documentation": null,
+                        "id": 2808,
+                        "implemented": true,
+                        "kind": "function",
+                        "modifiers": [],
+                        "name": "erc20TokenStorage",
+                        "nodeType": "FunctionDefinition",
+                        "overrides": null,
+                        "parameters": {
+                            "id": 2798,
+                            "nodeType": "ParameterList",
+                            "parameters": [],
+                            "src": "458:2:12"
+                        },
+                        "returnParameters": {
+                            "id": 2801,
+                            "nodeType": "ParameterList",
+                            "parameters": [
+                                {
+                                    "constant": false,
+                                    "id": 2800,
+                                    "mutability": "mutable",
+                                    "name": "ds",
+                                    "nodeType": "VariableDeclaration",
+                                    "overrides": null,
+                                    "scope": 2808,
+                                    "src": "483:28:12",
+                                    "stateVariable": false,
+                                    "storageLocation": "storage",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_struct$_ERC20TokenStorage_$2797_storage_ptr",
+                                        "typeString": "struct ERC20TokenStorageContract.ERC20TokenStorage"
+                                    },
+                                    "typeName": {
+                                        "contractScope": null,
+                                        "id": 2799,
+                                        "name": "ERC20TokenStorage",
+                                        "nodeType": "UserDefinedTypeName",
+                                        "referencedDeclaration": 2797,
+                                        "src": "483:17:12",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_struct$_ERC20TokenStorage_$2797_storage_ptr",
+                                            "typeString": "struct ERC20TokenStorageContract.ERC20TokenStorage"
+                                        }
+                                    },
+                                    "value": null,
+                                    "visibility": "internal"
+                                }
+                            ],
+                            "src": "482:30:12"
+                        },
+                        "scope": 2809,
+                        "src": "432:188:12",
+                        "stateMutability": "pure",
+                        "virtual": false,
+                        "visibility": "internal"
+                    }
+                ],
+                "scope": 2810,
+                "src": "60:567:12"
+            }
+        ],
+        "src": "33:594:12"
+    },
+    "functionHashes": {},
+    "gasEstimates": {
+        "creation": {
+            "codeDepositCost": "12600",
+            "executionCost": "66",
+            "totalCost": "12666"
+        },
+        "internal": {
+            "erc20TokenStorage()": "infinite"
+        }
+    }
+}

@@ -40,15 +40,15 @@
     "absolutePath": "/C/Users/mudge/projects/diamond-governance-token/contracts/interfaces/IDiamond.sol",
     "exportedSymbols": {
       "IDiamond": [
-        1796
+        2434
       ]
     },
-    "id": 1797,
+    "id": 2435,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1782,
+        "id": 2420,
         "literals": [
           "solidity",
           "^",
@@ -56,16 +56,16 @@
           ".0"
         ],
         "nodeType": "PragmaDirective",
-        "src": "33:23:4"
+        "src": "33:23:5"
       },
       {
-        "id": 1783,
+        "id": 2421,
         "literals": [
           "experimental",
           "ABIEncoderV2"
         ],
         "nodeType": "PragmaDirective",
-        "src": "58:33:4"
+        "src": "58:33:5"
       },
       {
         "abstract": false,
@@ -74,9 +74,9 @@
         "contractKind": "interface",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 1796,
+        "id": 2434,
         "linearizedBaseContracts": [
-          1796
+          2434
         ],
         "name": "IDiamond",
         "nodeType": "ContractDefinition",
@@ -84,13 +84,13 @@
           {
             "body": null,
             "documentation": {
-              "id": 1784,
+              "id": 2422,
               "nodeType": "StructuredDocumentation",
-              "src": "121:484:4",
+              "src": "121:484:5",
               "text": "@notice _diamondCut is an array of bytes arrays.\n This argument is tightly packed for gas efficiency.\n That means no padding with zeros.\n Here is the structure of _diamondCut:\n _diamondCut = [\n     abi.encodePacked(facet, sel1, sel2, sel3, ...),\n     abi.encodePacked(facet, sel1, sel2, sel4, ...),\n     ...\n ]\n facet is the address of a facet\n sel1, sel2, sel3 etc. are four-byte function selectors."
             },
             "functionSelector": "99f5f52e",
-            "id": 1790,
+            "id": 2428,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -98,18 +98,18 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 1788,
+              "id": 2426,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1787,
+                  "id": 2425,
                   "mutability": "mutable",
                   "name": "_diamondCut",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 1790,
-                  "src": "631:28:4",
+                  "scope": 2428,
+                  "src": "631:28:5",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
@@ -118,19 +118,19 @@
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 1785,
+                      "id": 2423,
                       "name": "bytes",
                       "nodeType": "ElementaryTypeName",
-                      "src": "631:5:4",
+                      "src": "631:5:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bytes_storage_ptr",
                         "typeString": "bytes"
                       }
                     },
-                    "id": 1786,
+                    "id": 2424,
                     "length": null,
                     "nodeType": "ArrayTypeName",
-                    "src": "631:7:4",
+                    "src": "631:7:5",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_bytes_storage_$dyn_storage_ptr",
                       "typeString": "bytes[]"
@@ -140,16 +140,16 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "630:30:4"
+              "src": "630:30:5"
             },
             "returnParameters": {
-              "id": 1789,
+              "id": 2427,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "669:0:4"
+              "src": "669:0:5"
             },
-            "scope": 1796,
-            "src": "611:59:4",
+            "scope": 2434,
+            "src": "611:59:5",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
@@ -157,23 +157,23 @@
           {
             "anonymous": false,
             "documentation": null,
-            "id": 1795,
+            "id": 2433,
             "name": "DiamondCut",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 1794,
+              "id": 2432,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1793,
+                  "id": 2431,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "_diamondCut",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 1795,
-                  "src": "693:19:4",
+                  "scope": 2433,
+                  "src": "693:19:5",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -182,19 +182,19 @@
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 1791,
+                      "id": 2429,
                       "name": "bytes",
                       "nodeType": "ElementaryTypeName",
-                      "src": "693:5:4",
+                      "src": "693:5:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bytes_storage_ptr",
                         "typeString": "bytes"
                       }
                     },
-                    "id": 1792,
+                    "id": 2430,
                     "length": null,
                     "nodeType": "ArrayTypeName",
-                    "src": "693:7:4",
+                    "src": "693:7:5",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_bytes_storage_$dyn_storage_ptr",
                       "typeString": "bytes[]"
@@ -204,30 +204,30 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "692:21:4"
+              "src": "692:21:5"
             },
-            "src": "676:38:4"
+            "src": "676:38:5"
           }
         ],
-        "scope": 1797,
-        "src": "95:622:4"
+        "scope": 2435,
+        "src": "95:622:5"
       }
     ],
-    "src": "33:684:4"
+    "src": "33:684:5"
   },
   "legacyAST": {
     "absolutePath": "/C/Users/mudge/projects/diamond-governance-token/contracts/interfaces/IDiamond.sol",
     "exportedSymbols": {
       "IDiamond": [
-        1796
+        2434
       ]
     },
-    "id": 1797,
+    "id": 2435,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1782,
+        "id": 2420,
         "literals": [
           "solidity",
           "^",
@@ -235,16 +235,16 @@
           ".0"
         ],
         "nodeType": "PragmaDirective",
-        "src": "33:23:4"
+        "src": "33:23:5"
       },
       {
-        "id": 1783,
+        "id": 2421,
         "literals": [
           "experimental",
           "ABIEncoderV2"
         ],
         "nodeType": "PragmaDirective",
-        "src": "58:33:4"
+        "src": "58:33:5"
       },
       {
         "abstract": false,
@@ -253,9 +253,9 @@
         "contractKind": "interface",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 1796,
+        "id": 2434,
         "linearizedBaseContracts": [
-          1796
+          2434
         ],
         "name": "IDiamond",
         "nodeType": "ContractDefinition",
@@ -263,13 +263,13 @@
           {
             "body": null,
             "documentation": {
-              "id": 1784,
+              "id": 2422,
               "nodeType": "StructuredDocumentation",
-              "src": "121:484:4",
+              "src": "121:484:5",
               "text": "@notice _diamondCut is an array of bytes arrays.\n This argument is tightly packed for gas efficiency.\n That means no padding with zeros.\n Here is the structure of _diamondCut:\n _diamondCut = [\n     abi.encodePacked(facet, sel1, sel2, sel3, ...),\n     abi.encodePacked(facet, sel1, sel2, sel4, ...),\n     ...\n ]\n facet is the address of a facet\n sel1, sel2, sel3 etc. are four-byte function selectors."
             },
             "functionSelector": "99f5f52e",
-            "id": 1790,
+            "id": 2428,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -277,18 +277,18 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 1788,
+              "id": 2426,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1787,
+                  "id": 2425,
                   "mutability": "mutable",
                   "name": "_diamondCut",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 1790,
-                  "src": "631:28:4",
+                  "scope": 2428,
+                  "src": "631:28:5",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
@@ -297,19 +297,19 @@
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 1785,
+                      "id": 2423,
                       "name": "bytes",
                       "nodeType": "ElementaryTypeName",
-                      "src": "631:5:4",
+                      "src": "631:5:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bytes_storage_ptr",
                         "typeString": "bytes"
                       }
                     },
-                    "id": 1786,
+                    "id": 2424,
                     "length": null,
                     "nodeType": "ArrayTypeName",
-                    "src": "631:7:4",
+                    "src": "631:7:5",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_bytes_storage_$dyn_storage_ptr",
                       "typeString": "bytes[]"
@@ -319,16 +319,16 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "630:30:4"
+              "src": "630:30:5"
             },
             "returnParameters": {
-              "id": 1789,
+              "id": 2427,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "669:0:4"
+              "src": "669:0:5"
             },
-            "scope": 1796,
-            "src": "611:59:4",
+            "scope": 2434,
+            "src": "611:59:5",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
@@ -336,23 +336,23 @@
           {
             "anonymous": false,
             "documentation": null,
-            "id": 1795,
+            "id": 2433,
             "name": "DiamondCut",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 1794,
+              "id": 2432,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1793,
+                  "id": 2431,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "_diamondCut",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 1795,
-                  "src": "693:19:4",
+                  "scope": 2433,
+                  "src": "693:19:5",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -361,19 +361,19 @@
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 1791,
+                      "id": 2429,
                       "name": "bytes",
                       "nodeType": "ElementaryTypeName",
-                      "src": "693:5:4",
+                      "src": "693:5:5",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bytes_storage_ptr",
                         "typeString": "bytes"
                       }
                     },
-                    "id": 1792,
+                    "id": 2430,
                     "length": null,
                     "nodeType": "ArrayTypeName",
-                    "src": "693:7:4",
+                    "src": "693:7:5",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_bytes_storage_$dyn_storage_ptr",
                       "typeString": "bytes[]"
@@ -383,16 +383,16 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "692:21:4"
+              "src": "692:21:5"
             },
-            "src": "676:38:4"
+            "src": "676:38:5"
           }
         ],
-        "scope": 1797,
-        "src": "95:622:4"
+        "scope": 2435,
+        "src": "95:622:5"
       }
     ],
-    "src": "33:684:4"
+    "src": "33:684:5"
   },
   "compiler": {
     "name": "solc",
@@ -400,7 +400,7 @@
   },
   "networks": {},
   "schemaVersion": "3.1.0",
-  "updatedAt": "2020-08-02T19:17:52.629Z",
+  "updatedAt": "2020-08-04T18:26:05.160Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},

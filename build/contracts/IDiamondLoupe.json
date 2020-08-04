@@ -78,15 +78,15 @@
     "absolutePath": "/C/Users/mudge/projects/diamond-governance-token/contracts/interfaces/IDiamondLoupe.sol",
     "exportedSymbols": {
       "IDiamondLoupe": [
-        1829
+        2467
       ]
     },
-    "id": 1830,
+    "id": 2468,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1798,
+        "id": 2436,
         "literals": [
           "solidity",
           "^",
@@ -94,16 +94,16 @@
           ".0"
         ],
         "nodeType": "PragmaDirective",
-        "src": "33:23:5"
+        "src": "33:23:6"
       },
       {
-        "id": 1799,
+        "id": 2437,
         "literals": [
           "experimental",
           "ABIEncoderV2"
         ],
         "nodeType": "PragmaDirective",
-        "src": "58:33:5"
+        "src": "58:33:6"
       },
       {
         "abstract": false,
@@ -112,9 +112,9 @@
         "contractKind": "interface",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 1829,
+        "id": 2467,
         "linearizedBaseContracts": [
-          1829
+          2467
         ],
         "name": "IDiamondLoupe",
         "nodeType": "ContractDefinition",
@@ -122,13 +122,13 @@
           {
             "body": null,
             "documentation": {
-              "id": 1800,
+              "id": 2438,
               "nodeType": "StructuredDocumentation",
-              "src": "418:536:5",
+              "src": "418:536:6",
               "text": "@notice Gets all facets and their selectors.\n @return An array of bytes arrays containing each facet\n         and each facet's selectors.\n The return value is tightly packed.\n Here is the structure of the return value:\n returnValue = [\n     abi.encodePacked(facet, sel1, sel2, sel3, ...),\n     abi.encodePacked(facet, sel1, sel2, sel3, ...),\n     ...\n ]\n facet is the address of a facet.\n sel1, sel2, sel3 etc. are four-byte function selectors."
             },
             "functionSelector": "7a0ed627",
-            "id": 1806,
+            "id": 2444,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -136,24 +136,24 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 1801,
+              "id": 2439,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "975:2:5"
+              "src": "975:2:6"
             },
             "returnParameters": {
-              "id": 1805,
+              "id": 2443,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1804,
+                  "id": 2442,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 1806,
-                  "src": "1000:14:5",
+                  "scope": 2444,
+                  "src": "1000:14:6",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -162,19 +162,19 @@
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 1802,
+                      "id": 2440,
                       "name": "bytes",
                       "nodeType": "ElementaryTypeName",
-                      "src": "1000:5:5",
+                      "src": "1000:5:6",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bytes_storage_ptr",
                         "typeString": "bytes"
                       }
                     },
-                    "id": 1803,
+                    "id": 2441,
                     "length": null,
                     "nodeType": "ArrayTypeName",
-                    "src": "1000:7:5",
+                    "src": "1000:7:6",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_bytes_storage_$dyn_storage_ptr",
                       "typeString": "bytes[]"
@@ -184,10 +184,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "999:16:5"
+              "src": "999:16:6"
             },
-            "scope": 1829,
-            "src": "960:56:5",
+            "scope": 2467,
+            "src": "960:56:6",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
@@ -195,13 +195,13 @@
           {
             "body": null,
             "documentation": {
-              "id": 1807,
+              "id": 2445,
               "nodeType": "StructuredDocumentation",
-              "src": "1024:305:5",
+              "src": "1024:305:6",
               "text": "@notice Gets all the function selectors supported by a specific facet.\n @param _facet The facet address.\n @return A byte array of function selectors.\n The return value is tightly packed. Here is an example:\n return abi.encodePacked(selector1, selector2, selector3, ...)"
             },
             "functionSelector": "adfca15e",
-            "id": 1814,
+            "id": 2452,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -209,18 +209,18 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 1810,
+              "id": 2448,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1809,
+                  "id": 2447,
                   "mutability": "mutable",
                   "name": "_facet",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 1814,
-                  "src": "1367:14:5",
+                  "scope": 2452,
+                  "src": "1367:14:6",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -228,10 +228,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1808,
+                    "id": 2446,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1367:7:5",
+                    "src": "1367:7:6",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -242,21 +242,21 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1366:16:5"
+              "src": "1366:16:6"
             },
             "returnParameters": {
-              "id": 1813,
+              "id": 2451,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1812,
+                  "id": 2450,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 1814,
-                  "src": "1405:12:5",
+                  "scope": 2452,
+                  "src": "1405:12:6",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -264,10 +264,10 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 1811,
+                    "id": 2449,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1405:5:5",
+                    "src": "1405:5:6",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes_storage_ptr",
                       "typeString": "bytes"
@@ -277,10 +277,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1404:14:5"
+              "src": "1404:14:6"
             },
-            "scope": 1829,
-            "src": "1335:84:5",
+            "scope": 2467,
+            "src": "1335:84:6",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
@@ -288,13 +288,13 @@
           {
             "body": null,
             "documentation": {
-              "id": 1815,
+              "id": 2453,
               "nodeType": "StructuredDocumentation",
-              "src": "1427:216:5",
+              "src": "1427:216:6",
               "text": "@notice Get all the facet addresses used by a diamond.\n @return A byte array of tightly packed facet addresses.\n Example return value:\n return abi.encodePacked(facet1, facet2, facet3, ...)"
             },
             "functionSelector": "52ef6b2c",
-            "id": 1820,
+            "id": 2458,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -302,24 +302,24 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 1816,
+              "id": 2454,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1672:2:5"
+              "src": "1672:2:6"
             },
             "returnParameters": {
-              "id": 1819,
+              "id": 2457,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1818,
+                  "id": 2456,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 1820,
-                  "src": "1697:12:5",
+                  "scope": 2458,
+                  "src": "1697:12:6",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -327,10 +327,10 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 1817,
+                    "id": 2455,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1697:5:5",
+                    "src": "1697:5:6",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes_storage_ptr",
                       "typeString": "bytes"
@@ -340,10 +340,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1696:14:5"
+              "src": "1696:14:6"
             },
-            "scope": 1829,
-            "src": "1649:62:5",
+            "scope": 2467,
+            "src": "1649:62:6",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
@@ -351,13 +351,13 @@
           {
             "body": null,
             "documentation": {
-              "id": 1821,
+              "id": 2459,
               "nodeType": "StructuredDocumentation",
-              "src": "1719:208:5",
+              "src": "1719:208:6",
               "text": "@notice Gets the facet that supports the given selector.\n @dev If facet is not found return address(0).\n @param _functionSelector The function selector.\n @return The facet address."
             },
             "functionSelector": "cdffacc6",
-            "id": 1828,
+            "id": 2466,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -365,18 +365,18 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 1824,
+              "id": 2462,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1823,
+                  "id": 2461,
                   "mutability": "mutable",
                   "name": "_functionSelector",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 1828,
-                  "src": "1955:24:5",
+                  "scope": 2466,
+                  "src": "1955:24:6",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -384,10 +384,10 @@
                     "typeString": "bytes4"
                   },
                   "typeName": {
-                    "id": 1822,
+                    "id": 2460,
                     "name": "bytes4",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1955:6:5",
+                    "src": "1955:6:6",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes4",
                       "typeString": "bytes4"
@@ -397,21 +397,21 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1954:26:5"
+              "src": "1954:26:6"
             },
             "returnParameters": {
-              "id": 1827,
+              "id": 2465,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1826,
+                  "id": 2464,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 1828,
-                  "src": "2003:7:5",
+                  "scope": 2466,
+                  "src": "2003:7:6",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -419,10 +419,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1825,
+                    "id": 2463,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2003:7:5",
+                    "src": "2003:7:6",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -433,34 +433,34 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2002:9:5"
+              "src": "2002:9:6"
             },
-            "scope": 1829,
-            "src": "1933:79:5",
+            "scope": 2467,
+            "src": "1933:79:6",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 1830,
-        "src": "198:1817:5"
+        "scope": 2468,
+        "src": "198:1817:6"
       }
     ],
-    "src": "33:1982:5"
+    "src": "33:1982:6"
   },
   "legacyAST": {
     "absolutePath": "/C/Users/mudge/projects/diamond-governance-token/contracts/interfaces/IDiamondLoupe.sol",
     "exportedSymbols": {
       "IDiamondLoupe": [
-        1829
+        2467
       ]
     },
-    "id": 1830,
+    "id": 2468,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1798,
+        "id": 2436,
         "literals": [
           "solidity",
           "^",
@@ -468,16 +468,16 @@
           ".0"
         ],
         "nodeType": "PragmaDirective",
-        "src": "33:23:5"
+        "src": "33:23:6"
       },
       {
-        "id": 1799,
+        "id": 2437,
         "literals": [
           "experimental",
           "ABIEncoderV2"
         ],
         "nodeType": "PragmaDirective",
-        "src": "58:33:5"
+        "src": "58:33:6"
       },
       {
         "abstract": false,
@@ -486,9 +486,9 @@
         "contractKind": "interface",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 1829,
+        "id": 2467,
         "linearizedBaseContracts": [
-          1829
+          2467
         ],
         "name": "IDiamondLoupe",
         "nodeType": "ContractDefinition",
@@ -496,13 +496,13 @@
           {
             "body": null,
             "documentation": {
-              "id": 1800,
+              "id": 2438,
               "nodeType": "StructuredDocumentation",
-              "src": "418:536:5",
+              "src": "418:536:6",
               "text": "@notice Gets all facets and their selectors.\n @return An array of bytes arrays containing each facet\n         and each facet's selectors.\n The return value is tightly packed.\n Here is the structure of the return value:\n returnValue = [\n     abi.encodePacked(facet, sel1, sel2, sel3, ...),\n     abi.encodePacked(facet, sel1, sel2, sel3, ...),\n     ...\n ]\n facet is the address of a facet.\n sel1, sel2, sel3 etc. are four-byte function selectors."
             },
             "functionSelector": "7a0ed627",
-            "id": 1806,
+            "id": 2444,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -510,24 +510,24 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 1801,
+              "id": 2439,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "975:2:5"
+              "src": "975:2:6"
             },
             "returnParameters": {
-              "id": 1805,
+              "id": 2443,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1804,
+                  "id": 2442,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 1806,
-                  "src": "1000:14:5",
+                  "scope": 2444,
+                  "src": "1000:14:6",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -536,19 +536,19 @@
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 1802,
+                      "id": 2440,
                       "name": "bytes",
                       "nodeType": "ElementaryTypeName",
-                      "src": "1000:5:5",
+                      "src": "1000:5:6",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bytes_storage_ptr",
                         "typeString": "bytes"
                       }
                     },
-                    "id": 1803,
+                    "id": 2441,
                     "length": null,
                     "nodeType": "ArrayTypeName",
-                    "src": "1000:7:5",
+                    "src": "1000:7:6",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_bytes_storage_$dyn_storage_ptr",
                       "typeString": "bytes[]"
@@ -558,10 +558,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "999:16:5"
+              "src": "999:16:6"
             },
-            "scope": 1829,
-            "src": "960:56:5",
+            "scope": 2467,
+            "src": "960:56:6",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
@@ -569,13 +569,13 @@
           {
             "body": null,
             "documentation": {
-              "id": 1807,
+              "id": 2445,
               "nodeType": "StructuredDocumentation",
-              "src": "1024:305:5",
+              "src": "1024:305:6",
               "text": "@notice Gets all the function selectors supported by a specific facet.\n @param _facet The facet address.\n @return A byte array of function selectors.\n The return value is tightly packed. Here is an example:\n return abi.encodePacked(selector1, selector2, selector3, ...)"
             },
             "functionSelector": "adfca15e",
-            "id": 1814,
+            "id": 2452,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -583,18 +583,18 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 1810,
+              "id": 2448,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1809,
+                  "id": 2447,
                   "mutability": "mutable",
                   "name": "_facet",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 1814,
-                  "src": "1367:14:5",
+                  "scope": 2452,
+                  "src": "1367:14:6",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -602,10 +602,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1808,
+                    "id": 2446,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1367:7:5",
+                    "src": "1367:7:6",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -616,21 +616,21 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1366:16:5"
+              "src": "1366:16:6"
             },
             "returnParameters": {
-              "id": 1813,
+              "id": 2451,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1812,
+                  "id": 2450,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 1814,
-                  "src": "1405:12:5",
+                  "scope": 2452,
+                  "src": "1405:12:6",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -638,10 +638,10 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 1811,
+                    "id": 2449,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1405:5:5",
+                    "src": "1405:5:6",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes_storage_ptr",
                       "typeString": "bytes"
@@ -651,10 +651,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1404:14:5"
+              "src": "1404:14:6"
             },
-            "scope": 1829,
-            "src": "1335:84:5",
+            "scope": 2467,
+            "src": "1335:84:6",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
@@ -662,13 +662,13 @@
           {
             "body": null,
             "documentation": {
-              "id": 1815,
+              "id": 2453,
               "nodeType": "StructuredDocumentation",
-              "src": "1427:216:5",
+              "src": "1427:216:6",
               "text": "@notice Get all the facet addresses used by a diamond.\n @return A byte array of tightly packed facet addresses.\n Example return value:\n return abi.encodePacked(facet1, facet2, facet3, ...)"
             },
             "functionSelector": "52ef6b2c",
-            "id": 1820,
+            "id": 2458,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -676,24 +676,24 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 1816,
+              "id": 2454,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1672:2:5"
+              "src": "1672:2:6"
             },
             "returnParameters": {
-              "id": 1819,
+              "id": 2457,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1818,
+                  "id": 2456,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 1820,
-                  "src": "1697:12:5",
+                  "scope": 2458,
+                  "src": "1697:12:6",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -701,10 +701,10 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 1817,
+                    "id": 2455,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1697:5:5",
+                    "src": "1697:5:6",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes_storage_ptr",
                       "typeString": "bytes"
@@ -714,10 +714,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1696:14:5"
+              "src": "1696:14:6"
             },
-            "scope": 1829,
-            "src": "1649:62:5",
+            "scope": 2467,
+            "src": "1649:62:6",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
@@ -725,13 +725,13 @@
           {
             "body": null,
             "documentation": {
-              "id": 1821,
+              "id": 2459,
               "nodeType": "StructuredDocumentation",
-              "src": "1719:208:5",
+              "src": "1719:208:6",
               "text": "@notice Gets the facet that supports the given selector.\n @dev If facet is not found return address(0).\n @param _functionSelector The function selector.\n @return The facet address."
             },
             "functionSelector": "cdffacc6",
-            "id": 1828,
+            "id": 2466,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -739,18 +739,18 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 1824,
+              "id": 2462,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1823,
+                  "id": 2461,
                   "mutability": "mutable",
                   "name": "_functionSelector",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 1828,
-                  "src": "1955:24:5",
+                  "scope": 2466,
+                  "src": "1955:24:6",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -758,10 +758,10 @@
                     "typeString": "bytes4"
                   },
                   "typeName": {
-                    "id": 1822,
+                    "id": 2460,
                     "name": "bytes4",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1955:6:5",
+                    "src": "1955:6:6",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes4",
                       "typeString": "bytes4"
@@ -771,21 +771,21 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1954:26:5"
+              "src": "1954:26:6"
             },
             "returnParameters": {
-              "id": 1827,
+              "id": 2465,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1826,
+                  "id": 2464,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 1828,
-                  "src": "2003:7:5",
+                  "scope": 2466,
+                  "src": "2003:7:6",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -793,10 +793,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1825,
+                    "id": 2463,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2003:7:5",
+                    "src": "2003:7:6",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -807,20 +807,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2002:9:5"
+              "src": "2002:9:6"
             },
-            "scope": 1829,
-            "src": "1933:79:5",
+            "scope": 2467,
+            "src": "1933:79:6",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 1830,
-        "src": "198:1817:5"
+        "scope": 2468,
+        "src": "198:1817:6"
       }
     ],
-    "src": "33:1982:5"
+    "src": "33:1982:6"
   },
   "compiler": {
     "name": "solc",
@@ -828,7 +828,7 @@
   },
   "networks": {},
   "schemaVersion": "3.1.0",
-  "updatedAt": "2020-08-02T19:17:52.643Z",
+  "updatedAt": "2020-08-04T18:26:05.197Z",
   "devdoc": {
     "kind": "dev",
     "methods": {
