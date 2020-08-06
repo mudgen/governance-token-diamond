@@ -11,16 +11,6 @@ contract Governance is InternalFunctions {
     
     event Vote(uint indexed _proposalId, address indexed _voter, uint _votes, bool _support);
     event UnVote(uint indexed _proposalId, address indexed _voter, uint _votes, bool _support);  
-
-/*
-    /// @notice The number of tokens required for someone to submit a proposal
-    function proposerThreshold() public pure returns (uint) { return 1; } // 1 percent of totalSupply
-    
-    /// @notice The number of votes required for a proposal to pass
-    function quorumVotes() public pure returns (uint) { return 10; } // 10 percent of totalSupply
-
-    function voterReward() public pure returns (uint) 
-*/
     
     function mint(address _to, uint96 _value) internal {
         ERC20TokenStorage storage ets = erc20TokenStorage();        
@@ -32,17 +22,66 @@ contract Governance is InternalFunctions {
         return governanceStorage().proposalCount;
     }
 
-    function propose(address _proposalContract, uint _endBlock) external {
-        GovernanceStorage storage gs = governanceStorage();
+    function propose(address _proposalContract, uint _endTime) external {
+        (ERC20TokenStorage storage ets,
+        GovernanceStorage storage gs) = governanceTokenStorage();        
+        require(_endTime > block.timestamp + 172800, 'Governance: Vote must be longer than 2 days');
+        uint balance = ets.balances[msg.sender];
+        uint totalSupply = ets.totalSupply;
+        // proposalThreshold is 1 percent of totalSupply
+        require(balance >= (totalSupply / 100), 'Governance: Balance less than proposer threshold');
+        uint proposalId = gs.proposalCount++;
+        Proposal storage proposal = gs.proposals[proposalId];
+        proposal.proposer = msg.sender;
+        proposal.proposalContract = _proposalContract;
+        proposal.endTime = uint64(_endTime);
+        // adding vote
+        proposal.forVotes = uint96(balance);
+        proposal.voted[msg.sender] = Voted(uint96(balance), true);
+        gs.votedProposalIds[msg.sender].push(uint24(proposalId));
+        emit Vote(proposalId, msg.sender, balance, true);
+    }
+
+    function executeProposal(uint _proposalId) external {
+        (ERC20TokenStorage storage ets,
+        GovernanceStorage storage gs) = governanceTokenStorage();
+        Proposal storage proposal = gs.proposals[_proposalId];
+        address proposor = proposal.proposer;
+        require(proposor != address(0), 'Governance: Proposal does not exist');
+        require(block.timestamp > proposal.endTime, 'Governance: Voting hasn\'t ended');        
+        require(proposal.executed != true, 'Governance: Proposal has already been executed');
+        proposal.executed = true;        
+        uint totalSupply = ets.totalSupply;
+        uint forVotes = proposal.forVotes;
+        uint againstVotes = proposal.againstVotes;
+        bool proposalSuccess = forVotes > againstVotes && forVotes > ets.totalSupply / 20;
+        uint votes = proposal.voted[proposor].votes;        
+        if(proposalSuccess) {
+            (proposalSuccess,) = proposal.proposalContract.delegatecall(abi.encodeWithSignature('execute', _proposalId));
+        }
+        if(proposalSuccess) {
+            if(totalSupply < ets.totalSupplyCap) {
+                uint fivePercentOfTotalSupply = totalSupply / 20;
+                if(votes > fivePercentOfTotalSupply) {
+                    votes = fivePercentOfTotalSupply;
+                }
+                // 5 percent reward
+                ets.totalSupply += uint96(votes / 20);
+                ets.balances[proposor] += votes / 20;
+            }
+        }
+
+
+
     }
 
     function vote(uint _proposalId, bool _support) external {
         (ERC20TokenStorage storage ets,
         GovernanceStorage storage gs) = governanceTokenStorage();
-        require(_proposalId < gs.proposalCount, '_proposalId does not exist');
+        require(_proposalId < gs.proposalCount, 'Governance: _proposalId does not exist');
         Proposal storage proposal = gs.proposals[_proposalId];
-        require(block.number < proposal.endBlock, 'Voting ended');
-        require(proposal.voted[msg.sender].votes == 0, 'Already voted');        
+        require(block.timestamp < proposal.endTime, 'Governance: Voting ended');
+        require(proposal.voted[msg.sender].votes == 0, 'Governance: Already voted');        
         uint balance = ets.balances[msg.sender];
         if(_support) {
             proposal.forVotes += uint96(balance);
@@ -54,18 +93,27 @@ contract Governance is InternalFunctions {
         gs.votedProposalIds[msg.sender].push(uint24(_proposalId));
         emit Vote(_proposalId, msg.sender, balance, _support);
         // Reward voter with 1 percent increase in token
-        ets.balances[msg.sender] += balance / 100;
+        // Reward is capped at 1 percent of 5 percent of totalSupply
+        uint fivePercentOfTotalSupply = ets.totalSupply / 20;
+        if(balance > fivePercentOfTotalSupply) {
+            balance = fivePercentOfTotalSupply;
+        }
+        uint totalSupply = ets.totalSupply;
+        if(totalSupply < ets.totalSupplyCap) {
+            ets.totalSupply += uint96(balance / 100);
+            ets.balances[msg.sender] += balance / 100;
+        }
     }
 
     function unvote(uint _proposalId) external {
         (ERC20TokenStorage storage ets,
         GovernanceStorage storage gs) = governanceTokenStorage();
-        require(_proposalId < gs.proposalCount, '_proposalId does not exist');
+        require(_proposalId < gs.proposalCount, 'Governance: _proposalId does not exist');
         Proposal storage proposal = gs.proposals[_proposalId];
-        require(block.number < proposal.endBlock, 'Voting ended');        
+        require(block.timestamp < proposal.endTime, 'Governance: Voting ended');        
         uint votes = proposal.voted[msg.sender].votes;
         bool support = proposal.voted[msg.sender].support;
-        require(votes > 0, 'Did not vote');                
+        require(votes > 0, 'Governance: Did not vote');                
         if(support) {
             proposal.forVotes -= uint96(votes);
         }
@@ -88,6 +136,7 @@ contract Governance is InternalFunctions {
         proposalIds.pop();
         emit UnVote(_proposalId, msg.sender, votes, support);
         // Remove voter reward
+        ets.totalSupply -= uint96(votes / 100);
         ets.balances[msg.sender] -= votes / 100;
     }
 

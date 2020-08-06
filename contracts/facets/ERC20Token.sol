@@ -19,7 +19,8 @@ contract ERC20Token is IERC20, InternalFunctions {
 
     function balanceOf(address _owner) external view override returns (uint balance) {
         ERC20TokenStorage storage gts = erc20TokenStorage();
-        balance = gts.balances[_owner];
+        balance = (gts.balances[_owner] * 1e18) / gts.deflationaryRate;
+
     }
 
     function transfer(address _to, uint _value) external override returns (bool success) {
@@ -50,11 +51,12 @@ contract ERC20Token is IERC20, InternalFunctions {
         emit Transfer(_from, _to, _value);
 
         uint24[] storage proposalIds = gs.votedProposalIds[_from];
-        uint length = proposalIds.length;
-        while(length > 0) {
-            length--;
-            Proposal storage proposal = gs.proposals[proposalIds[length]];
-            require(block.number > proposal.endBlock, 'Can\'t transfer during vote');
+        uint index = proposalIds.length;
+        while(index > 0) {
+            index--;
+            Proposal storage proposal = gs.proposals[proposalIds[index]];
+            require(block.timestamp > proposal.endTime, 'ERC20Token: Can\'t transfer during vote');
+            require(msg.sender != proposal.proposer || proposal.executed, 'ERC20Token: Proposal must execute first.');
             proposalIds.pop();
         }
     }
@@ -89,81 +91,4 @@ contract ERC20Token is IERC20, InternalFunctions {
         emit Approval(msg.sender, _spender, newAllow);
         success = true;
     }   
-
-    function _transferFrom1(address _from, address _to, uint _value) internal {
-        (ERC20TokenStorage storage gts,
-         GovernanceStorage storage gs) = governanceTokenStorage();
-        uint balance = gts.balances[_from];
-        require(_value <= balance, 'ERC20: Balance less than transfer amount');
-        gts.balances[_from] = balance - _value;
-        gts.balances[_to] += _value;
-        emit Transfer(_from, _to, _value);
-
-        uint24[] storage proposalIds = gs.votedProposalIds[_from];
-        uint length = proposalIds.length;
-        while(length > 0) {
-            length--;
-            Proposal storage proposal = gs.proposals[proposalIds[length]];
-            require(block.number > proposal.endBlock, 'Can\'t transfer during vote');
-            proposalIds.pop();
-        }
-    }
-
-    function _transferFrom2(address _from, address _to, uint _value) internal {
-        (ERC20TokenStorage storage gts,
-         GovernanceStorage storage gs) = governanceTokenStorage();
-        uint balance = gts.balances[_from];
-        require(_value <= balance, 'ERC20: Balance less than transfer amount');
-        gts.balances[_from] = balance - _value;
-        gts.balances[_to] += _value;
-        emit Transfer(_from, _to, _value);
-
-        uint24[] storage proposalIds = gs.votedProposalIds[_from];
-        uint length = proposalIds.length;
-        while(length > 0) {
-            length--;
-            Proposal storage proposal = gs.proposals[proposalIds[length]];
-            require(block.number > proposal.endBlock, 'Can\'t transfer during vote');
-            proposalIds.pop();
-        }
-    }
-
-    function _transferFrom3(address _from, address _to, uint _value) internal {
-        (ERC20TokenStorage storage gts,
-         GovernanceStorage storage gs) = governanceTokenStorage();
-        uint balance = gts.balances[_from];
-        require(_value <= balance, 'ERC20: Balance less than transfer amount');
-        gts.balances[_from] = balance - _value;
-        gts.balances[_to] += _value;
-        emit Transfer(_from, _to, _value);
-
-        uint24[] storage proposalIds = gs.votedProposalIds[_from];
-        uint length = proposalIds.length;
-        while(length > 0) {
-            length--;
-            Proposal storage proposal = gs.proposals[proposalIds[length]];
-            require(block.number > proposal.endBlock, 'Can\'t transfer during vote');
-            proposalIds.pop();
-        }
-    }
-
-    function _transferFrom4(address _from, address _to, uint _value) internal {
-        (ERC20TokenStorage storage gts,
-         GovernanceStorage storage gs) = governanceTokenStorage();
-        uint balance = gts.balances[_from];
-        require(_value <= balance, 'ERC20: Balance less than transfer amount');
-        gts.balances[_from] = balance - _value;
-        gts.balances[_to] += _value;
-        emit Transfer(_from, _to, _value);
-
-        uint24[] storage proposalIds = gs.votedProposalIds[_from];
-        uint length = proposalIds.length;
-        while(length > 0) {
-            length--;
-            Proposal storage proposal = gs.proposals[proposalIds[length]];
-            require(block.number > proposal.endBlock, 'Can\'t transfer during vote');
-            proposalIds.pop();
-        }
-    }
-
 }
