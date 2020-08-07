@@ -17,7 +17,25 @@ import { Diamond, DiamondStorageContract } from './lib/Diamond.sol';
 contract GovernanceTokenDiamond is InternalFunctions {  
     
     constructor() {
-        erc20TokenStorage().totalSupply = 100_000_000e18;        
+        (ERC20TokenStorage storage ets,
+        GovernanceStorage storage gs) = governanceTokenStorage();
+        // Set total supply cap. The token supply cannot grow past this.
+        ets.totalSupplyCap = 100_000_000e18;
+        // Require 5 percent of governance token for votes to pass a proposal
+        gs.quorumDivisor = 20;
+        // Proposers must own 1 percent of totalSupply to submit a proposal
+        gs.proposalThresholdDivisor = 100;
+        // Proposers get an additional 5 percent of their balance if proposal passes
+        gs.proposerAwardDivisor = 20;
+        // Voters get an additional 1 percent of their balance for voting on a proposal
+        gs.voterAwardDivisor = 100;
+        // Cap voter and proposer balance used to generate awards at 5 percent of totalSupply
+        // This is to help prevent too much inflation
+        gs.voteAwardCapDivisor = 20;
+        // Proposals must have at least 48 hours of voting time
+        gs.minimumVotingTime = 48;
+        // Proposals must have no more than 336 hours (14 days) of voting time
+        gs.maximumVotingTime = 336;
 
         // Create a DiamondLoupeFacet contract which implements the Diamond Loupe interface
         DiamondLoupe diamondLoupe = new DiamondLoupe();   

@@ -7,6 +7,10 @@ contract DiamondStorageContract {
 
     struct DiamondStorage {
 
+        // Used to query if a contract implements an interface.
+        // Used to implement ERC-165.
+        mapping(bytes4 => bool) supportedInterfaces;
+
         // maps function selectors to the facets that execute the functions.
         // and maps the selectors to the slot in the selectorSlots array.
         // and maps the selectors to the position in the slot.
@@ -21,11 +25,7 @@ contract DiamondStorageContract {
         // selectorSlotsLength is the number of 32-byte slots in selectorSlots.
         // selectorSlotLength is the number of selectors in the last slot of
         // selectorSlots.
-        uint selectorSlotsLength;
-
-        // Used to query if a contract implements an interface.
-        // Used to implement ERC-165.
-        mapping(bytes4 => bool) supportedInterfaces;
+        uint selectorSlotsLength;        
     }
 
     function diamondStorage() internal pure returns(DiamondStorage storage ds) {

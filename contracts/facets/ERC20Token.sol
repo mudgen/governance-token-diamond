@@ -19,7 +19,7 @@ contract ERC20Token is IERC20, InternalFunctions {
 
     function balanceOf(address _owner) external view override returns (uint balance) {
         ERC20TokenStorage storage gts = erc20TokenStorage();
-        balance = (gts.balances[_owner] * 1e18) / gts.deflationaryRate;
+        balance = gts.balances[_owner];
 
     }
 

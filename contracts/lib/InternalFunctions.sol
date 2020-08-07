@@ -15,14 +15,6 @@ contract InternalFunctions is Diamond, ERC20TokenStorageContract, GovernanceStor
         assembly { ets.slot := position }
         position = GOVERNANCE_STORAGE_POSITION;
         assembly { gs.slot := position }        
-    }
-    
-
-    function balance(address _user) returns (uint) {
-            
-
-        
-        
-    }
+    }  
 
 }

@@ -11,19 +11,34 @@ contract GovernanceStorageContract {
     }
     
     struct Proposal {
+        mapping(address => Voted) voted;
         address proposer;        
         address proposalContract;                
         uint64 endTime;
         bool executed;
         uint96 againstVotes;
-        uint96 forVotes;                     
-        mapping(address => Voted) voted;
+        uint96 forVotes;                             
     }   
     
-    struct GovernanceStorage {
-        uint24 proposalCount;        
+    struct GovernanceStorage {        
         mapping(uint => Proposal) proposals;
         mapping(address => uint24[]) votedProposalIds;
+        uint24 proposalCount;
+        // Proposer must own enough tokens to submit a proposal
+        uint8 proposalThresholdDivisor;
+        // The minimum amount of time a proposal can be voted on. In hours. 
+        uint16 minimumVotingTime;
+        // The maximum amount of time a proposal can be voted on. In hours. 
+        uint16 maximumVotingTime;
+        // Require an amount of governance tokens for votes to pass a proposal
+        uint8 quorumDivisor;
+        // Proposers get an additional amount of tokens if proposal passes
+        uint8 proposerAwardDivisor; 
+        // Voters get an additional amount of tokens for voting on a proposal
+        uint8 voterAwardDivisor; 
+        // Cap voter and proposer token awards.
+        // This is to help prevent too much inflation
+        uint8 voteAwardCapDivisor;
     }
 
     function governanceStorage() internal pure returns(GovernanceStorage storage ds) {
