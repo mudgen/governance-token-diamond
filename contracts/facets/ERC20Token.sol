@@ -54,9 +54,9 @@ contract ERC20Token is IERC20, InternalFunctions {
         uint index = proposalIds.length;
         while(index > 0) {
             index--;
-            Proposal storage proposal = gs.proposals[proposalIds[index]];
-            require(block.timestamp > proposal.endTime, 'ERC20Token: Can\'t transfer during vote');
-            require(msg.sender != proposal.proposer || proposal.executed, 'ERC20Token: Proposal must execute first.');
+            Proposal storage proposalStorage = gs.proposals[proposalIds[index]];
+            require(block.timestamp > proposalStorage.endTime, 'ERC20Token: Can\'t transfer during vote');
+            require(msg.sender != proposalStorage.proposer || proposalStorage.executed, 'ERC20Token: Proposal must execute first.');
             proposalIds.pop();
         }
     }

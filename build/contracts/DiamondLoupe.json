@@ -130,7 +130,7 @@
         "id": 245,
         "nodeType": "ImportDirective",
         "scope": 1217,
-        "sourceUnit": 3245,
+        "sourceUnit": 3409,
         "src": "331:60:2",
         "symbolAliases": [
           {
@@ -158,7 +158,7 @@
         "id": 247,
         "nodeType": "ImportDirective",
         "scope": 1217,
-        "sourceUnit": 2599,
+        "sourceUnit": 2763,
         "src": "393:64:2",
         "symbolAliases": [
           {
@@ -190,10 +190,10 @@
               "id": 248,
               "name": "IDiamondLoupe",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 2598,
+              "referencedDeclaration": 2762,
               "src": "488:13:2",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_IDiamondLoupe_$2598",
+                "typeIdentifier": "t_contract$_IDiamondLoupe_$2762",
                 "typeString": "contract IDiamondLoupe"
               }
             },
@@ -208,10 +208,10 @@
               "id": 250,
               "name": "DiamondStorageContract",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 3312,
+              "referencedDeclaration": 3476,
               "src": "503:22:2",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_DiamondStorageContract_$3312",
+                "typeIdentifier": "t_contract$_DiamondStorageContract_$3476",
                 "typeString": "contract DiamondStorageContract"
               }
             },
@@ -221,8 +221,8 @@
           }
         ],
         "contractDependencies": [
-          2598,
-          3312
+          2762,
+          3476
         ],
         "contractKind": "contract",
         "documentation": null,
@@ -230,8 +230,8 @@
         "id": 1216,
         "linearizedBaseContracts": [
           1216,
-          3312,
-          2598
+          3476,
+          2762
         ],
         "name": "DiamondLoupe",
         "nodeType": "ContractDefinition",
@@ -316,7 +316,7 @@
           },
           {
             "baseFunctions": [
-              2575
+              2739
             ],
             "body": {
               "id": 741,
@@ -340,7 +340,7 @@
                       "stateVariable": false,
                       "storageLocation": "storage",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_DiamondStorage_$3300_storage_ptr",
+                        "typeIdentifier": "t_struct$_DiamondStorage_$3464_storage_ptr",
                         "typeString": "struct DiamondStorageContract.DiamondStorage"
                       },
                       "typeName": {
@@ -348,10 +348,10 @@
                         "id": 265,
                         "name": "DiamondStorage",
                         "nodeType": "UserDefinedTypeName",
-                        "referencedDeclaration": 3300,
+                        "referencedDeclaration": 3464,
                         "src": "1492:14:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_DiamondStorage_$3300_storage_ptr",
+                          "typeIdentifier": "t_struct$_DiamondStorage_$3464_storage_ptr",
                           "typeString": "struct DiamondStorageContract.DiamondStorage"
                         }
                       },
@@ -369,10 +369,10 @@
                       "name": "diamondStorage",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 3311,
+                      "referencedDeclaration": 3475,
                       "src": "1520:14:2",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_pure$__$returns$_t_struct$_DiamondStorage_$3300_storage_ptr_$",
+                        "typeIdentifier": "t_function_internal_pure$__$returns$_t_struct$_DiamondStorage_$3464_storage_ptr_$",
                         "typeString": "function () pure returns (struct DiamondStorageContract.DiamondStorage storage pointer)"
                       }
                     },
@@ -387,7 +387,7 @@
                     "src": "1520:16:2",
                     "tryCall": false,
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_DiamondStorage_$3300_storage_ptr",
+                      "typeIdentifier": "t_struct$_DiamondStorage_$3464_storage_ptr",
                       "typeString": "struct DiamondStorageContract.DiamondStorage storage pointer"
                     }
                   },
@@ -440,7 +440,7 @@
                       "referencedDeclaration": 266,
                       "src": "1573:2:2",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_DiamondStorage_$3300_storage_ptr",
+                        "typeIdentifier": "t_struct$_DiamondStorage_$3464_storage_ptr",
                         "typeString": "struct DiamondStorageContract.DiamondStorage storage pointer"
                       }
                     },
@@ -451,7 +451,7 @@
                     "lValueRequested": false,
                     "memberName": "selectorSlotsLength",
                     "nodeType": "MemberAccess",
-                    "referencedDeclaration": 3299,
+                    "referencedDeclaration": 3463,
                     "src": "1573:22:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
@@ -1447,7 +1447,7 @@
                               "referencedDeclaration": 266,
                               "src": "2422:2:2",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_struct$_DiamondStorage_$3300_storage_ptr",
+                                "typeIdentifier": "t_struct$_DiamondStorage_$3464_storage_ptr",
                                 "typeString": "struct DiamondStorageContract.DiamondStorage storage pointer"
                               }
                             },
@@ -1458,7 +1458,7 @@
                             "lValueRequested": false,
                             "memberName": "selectorSlots",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 3297,
+                            "referencedDeclaration": 3461,
                             "src": "2422:16:2",
                             "typeDescriptions": {
                               "typeIdentifier": "t_mapping$_t_uint256_$_t_bytes32_$",
@@ -1819,7 +1819,7 @@
                                             "referencedDeclaration": 266,
                                             "src": "2781:2:2",
                                             "typeDescriptions": {
-                                              "typeIdentifier": "t_struct$_DiamondStorage_$3300_storage_ptr",
+                                              "typeIdentifier": "t_struct$_DiamondStorage_$3464_storage_ptr",
                                               "typeString": "struct DiamondStorageContract.DiamondStorage storage pointer"
                                             }
                                           },
@@ -1830,7 +1830,7 @@
                                           "lValueRequested": false,
                                           "memberName": "facets",
                                           "nodeType": "MemberAccess",
-                                          "referencedDeclaration": 3293,
+                                          "referencedDeclaration": 3457,
                                           "src": "2781:9:2",
                                           "typeDescriptions": {
                                             "typeIdentifier": "t_mapping$_t_bytes4_$_t_bytes32_$",
@@ -6470,7 +6470,7 @@
           },
           {
             "baseFunctions": [
-              2583
+              2747
             ],
             "body": {
               "id": 940,
@@ -6494,7 +6494,7 @@
                       "stateVariable": false,
                       "storageLocation": "storage",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_DiamondStorage_$3300_storage_ptr",
+                        "typeIdentifier": "t_struct$_DiamondStorage_$3464_storage_ptr",
                         "typeString": "struct DiamondStorageContract.DiamondStorage"
                       },
                       "typeName": {
@@ -6502,10 +6502,10 @@
                         "id": 751,
                         "name": "DiamondStorage",
                         "nodeType": "UserDefinedTypeName",
-                        "referencedDeclaration": 3300,
+                        "referencedDeclaration": 3464,
                         "src": "6510:14:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_DiamondStorage_$3300_storage_ptr",
+                          "typeIdentifier": "t_struct$_DiamondStorage_$3464_storage_ptr",
                           "typeString": "struct DiamondStorageContract.DiamondStorage"
                         }
                       },
@@ -6523,10 +6523,10 @@
                       "name": "diamondStorage",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 3311,
+                      "referencedDeclaration": 3475,
                       "src": "6538:14:2",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_pure$__$returns$_t_struct$_DiamondStorage_$3300_storage_ptr_$",
+                        "typeIdentifier": "t_function_internal_pure$__$returns$_t_struct$_DiamondStorage_$3464_storage_ptr_$",
                         "typeString": "function () pure returns (struct DiamondStorageContract.DiamondStorage storage pointer)"
                       }
                     },
@@ -6541,7 +6541,7 @@
                     "src": "6538:16:2",
                     "tryCall": false,
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_DiamondStorage_$3300_storage_ptr",
+                      "typeIdentifier": "t_struct$_DiamondStorage_$3464_storage_ptr",
                       "typeString": "struct DiamondStorageContract.DiamondStorage storage pointer"
                     }
                   },
@@ -6594,7 +6594,7 @@
                       "referencedDeclaration": 752,
                       "src": "6591:2:2",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_DiamondStorage_$3300_storage_ptr",
+                        "typeIdentifier": "t_struct$_DiamondStorage_$3464_storage_ptr",
                         "typeString": "struct DiamondStorageContract.DiamondStorage storage pointer"
                       }
                     },
@@ -6605,7 +6605,7 @@
                     "lValueRequested": false,
                     "memberName": "selectorSlotsLength",
                     "nodeType": "MemberAccess",
-                    "referencedDeclaration": 3299,
+                    "referencedDeclaration": 3463,
                     "src": "6591:22:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
@@ -7313,7 +7313,7 @@
                               "referencedDeclaration": 752,
                               "src": "7228:2:2",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_struct$_DiamondStorage_$3300_storage_ptr",
+                                "typeIdentifier": "t_struct$_DiamondStorage_$3464_storage_ptr",
                                 "typeString": "struct DiamondStorageContract.DiamondStorage storage pointer"
                               }
                             },
@@ -7324,7 +7324,7 @@
                             "lValueRequested": false,
                             "memberName": "selectorSlots",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 3297,
+                            "referencedDeclaration": 3461,
                             "src": "7228:16:2",
                             "typeDescriptions": {
                               "typeIdentifier": "t_mapping$_t_uint256_$_t_bytes32_$",
@@ -7685,7 +7685,7 @@
                                             "referencedDeclaration": 752,
                                             "src": "7587:2:2",
                                             "typeDescriptions": {
-                                              "typeIdentifier": "t_struct$_DiamondStorage_$3300_storage_ptr",
+                                              "typeIdentifier": "t_struct$_DiamondStorage_$3464_storage_ptr",
                                               "typeString": "struct DiamondStorageContract.DiamondStorage storage pointer"
                                             }
                                           },
@@ -7696,7 +7696,7 @@
                                           "lValueRequested": false,
                                           "memberName": "facets",
                                           "nodeType": "MemberAccess",
-                                          "referencedDeclaration": 3293,
+                                          "referencedDeclaration": 3457,
                                           "src": "7587:9:2",
                                           "typeDescriptions": {
                                             "typeIdentifier": "t_mapping$_t_bytes4_$_t_bytes32_$",
@@ -9049,7 +9049,7 @@
           },
           {
             "baseFunctions": [
-              2589
+              2753
             ],
             "body": {
               "id": 1170,
@@ -9073,7 +9073,7 @@
                       "stateVariable": false,
                       "storageLocation": "storage",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_DiamondStorage_$3300_storage_ptr",
+                        "typeIdentifier": "t_struct$_DiamondStorage_$3464_storage_ptr",
                         "typeString": "struct DiamondStorageContract.DiamondStorage"
                       },
                       "typeName": {
@@ -9081,10 +9081,10 @@
                         "id": 948,
                         "name": "DiamondStorage",
                         "nodeType": "UserDefinedTypeName",
-                        "referencedDeclaration": 3300,
+                        "referencedDeclaration": 3464,
                         "src": "8494:14:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_DiamondStorage_$3300_storage_ptr",
+                          "typeIdentifier": "t_struct$_DiamondStorage_$3464_storage_ptr",
                           "typeString": "struct DiamondStorageContract.DiamondStorage"
                         }
                       },
@@ -9102,10 +9102,10 @@
                       "name": "diamondStorage",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 3311,
+                      "referencedDeclaration": 3475,
                       "src": "8522:14:2",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_pure$__$returns$_t_struct$_DiamondStorage_$3300_storage_ptr_$",
+                        "typeIdentifier": "t_function_internal_pure$__$returns$_t_struct$_DiamondStorage_$3464_storage_ptr_$",
                         "typeString": "function () pure returns (struct DiamondStorageContract.DiamondStorage storage pointer)"
                       }
                     },
@@ -9120,7 +9120,7 @@
                     "src": "8522:16:2",
                     "tryCall": false,
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_DiamondStorage_$3300_storage_ptr",
+                      "typeIdentifier": "t_struct$_DiamondStorage_$3464_storage_ptr",
                       "typeString": "struct DiamondStorageContract.DiamondStorage storage pointer"
                     }
                   },
@@ -9173,7 +9173,7 @@
                       "referencedDeclaration": 949,
                       "src": "8575:2:2",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_DiamondStorage_$3300_storage_ptr",
+                        "typeIdentifier": "t_struct$_DiamondStorage_$3464_storage_ptr",
                         "typeString": "struct DiamondStorageContract.DiamondStorage storage pointer"
                       }
                     },
@@ -9184,7 +9184,7 @@
                     "lValueRequested": false,
                     "memberName": "selectorSlotsLength",
                     "nodeType": "MemberAccess",
-                    "referencedDeclaration": 3299,
+                    "referencedDeclaration": 3463,
                     "src": "8575:22:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
@@ -9893,7 +9893,7 @@
                               "referencedDeclaration": 949,
                               "src": "9186:2:2",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_struct$_DiamondStorage_$3300_storage_ptr",
+                                "typeIdentifier": "t_struct$_DiamondStorage_$3464_storage_ptr",
                                 "typeString": "struct DiamondStorageContract.DiamondStorage storage pointer"
                               }
                             },
@@ -9904,7 +9904,7 @@
                             "lValueRequested": false,
                             "memberName": "selectorSlots",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 3297,
+                            "referencedDeclaration": 3461,
                             "src": "9186:16:2",
                             "typeDescriptions": {
                               "typeIdentifier": "t_mapping$_t_uint256_$_t_bytes32_$",
@@ -10265,7 +10265,7 @@
                                             "referencedDeclaration": 949,
                                             "src": "9545:2:2",
                                             "typeDescriptions": {
-                                              "typeIdentifier": "t_struct$_DiamondStorage_$3300_storage_ptr",
+                                              "typeIdentifier": "t_struct$_DiamondStorage_$3464_storage_ptr",
                                               "typeString": "struct DiamondStorageContract.DiamondStorage storage pointer"
                                             }
                                           },
@@ -10276,7 +10276,7 @@
                                           "lValueRequested": false,
                                           "memberName": "facets",
                                           "nodeType": "MemberAccess",
-                                          "referencedDeclaration": 3293,
+                                          "referencedDeclaration": 3457,
                                           "src": "9545:9:2",
                                           "typeDescriptions": {
                                             "typeIdentifier": "t_mapping$_t_bytes4_$_t_bytes32_$",
@@ -11998,7 +11998,7 @@
           },
           {
             "baseFunctions": [
-              2597
+              2761
             ],
             "body": {
               "id": 1196,
@@ -12022,7 +12022,7 @@
                       "stateVariable": false,
                       "storageLocation": "storage",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_DiamondStorage_$3300_storage_ptr",
+                        "typeIdentifier": "t_struct$_DiamondStorage_$3464_storage_ptr",
                         "typeString": "struct DiamondStorageContract.DiamondStorage"
                       },
                       "typeName": {
@@ -12030,10 +12030,10 @@
                         "id": 1180,
                         "name": "DiamondStorage",
                         "nodeType": "UserDefinedTypeName",
-                        "referencedDeclaration": 3300,
+                        "referencedDeclaration": 3464,
                         "src": "10776:14:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_DiamondStorage_$3300_storage_ptr",
+                          "typeIdentifier": "t_struct$_DiamondStorage_$3464_storage_ptr",
                           "typeString": "struct DiamondStorageContract.DiamondStorage"
                         }
                       },
@@ -12051,10 +12051,10 @@
                       "name": "diamondStorage",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 3311,
+                      "referencedDeclaration": 3475,
                       "src": "10804:14:2",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_pure$__$returns$_t_struct$_DiamondStorage_$3300_storage_ptr_$",
+                        "typeIdentifier": "t_function_internal_pure$__$returns$_t_struct$_DiamondStorage_$3464_storage_ptr_$",
                         "typeString": "function () pure returns (struct DiamondStorageContract.DiamondStorage storage pointer)"
                       }
                     },
@@ -12069,7 +12069,7 @@
                     "src": "10804:16:2",
                     "tryCall": false,
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_DiamondStorage_$3300_storage_ptr",
+                      "typeIdentifier": "t_struct$_DiamondStorage_$3464_storage_ptr",
                       "typeString": "struct DiamondStorageContract.DiamondStorage storage pointer"
                     }
                   },
@@ -12096,7 +12096,7 @@
                                 "referencedDeclaration": 1181,
                                 "src": "10854:2:2",
                                 "typeDescriptions": {
-                                  "typeIdentifier": "t_struct$_DiamondStorage_$3300_storage_ptr",
+                                  "typeIdentifier": "t_struct$_DiamondStorage_$3464_storage_ptr",
                                   "typeString": "struct DiamondStorageContract.DiamondStorage storage pointer"
                                 }
                               },
@@ -12107,7 +12107,7 @@
                               "lValueRequested": false,
                               "memberName": "facets",
                               "nodeType": "MemberAccess",
-                              "referencedDeclaration": 3293,
+                              "referencedDeclaration": 3457,
                               "src": "10854:9:2",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_mapping$_t_bytes4_$_t_bytes32_$",
@@ -12355,7 +12355,7 @@
                       "stateVariable": false,
                       "storageLocation": "storage",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_DiamondStorage_$3300_storage_ptr",
+                        "typeIdentifier": "t_struct$_DiamondStorage_$3464_storage_ptr",
                         "typeString": "struct DiamondStorageContract.DiamondStorage"
                       },
                       "typeName": {
@@ -12363,10 +12363,10 @@
                         "id": 1204,
                         "name": "DiamondStorage",
                         "nodeType": "UserDefinedTypeName",
-                        "referencedDeclaration": 3300,
+                        "referencedDeclaration": 3464,
                         "src": "11107:14:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_DiamondStorage_$3300_storage_ptr",
+                          "typeIdentifier": "t_struct$_DiamondStorage_$3464_storage_ptr",
                           "typeString": "struct DiamondStorageContract.DiamondStorage"
                         }
                       },
@@ -12384,10 +12384,10 @@
                       "name": "diamondStorage",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 3311,
+                      "referencedDeclaration": 3475,
                       "src": "11135:14:2",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_pure$__$returns$_t_struct$_DiamondStorage_$3300_storage_ptr_$",
+                        "typeIdentifier": "t_function_internal_pure$__$returns$_t_struct$_DiamondStorage_$3464_storage_ptr_$",
                         "typeString": "function () pure returns (struct DiamondStorageContract.DiamondStorage storage pointer)"
                       }
                     },
@@ -12402,7 +12402,7 @@
                     "src": "11135:16:2",
                     "tryCall": false,
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_DiamondStorage_$3300_storage_ptr",
+                      "typeIdentifier": "t_struct$_DiamondStorage_$3464_storage_ptr",
                       "typeString": "struct DiamondStorageContract.DiamondStorage storage pointer"
                     }
                   },
@@ -12423,7 +12423,7 @@
                         "referencedDeclaration": 1205,
                         "src": "11169:2:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_DiamondStorage_$3300_storage_ptr",
+                          "typeIdentifier": "t_struct$_DiamondStorage_$3464_storage_ptr",
                           "typeString": "struct DiamondStorageContract.DiamondStorage storage pointer"
                         }
                       },
@@ -12434,7 +12434,7 @@
                       "lValueRequested": false,
                       "memberName": "supportedInterfaces",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 3289,
+                      "referencedDeclaration": 3453,
                       "src": "11169:22:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_mapping$_t_bytes4_$_t_bool_$",
@@ -12602,7 +12602,7 @@
         "id": 245,
         "nodeType": "ImportDirective",
         "scope": 1217,
-        "sourceUnit": 3245,
+        "sourceUnit": 3409,
         "src": "331:60:2",
         "symbolAliases": [
           {
@@ -12630,7 +12630,7 @@
         "id": 247,
         "nodeType": "ImportDirective",
         "scope": 1217,
-        "sourceUnit": 2599,
+        "sourceUnit": 2763,
         "src": "393:64:2",
         "symbolAliases": [
           {
@@ -12662,10 +12662,10 @@
               "id": 248,
               "name": "IDiamondLoupe",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 2598,
+              "referencedDeclaration": 2762,
               "src": "488:13:2",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_IDiamondLoupe_$2598",
+                "typeIdentifier": "t_contract$_IDiamondLoupe_$2762",
                 "typeString": "contract IDiamondLoupe"
               }
             },
@@ -12680,10 +12680,10 @@
               "id": 250,
               "name": "DiamondStorageContract",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 3312,
+              "referencedDeclaration": 3476,
               "src": "503:22:2",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_DiamondStorageContract_$3312",
+                "typeIdentifier": "t_contract$_DiamondStorageContract_$3476",
                 "typeString": "contract DiamondStorageContract"
               }
             },
@@ -12693,8 +12693,8 @@
           }
         ],
         "contractDependencies": [
-          2598,
-          3312
+          2762,
+          3476
         ],
         "contractKind": "contract",
         "documentation": null,
@@ -12702,8 +12702,8 @@
         "id": 1216,
         "linearizedBaseContracts": [
           1216,
-          3312,
-          2598
+          3476,
+          2762
         ],
         "name": "DiamondLoupe",
         "nodeType": "ContractDefinition",
@@ -12788,7 +12788,7 @@
           },
           {
             "baseFunctions": [
-              2575
+              2739
             ],
             "body": {
               "id": 741,
@@ -12812,7 +12812,7 @@
                       "stateVariable": false,
                       "storageLocation": "storage",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_DiamondStorage_$3300_storage_ptr",
+                        "typeIdentifier": "t_struct$_DiamondStorage_$3464_storage_ptr",
                         "typeString": "struct DiamondStorageContract.DiamondStorage"
                       },
                       "typeName": {
@@ -12820,10 +12820,10 @@
                         "id": 265,
                         "name": "DiamondStorage",
                         "nodeType": "UserDefinedTypeName",
-                        "referencedDeclaration": 3300,
+                        "referencedDeclaration": 3464,
                         "src": "1492:14:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_DiamondStorage_$3300_storage_ptr",
+                          "typeIdentifier": "t_struct$_DiamondStorage_$3464_storage_ptr",
                           "typeString": "struct DiamondStorageContract.DiamondStorage"
                         }
                       },
@@ -12841,10 +12841,10 @@
                       "name": "diamondStorage",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 3311,
+                      "referencedDeclaration": 3475,
                       "src": "1520:14:2",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_pure$__$returns$_t_struct$_DiamondStorage_$3300_storage_ptr_$",
+                        "typeIdentifier": "t_function_internal_pure$__$returns$_t_struct$_DiamondStorage_$3464_storage_ptr_$",
                         "typeString": "function () pure returns (struct DiamondStorageContract.DiamondStorage storage pointer)"
                       }
                     },
@@ -12859,7 +12859,7 @@
                     "src": "1520:16:2",
                     "tryCall": false,
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_DiamondStorage_$3300_storage_ptr",
+                      "typeIdentifier": "t_struct$_DiamondStorage_$3464_storage_ptr",
                       "typeString": "struct DiamondStorageContract.DiamondStorage storage pointer"
                     }
                   },
@@ -12912,7 +12912,7 @@
                       "referencedDeclaration": 266,
                       "src": "1573:2:2",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_DiamondStorage_$3300_storage_ptr",
+                        "typeIdentifier": "t_struct$_DiamondStorage_$3464_storage_ptr",
                         "typeString": "struct DiamondStorageContract.DiamondStorage storage pointer"
                       }
                     },
@@ -12923,7 +12923,7 @@
                     "lValueRequested": false,
                     "memberName": "selectorSlotsLength",
                     "nodeType": "MemberAccess",
-                    "referencedDeclaration": 3299,
+                    "referencedDeclaration": 3463,
                     "src": "1573:22:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
@@ -13919,7 +13919,7 @@
                               "referencedDeclaration": 266,
                               "src": "2422:2:2",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_struct$_DiamondStorage_$3300_storage_ptr",
+                                "typeIdentifier": "t_struct$_DiamondStorage_$3464_storage_ptr",
                                 "typeString": "struct DiamondStorageContract.DiamondStorage storage pointer"
                               }
                             },
@@ -13930,7 +13930,7 @@
                             "lValueRequested": false,
                             "memberName": "selectorSlots",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 3297,
+                            "referencedDeclaration": 3461,
                             "src": "2422:16:2",
                             "typeDescriptions": {
                               "typeIdentifier": "t_mapping$_t_uint256_$_t_bytes32_$",
@@ -14291,7 +14291,7 @@
                                             "referencedDeclaration": 266,
                                             "src": "2781:2:2",
                                             "typeDescriptions": {
-                                              "typeIdentifier": "t_struct$_DiamondStorage_$3300_storage_ptr",
+                                              "typeIdentifier": "t_struct$_DiamondStorage_$3464_storage_ptr",
                                               "typeString": "struct DiamondStorageContract.DiamondStorage storage pointer"
                                             }
                                           },
@@ -14302,7 +14302,7 @@
                                           "lValueRequested": false,
                                           "memberName": "facets",
                                           "nodeType": "MemberAccess",
-                                          "referencedDeclaration": 3293,
+                                          "referencedDeclaration": 3457,
                                           "src": "2781:9:2",
                                           "typeDescriptions": {
                                             "typeIdentifier": "t_mapping$_t_bytes4_$_t_bytes32_$",
@@ -18942,7 +18942,7 @@
           },
           {
             "baseFunctions": [
-              2583
+              2747
             ],
             "body": {
               "id": 940,
@@ -18966,7 +18966,7 @@
                       "stateVariable": false,
                       "storageLocation": "storage",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_DiamondStorage_$3300_storage_ptr",
+                        "typeIdentifier": "t_struct$_DiamondStorage_$3464_storage_ptr",
                         "typeString": "struct DiamondStorageContract.DiamondStorage"
                       },
                       "typeName": {
@@ -18974,10 +18974,10 @@
                         "id": 751,
                         "name": "DiamondStorage",
                         "nodeType": "UserDefinedTypeName",
-                        "referencedDeclaration": 3300,
+                        "referencedDeclaration": 3464,
                         "src": "6510:14:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_DiamondStorage_$3300_storage_ptr",
+                          "typeIdentifier": "t_struct$_DiamondStorage_$3464_storage_ptr",
                           "typeString": "struct DiamondStorageContract.DiamondStorage"
                         }
                       },
@@ -18995,10 +18995,10 @@
                       "name": "diamondStorage",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 3311,
+                      "referencedDeclaration": 3475,
                       "src": "6538:14:2",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_pure$__$returns$_t_struct$_DiamondStorage_$3300_storage_ptr_$",
+                        "typeIdentifier": "t_function_internal_pure$__$returns$_t_struct$_DiamondStorage_$3464_storage_ptr_$",
                         "typeString": "function () pure returns (struct DiamondStorageContract.DiamondStorage storage pointer)"
                       }
                     },
@@ -19013,7 +19013,7 @@
                     "src": "6538:16:2",
                     "tryCall": false,
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_DiamondStorage_$3300_storage_ptr",
+                      "typeIdentifier": "t_struct$_DiamondStorage_$3464_storage_ptr",
                       "typeString": "struct DiamondStorageContract.DiamondStorage storage pointer"
                     }
                   },
@@ -19066,7 +19066,7 @@
                       "referencedDeclaration": 752,
                       "src": "6591:2:2",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_DiamondStorage_$3300_storage_ptr",
+                        "typeIdentifier": "t_struct$_DiamondStorage_$3464_storage_ptr",
                         "typeString": "struct DiamondStorageContract.DiamondStorage storage pointer"
                       }
                     },
@@ -19077,7 +19077,7 @@
                     "lValueRequested": false,
                     "memberName": "selectorSlotsLength",
                     "nodeType": "MemberAccess",
-                    "referencedDeclaration": 3299,
+                    "referencedDeclaration": 3463,
                     "src": "6591:22:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
@@ -19785,7 +19785,7 @@
                               "referencedDeclaration": 752,
                               "src": "7228:2:2",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_struct$_DiamondStorage_$3300_storage_ptr",
+                                "typeIdentifier": "t_struct$_DiamondStorage_$3464_storage_ptr",
                                 "typeString": "struct DiamondStorageContract.DiamondStorage storage pointer"
                               }
                             },
@@ -19796,7 +19796,7 @@
                             "lValueRequested": false,
                             "memberName": "selectorSlots",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 3297,
+                            "referencedDeclaration": 3461,
                             "src": "7228:16:2",
                             "typeDescriptions": {
                               "typeIdentifier": "t_mapping$_t_uint256_$_t_bytes32_$",
@@ -20157,7 +20157,7 @@
                                             "referencedDeclaration": 752,
                                             "src": "7587:2:2",
                                             "typeDescriptions": {
-                                              "typeIdentifier": "t_struct$_DiamondStorage_$3300_storage_ptr",
+                                              "typeIdentifier": "t_struct$_DiamondStorage_$3464_storage_ptr",
                                               "typeString": "struct DiamondStorageContract.DiamondStorage storage pointer"
                                             }
                                           },
@@ -20168,7 +20168,7 @@
                                           "lValueRequested": false,
                                           "memberName": "facets",
                                           "nodeType": "MemberAccess",
-                                          "referencedDeclaration": 3293,
+                                          "referencedDeclaration": 3457,
                                           "src": "7587:9:2",
                                           "typeDescriptions": {
                                             "typeIdentifier": "t_mapping$_t_bytes4_$_t_bytes32_$",
@@ -21521,7 +21521,7 @@
           },
           {
             "baseFunctions": [
-              2589
+              2753
             ],
             "body": {
               "id": 1170,
@@ -21545,7 +21545,7 @@
                       "stateVariable": false,
                       "storageLocation": "storage",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_DiamondStorage_$3300_storage_ptr",
+                        "typeIdentifier": "t_struct$_DiamondStorage_$3464_storage_ptr",
                         "typeString": "struct DiamondStorageContract.DiamondStorage"
                       },
                       "typeName": {
@@ -21553,10 +21553,10 @@
                         "id": 948,
                         "name": "DiamondStorage",
                         "nodeType": "UserDefinedTypeName",
-                        "referencedDeclaration": 3300,
+                        "referencedDeclaration": 3464,
                         "src": "8494:14:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_DiamondStorage_$3300_storage_ptr",
+                          "typeIdentifier": "t_struct$_DiamondStorage_$3464_storage_ptr",
                           "typeString": "struct DiamondStorageContract.DiamondStorage"
                         }
                       },
@@ -21574,10 +21574,10 @@
                       "name": "diamondStorage",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 3311,
+                      "referencedDeclaration": 3475,
                       "src": "8522:14:2",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_pure$__$returns$_t_struct$_DiamondStorage_$3300_storage_ptr_$",
+                        "typeIdentifier": "t_function_internal_pure$__$returns$_t_struct$_DiamondStorage_$3464_storage_ptr_$",
                         "typeString": "function () pure returns (struct DiamondStorageContract.DiamondStorage storage pointer)"
                       }
                     },
@@ -21592,7 +21592,7 @@
                     "src": "8522:16:2",
                     "tryCall": false,
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_DiamondStorage_$3300_storage_ptr",
+                      "typeIdentifier": "t_struct$_DiamondStorage_$3464_storage_ptr",
                       "typeString": "struct DiamondStorageContract.DiamondStorage storage pointer"
                     }
                   },
@@ -21645,7 +21645,7 @@
                       "referencedDeclaration": 949,
                       "src": "8575:2:2",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_DiamondStorage_$3300_storage_ptr",
+                        "typeIdentifier": "t_struct$_DiamondStorage_$3464_storage_ptr",
                         "typeString": "struct DiamondStorageContract.DiamondStorage storage pointer"
                       }
                     },
@@ -21656,7 +21656,7 @@
                     "lValueRequested": false,
                     "memberName": "selectorSlotsLength",
                     "nodeType": "MemberAccess",
-                    "referencedDeclaration": 3299,
+                    "referencedDeclaration": 3463,
                     "src": "8575:22:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
@@ -22365,7 +22365,7 @@
                               "referencedDeclaration": 949,
                               "src": "9186:2:2",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_struct$_DiamondStorage_$3300_storage_ptr",
+                                "typeIdentifier": "t_struct$_DiamondStorage_$3464_storage_ptr",
                                 "typeString": "struct DiamondStorageContract.DiamondStorage storage pointer"
                               }
                             },
@@ -22376,7 +22376,7 @@
                             "lValueRequested": false,
                             "memberName": "selectorSlots",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 3297,
+                            "referencedDeclaration": 3461,
                             "src": "9186:16:2",
                             "typeDescriptions": {
                               "typeIdentifier": "t_mapping$_t_uint256_$_t_bytes32_$",
@@ -22737,7 +22737,7 @@
                                             "referencedDeclaration": 949,
                                             "src": "9545:2:2",
                                             "typeDescriptions": {
-                                              "typeIdentifier": "t_struct$_DiamondStorage_$3300_storage_ptr",
+                                              "typeIdentifier": "t_struct$_DiamondStorage_$3464_storage_ptr",
                                               "typeString": "struct DiamondStorageContract.DiamondStorage storage pointer"
                                             }
                                           },
@@ -22748,7 +22748,7 @@
                                           "lValueRequested": false,
                                           "memberName": "facets",
                                           "nodeType": "MemberAccess",
-                                          "referencedDeclaration": 3293,
+                                          "referencedDeclaration": 3457,
                                           "src": "9545:9:2",
                                           "typeDescriptions": {
                                             "typeIdentifier": "t_mapping$_t_bytes4_$_t_bytes32_$",
@@ -24470,7 +24470,7 @@
           },
           {
             "baseFunctions": [
-              2597
+              2761
             ],
             "body": {
               "id": 1196,
@@ -24494,7 +24494,7 @@
                       "stateVariable": false,
                       "storageLocation": "storage",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_DiamondStorage_$3300_storage_ptr",
+                        "typeIdentifier": "t_struct$_DiamondStorage_$3464_storage_ptr",
                         "typeString": "struct DiamondStorageContract.DiamondStorage"
                       },
                       "typeName": {
@@ -24502,10 +24502,10 @@
                         "id": 1180,
                         "name": "DiamondStorage",
                         "nodeType": "UserDefinedTypeName",
-                        "referencedDeclaration": 3300,
+                        "referencedDeclaration": 3464,
                         "src": "10776:14:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_DiamondStorage_$3300_storage_ptr",
+                          "typeIdentifier": "t_struct$_DiamondStorage_$3464_storage_ptr",
                           "typeString": "struct DiamondStorageContract.DiamondStorage"
                         }
                       },
@@ -24523,10 +24523,10 @@
                       "name": "diamondStorage",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 3311,
+                      "referencedDeclaration": 3475,
                       "src": "10804:14:2",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_pure$__$returns$_t_struct$_DiamondStorage_$3300_storage_ptr_$",
+                        "typeIdentifier": "t_function_internal_pure$__$returns$_t_struct$_DiamondStorage_$3464_storage_ptr_$",
                         "typeString": "function () pure returns (struct DiamondStorageContract.DiamondStorage storage pointer)"
                       }
                     },
@@ -24541,7 +24541,7 @@
                     "src": "10804:16:2",
                     "tryCall": false,
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_DiamondStorage_$3300_storage_ptr",
+                      "typeIdentifier": "t_struct$_DiamondStorage_$3464_storage_ptr",
                       "typeString": "struct DiamondStorageContract.DiamondStorage storage pointer"
                     }
                   },
@@ -24568,7 +24568,7 @@
                                 "referencedDeclaration": 1181,
                                 "src": "10854:2:2",
                                 "typeDescriptions": {
-                                  "typeIdentifier": "t_struct$_DiamondStorage_$3300_storage_ptr",
+                                  "typeIdentifier": "t_struct$_DiamondStorage_$3464_storage_ptr",
                                   "typeString": "struct DiamondStorageContract.DiamondStorage storage pointer"
                                 }
                               },
@@ -24579,7 +24579,7 @@
                               "lValueRequested": false,
                               "memberName": "facets",
                               "nodeType": "MemberAccess",
-                              "referencedDeclaration": 3293,
+                              "referencedDeclaration": 3457,
                               "src": "10854:9:2",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_mapping$_t_bytes4_$_t_bytes32_$",
@@ -24827,7 +24827,7 @@
                       "stateVariable": false,
                       "storageLocation": "storage",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_DiamondStorage_$3300_storage_ptr",
+                        "typeIdentifier": "t_struct$_DiamondStorage_$3464_storage_ptr",
                         "typeString": "struct DiamondStorageContract.DiamondStorage"
                       },
                       "typeName": {
@@ -24835,10 +24835,10 @@
                         "id": 1204,
                         "name": "DiamondStorage",
                         "nodeType": "UserDefinedTypeName",
-                        "referencedDeclaration": 3300,
+                        "referencedDeclaration": 3464,
                         "src": "11107:14:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_DiamondStorage_$3300_storage_ptr",
+                          "typeIdentifier": "t_struct$_DiamondStorage_$3464_storage_ptr",
                           "typeString": "struct DiamondStorageContract.DiamondStorage"
                         }
                       },
@@ -24856,10 +24856,10 @@
                       "name": "diamondStorage",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 3311,
+                      "referencedDeclaration": 3475,
                       "src": "11135:14:2",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_pure$__$returns$_t_struct$_DiamondStorage_$3300_storage_ptr_$",
+                        "typeIdentifier": "t_function_internal_pure$__$returns$_t_struct$_DiamondStorage_$3464_storage_ptr_$",
                         "typeString": "function () pure returns (struct DiamondStorageContract.DiamondStorage storage pointer)"
                       }
                     },
@@ -24874,7 +24874,7 @@
                     "src": "11135:16:2",
                     "tryCall": false,
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_DiamondStorage_$3300_storage_ptr",
+                      "typeIdentifier": "t_struct$_DiamondStorage_$3464_storage_ptr",
                       "typeString": "struct DiamondStorageContract.DiamondStorage storage pointer"
                     }
                   },
@@ -24895,7 +24895,7 @@
                         "referencedDeclaration": 1205,
                         "src": "11169:2:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_DiamondStorage_$3300_storage_ptr",
+                          "typeIdentifier": "t_struct$_DiamondStorage_$3464_storage_ptr",
                           "typeString": "struct DiamondStorageContract.DiamondStorage storage pointer"
                         }
                       },
@@ -24906,7 +24906,7 @@
                       "lValueRequested": false,
                       "memberName": "supportedInterfaces",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 3289,
+                      "referencedDeclaration": 3453,
                       "src": "11169:22:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_mapping$_t_bytes4_$_t_bool_$",
@@ -25043,7 +25043,7 @@
   },
   "networks": {},
   "schemaVersion": "3.1.0",
-  "updatedAt": "2020-08-07T04:57:34.425Z",
+  "updatedAt": "2020-08-07T18:06:06.591Z",
   "devdoc": {
     "kind": "dev",
     "methods": {

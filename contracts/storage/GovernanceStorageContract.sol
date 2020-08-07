@@ -12,10 +12,11 @@ contract GovernanceStorageContract {
     
     struct Proposal {
         mapping(address => Voted) voted;
-        address proposer;        
-        address proposalContract;                
+        address proposalContract;
+        address proposer;
         uint64 endTime;
-        bool executed;
+        bool executed;        
+        bool stuck;
         uint96 againstVotes;
         uint96 forVotes;                             
     }   

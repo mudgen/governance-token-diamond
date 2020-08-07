@@ -1,27 +1,27 @@
 {
   "contractName": "GovernanceStorageContract",
   "abi": [],
-  "metadata": "{\"compiler\":{\"version\":\"0.7.0+commit.9e61f92b\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/C/Users/mudge/projects/governance-token-diamond/contracts/storage/GovernanceStorageContract.sol\":\"GovernanceStorageContract\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/mudge/projects/governance-token-diamond/contracts/storage/GovernanceStorageContract.sol\":{\"keccak256\":\"0x638a617d7624efd9a39d19804ac47d76cbfc6e2a4d39a8dc604faece166aa236\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://52fc6f5e61598bf054161a3388c0aca475329bf2cbae108b3a776a15a36bc3cb\",\"dweb:/ipfs/QmeAroRAA3dmc5oSSjVRYTDRwaMD6VdF1q7BosiLY35F4c\"]}},\"version\":1}",
-  "bytecode": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea26469706673582212200193dec0d78b36f0ee1f112c67129bbce076cf87a5519ca4e4a395b3f66c077064736f6c63430007000033",
-  "deployedBytecode": "0x6080604052600080fdfea26469706673582212200193dec0d78b36f0ee1f112c67129bbce076cf87a5519ca4e4a395b3f66c077064736f6c63430007000033",
+  "metadata": "{\"compiler\":{\"version\":\"0.7.0+commit.9e61f92b\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/C/Users/mudge/projects/governance-token-diamond/contracts/storage/GovernanceStorageContract.sol\":\"GovernanceStorageContract\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/mudge/projects/governance-token-diamond/contracts/storage/GovernanceStorageContract.sol\":{\"keccak256\":\"0xf69a43858e2038cf7e26f450e9aafd4e566946fc791d680c8029ff775feb639c\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://b48e0e01aeeb118a888b2a8086a6e278d4cbc079160330727ccb9847b3606746\",\"dweb:/ipfs/QmcVQ9cVktu4oxi1Xt6ejDEzAJUmF4y564LhU3shVbHe6x\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea2646970667358221220434d36fa9924c55c3af9e81223ce64e96f81d7e227328036546dcccdfe984e0e64736f6c63430007000033",
+  "deployedBytecode": "0x6080604052600080fdfea2646970667358221220434d36fa9924c55c3af9e81223ce64e96f81d7e227328036546dcccdfe984e0e64736f6c63430007000033",
   "immutableReferences": {},
-  "sourceMap": "60:1743:13:-:0;;;;;;;;;;;;;;;;;;;",
-  "deployedSourceMap": "60:1743:13:-:0;;;;;",
-  "source": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.7.0;\r\n\r\ncontract GovernanceStorageContract {           \r\n\r\n    bytes32 internal constant GOVERNANCE_STORAGE_POSITION = keccak256(\"governance.token.diamond.governance\");\r\n    \r\n    struct Voted {        \r\n        uint96 votes;\r\n        bool support;\r\n    }\r\n    \r\n    struct Proposal {\r\n        mapping(address => Voted) voted;\r\n        address proposer;        \r\n        address proposalContract;                \r\n        uint64 endTime;\r\n        bool executed;\r\n        uint96 againstVotes;\r\n        uint96 forVotes;                             \r\n    }   \r\n    \r\n    struct GovernanceStorage {        \r\n        mapping(uint => Proposal) proposals;\r\n        mapping(address => uint24[]) votedProposalIds;\r\n        uint24 proposalCount;\r\n        // Proposer must own enough tokens to submit a proposal\r\n        uint8 proposalThresholdDivisor;\r\n        // The minimum amount of time a proposal can be voted on. In hours. \r\n        uint16 minimumVotingTime;\r\n        // The maximum amount of time a proposal can be voted on. In hours. \r\n        uint16 maximumVotingTime;\r\n        // Require an amount of governance tokens for votes to pass a proposal\r\n        uint8 quorumDivisor;\r\n        // Proposers get an additional amount of tokens if proposal passes\r\n        uint8 proposerAwardDivisor; \r\n        // Voters get an additional amount of tokens for voting on a proposal\r\n        uint8 voterAwardDivisor; \r\n        // Cap voter and proposer token awards.\r\n        // This is to help prevent too much inflation\r\n        uint8 voteAwardCapDivisor;\r\n    }\r\n\r\n    function governanceStorage() internal pure returns(GovernanceStorage storage ds) {\r\n        bytes32 position = GOVERNANCE_STORAGE_POSITION;\r\n        assembly { ds.slot := position }\r\n    }\r\n}\r\n",
+  "sourceMap": "60:1748:13:-:0;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "60:1748:13:-:0;;;;;",
+  "source": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.7.0;\r\n\r\ncontract GovernanceStorageContract {           \r\n\r\n    bytes32 internal constant GOVERNANCE_STORAGE_POSITION = keccak256(\"governance.token.diamond.governance\");\r\n    \r\n    struct Voted {        \r\n        uint96 votes;\r\n        bool support;\r\n    }\r\n    \r\n    struct Proposal {\r\n        mapping(address => Voted) voted;\r\n        address proposalContract;\r\n        address proposer;\r\n        uint64 endTime;\r\n        bool executed;        \r\n        bool stuck;\r\n        uint96 againstVotes;\r\n        uint96 forVotes;                             \r\n    }   \r\n    \r\n    struct GovernanceStorage {        \r\n        mapping(uint => Proposal) proposals;\r\n        mapping(address => uint24[]) votedProposalIds;\r\n        uint24 proposalCount;\r\n        // Proposer must own enough tokens to submit a proposal\r\n        uint8 proposalThresholdDivisor;\r\n        // The minimum amount of time a proposal can be voted on. In hours. \r\n        uint16 minimumVotingTime;\r\n        // The maximum amount of time a proposal can be voted on. In hours. \r\n        uint16 maximumVotingTime;\r\n        // Require an amount of governance tokens for votes to pass a proposal\r\n        uint8 quorumDivisor;\r\n        // Proposers get an additional amount of tokens if proposal passes\r\n        uint8 proposerAwardDivisor; \r\n        // Voters get an additional amount of tokens for voting on a proposal\r\n        uint8 voterAwardDivisor; \r\n        // Cap voter and proposer token awards.\r\n        // This is to help prevent too much inflation\r\n        uint8 voteAwardCapDivisor;\r\n    }\r\n\r\n    function governanceStorage() internal pure returns(GovernanceStorage storage ds) {\r\n        bytes32 position = GOVERNANCE_STORAGE_POSITION;\r\n        assembly { ds.slot := position }\r\n    }\r\n}\r\n",
   "sourcePath": "C:\\Users\\mudge\\projects\\governance-token-diamond\\contracts\\storage\\GovernanceStorageContract.sol",
   "ast": {
     "absolutePath": "/C/Users/mudge/projects/governance-token-diamond/contracts/storage/GovernanceStorageContract.sol",
     "exportedSymbols": {
       "GovernanceStorageContract": [
-        3413
+        3579
       ]
     },
-    "id": 3414,
+    "id": 3580,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 3348,
+        "id": 3512,
         "literals": [
           "solidity",
           "^",
@@ -38,21 +38,21 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 3413,
+        "id": 3579,
         "linearizedBaseContracts": [
-          3413
+          3579
         ],
         "name": "GovernanceStorageContract",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": true,
-            "id": 3353,
+            "id": 3517,
             "mutability": "constant",
             "name": "GOVERNANCE_STORAGE_POSITION",
             "nodeType": "VariableDeclaration",
             "overrides": null,
-            "scope": 3413,
+            "scope": 3579,
             "src": "115:104:13",
             "stateVariable": true,
             "storageLocation": "default",
@@ -61,7 +61,7 @@
               "typeString": "bytes32"
             },
             "typeName": {
-              "id": 3349,
+              "id": 3513,
               "name": "bytes32",
               "nodeType": "ElementaryTypeName",
               "src": "115:7:13",
@@ -76,7 +76,7 @@
                 {
                   "argumentTypes": null,
                   "hexValue": "676f7665726e616e63652e746f6b656e2e6469616d6f6e642e676f7665726e616e6365",
-                  "id": 3351,
+                  "id": 3515,
                   "isConstant": false,
                   "isLValue": false,
                   "isPure": true,
@@ -99,7 +99,7 @@
                     "typeString": "literal_string \"governance.token.diamond.governance\""
                   }
                 ],
-                "id": 3350,
+                "id": 3514,
                 "name": "keccak256",
                 "nodeType": "Identifier",
                 "overloadedDeclarations": [],
@@ -110,7 +110,7 @@
                   "typeString": "function (bytes memory) pure returns (bytes32)"
                 }
               },
-              "id": 3352,
+              "id": 3516,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
@@ -129,16 +129,16 @@
           },
           {
             "canonicalName": "GovernanceStorageContract.Voted",
-            "id": 3358,
+            "id": 3522,
             "members": [
               {
                 "constant": false,
-                "id": 3355,
+                "id": 3519,
                 "mutability": "mutable",
                 "name": "votes",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 3358,
+                "scope": 3522,
                 "src": "264:12:13",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -147,7 +147,7 @@
                   "typeString": "uint96"
                 },
                 "typeName": {
-                  "id": 3354,
+                  "id": 3518,
                   "name": "uint96",
                   "nodeType": "ElementaryTypeName",
                   "src": "264:6:13",
@@ -161,12 +161,12 @@
               },
               {
                 "constant": false,
-                "id": 3357,
+                "id": 3521,
                 "mutability": "mutable",
                 "name": "support",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 3358,
+                "scope": 3522,
                 "src": "287:12:13",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -175,7 +175,7 @@
                   "typeString": "bool"
                 },
                 "typeName": {
-                  "id": 3356,
+                  "id": 3520,
                   "name": "bool",
                   "nodeType": "ElementaryTypeName",
                   "src": "287:4:13",
@@ -190,33 +190,33 @@
             ],
             "name": "Voted",
             "nodeType": "StructDefinition",
-            "scope": 3413,
+            "scope": 3579,
             "src": "232:75:13",
             "visibility": "public"
           },
           {
             "canonicalName": "GovernanceStorageContract.Proposal",
-            "id": 3375,
+            "id": 3541,
             "members": [
               {
                 "constant": false,
-                "id": 3362,
+                "id": 3526,
                 "mutability": "mutable",
                 "name": "voted",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 3375,
+                "scope": 3541,
                 "src": "346:31:13",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Voted_$3358_storage_$",
+                  "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Voted_$3522_storage_$",
                   "typeString": "mapping(address => struct GovernanceStorageContract.Voted)"
                 },
                 "typeName": {
-                  "id": 3361,
+                  "id": 3525,
                   "keyType": {
-                    "id": 3359,
+                    "id": 3523,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "354:7:13",
@@ -228,18 +228,18 @@
                   "nodeType": "Mapping",
                   "src": "346:25:13",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Voted_$3358_storage_$",
+                    "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Voted_$3522_storage_$",
                     "typeString": "mapping(address => struct GovernanceStorageContract.Voted)"
                   },
                   "valueType": {
                     "contractScope": null,
-                    "id": 3360,
+                    "id": 3524,
                     "name": "Voted",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 3358,
+                    "referencedDeclaration": 3522,
                     "src": "365:5:13",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_Voted_$3358_storage_ptr",
+                      "typeIdentifier": "t_struct$_Voted_$3522_storage_ptr",
                       "typeString": "struct GovernanceStorageContract.Voted"
                     }
                   }
@@ -249,13 +249,13 @@
               },
               {
                 "constant": false,
-                "id": 3364,
+                "id": 3528,
                 "mutability": "mutable",
-                "name": "proposer",
+                "name": "proposalContract",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 3375,
-                "src": "388:16:13",
+                "scope": 3541,
+                "src": "388:24:13",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -263,7 +263,7 @@
                   "typeString": "address"
                 },
                 "typeName": {
-                  "id": 3363,
+                  "id": 3527,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
                   "src": "388:7:13",
@@ -278,13 +278,13 @@
               },
               {
                 "constant": false,
-                "id": 3366,
+                "id": 3530,
                 "mutability": "mutable",
-                "name": "proposalContract",
+                "name": "proposer",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 3375,
-                "src": "423:24:13",
+                "scope": 3541,
+                "src": "423:16:13",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -292,7 +292,7 @@
                   "typeString": "address"
                 },
                 "typeName": {
-                  "id": 3365,
+                  "id": 3529,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
                   "src": "423:7:13",
@@ -307,13 +307,13 @@
               },
               {
                 "constant": false,
-                "id": 3368,
+                "id": 3532,
                 "mutability": "mutable",
                 "name": "endTime",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 3375,
-                "src": "474:14:13",
+                "scope": 3541,
+                "src": "450:14:13",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -321,10 +321,10 @@
                   "typeString": "uint64"
                 },
                 "typeName": {
-                  "id": 3367,
+                  "id": 3531,
                   "name": "uint64",
                   "nodeType": "ElementaryTypeName",
-                  "src": "474:6:13",
+                  "src": "450:6:13",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint64",
                     "typeString": "uint64"
@@ -335,13 +335,13 @@
               },
               {
                 "constant": false,
-                "id": 3370,
+                "id": 3534,
                 "mutability": "mutable",
                 "name": "executed",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 3375,
-                "src": "499:13:13",
+                "scope": 3541,
+                "src": "475:13:13",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -349,10 +349,10 @@
                   "typeString": "bool"
                 },
                 "typeName": {
-                  "id": 3369,
+                  "id": 3533,
                   "name": "bool",
                   "nodeType": "ElementaryTypeName",
-                  "src": "499:4:13",
+                  "src": "475:4:13",
                   "typeDescriptions": {
                     "typeIdentifier": "t_bool",
                     "typeString": "bool"
@@ -363,13 +363,41 @@
               },
               {
                 "constant": false,
-                "id": 3372,
+                "id": 3536,
+                "mutability": "mutable",
+                "name": "stuck",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 3541,
+                "src": "507:10:13",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                },
+                "typeName": {
+                  "id": 3535,
+                  "name": "bool",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "507:4:13",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 3538,
                 "mutability": "mutable",
                 "name": "againstVotes",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 3375,
-                "src": "523:19:13",
+                "scope": 3541,
+                "src": "528:19:13",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -377,10 +405,10 @@
                   "typeString": "uint96"
                 },
                 "typeName": {
-                  "id": 3371,
+                  "id": 3537,
                   "name": "uint96",
                   "nodeType": "ElementaryTypeName",
-                  "src": "523:6:13",
+                  "src": "528:6:13",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint96",
                     "typeString": "uint96"
@@ -391,13 +419,13 @@
               },
               {
                 "constant": false,
-                "id": 3374,
+                "id": 3540,
                 "mutability": "mutable",
                 "name": "forVotes",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 3375,
-                "src": "553:15:13",
+                "scope": 3541,
+                "src": "558:15:13",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -405,10 +433,10 @@
                   "typeString": "uint96"
                 },
                 "typeName": {
-                  "id": 3373,
+                  "id": 3539,
                   "name": "uint96",
                   "nodeType": "ElementaryTypeName",
-                  "src": "553:6:13",
+                  "src": "558:6:13",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint96",
                     "typeString": "uint96"
@@ -420,56 +448,56 @@
             ],
             "name": "Proposal",
             "nodeType": "StructDefinition",
-            "scope": 3413,
-            "src": "319:286:13",
+            "scope": 3579,
+            "src": "319:291:13",
             "visibility": "public"
           },
           {
             "canonicalName": "GovernanceStorageContract.GovernanceStorage",
-            "id": 3401,
+            "id": 3567,
             "members": [
               {
                 "constant": false,
-                "id": 3379,
+                "id": 3545,
                 "mutability": "mutable",
                 "name": "proposals",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 3401,
-                "src": "664:35:13",
+                "scope": 3567,
+                "src": "669:35:13",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Proposal_$3375_storage_$",
+                  "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Proposal_$3541_storage_$",
                   "typeString": "mapping(uint256 => struct GovernanceStorageContract.Proposal)"
                 },
                 "typeName": {
-                  "id": 3378,
+                  "id": 3544,
                   "keyType": {
-                    "id": 3376,
+                    "id": 3542,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "672:4:13",
+                    "src": "677:4:13",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
                   "nodeType": "Mapping",
-                  "src": "664:25:13",
+                  "src": "669:25:13",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Proposal_$3375_storage_$",
+                    "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Proposal_$3541_storage_$",
                     "typeString": "mapping(uint256 => struct GovernanceStorageContract.Proposal)"
                   },
                   "valueType": {
                     "contractScope": null,
-                    "id": 3377,
+                    "id": 3543,
                     "name": "Proposal",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 3375,
-                    "src": "680:8:13",
+                    "referencedDeclaration": 3541,
+                    "src": "685:8:13",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_Proposal_$3375_storage_ptr",
+                      "typeIdentifier": "t_struct$_Proposal_$3541_storage_ptr",
                       "typeString": "struct GovernanceStorageContract.Proposal"
                     }
                   }
@@ -479,13 +507,13 @@
               },
               {
                 "constant": false,
-                "id": 3384,
+                "id": 3550,
                 "mutability": "mutable",
                 "name": "votedProposalIds",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 3401,
-                "src": "710:45:13",
+                "scope": 3567,
+                "src": "715:45:13",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -493,38 +521,38 @@
                   "typeString": "mapping(address => uint24[])"
                 },
                 "typeName": {
-                  "id": 3383,
+                  "id": 3549,
                   "keyType": {
-                    "id": 3380,
+                    "id": 3546,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "718:7:13",
+                    "src": "723:7:13",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
                     }
                   },
                   "nodeType": "Mapping",
-                  "src": "710:28:13",
+                  "src": "715:28:13",
                   "typeDescriptions": {
                     "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_uint24_$dyn_storage_$",
                     "typeString": "mapping(address => uint24[])"
                   },
                   "valueType": {
                     "baseType": {
-                      "id": 3381,
+                      "id": 3547,
                       "name": "uint24",
                       "nodeType": "ElementaryTypeName",
-                      "src": "729:6:13",
+                      "src": "734:6:13",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint24",
                         "typeString": "uint24"
                       }
                     },
-                    "id": 3382,
+                    "id": 3548,
                     "length": null,
                     "nodeType": "ArrayTypeName",
-                    "src": "729:8:13",
+                    "src": "734:8:13",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_uint24_$dyn_storage_ptr",
                       "typeString": "uint24[]"
@@ -536,13 +564,13 @@
               },
               {
                 "constant": false,
-                "id": 3386,
+                "id": 3552,
                 "mutability": "mutable",
                 "name": "proposalCount",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 3401,
-                "src": "766:20:13",
+                "scope": 3567,
+                "src": "771:20:13",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -550,10 +578,10 @@
                   "typeString": "uint24"
                 },
                 "typeName": {
-                  "id": 3385,
+                  "id": 3551,
                   "name": "uint24",
                   "nodeType": "ElementaryTypeName",
-                  "src": "766:6:13",
+                  "src": "771:6:13",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint24",
                     "typeString": "uint24"
@@ -564,13 +592,13 @@
               },
               {
                 "constant": false,
-                "id": 3388,
+                "id": 3554,
                 "mutability": "mutable",
                 "name": "proposalThresholdDivisor",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 3401,
-                "src": "862:30:13",
+                "scope": 3567,
+                "src": "867:30:13",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -578,10 +606,10 @@
                   "typeString": "uint8"
                 },
                 "typeName": {
-                  "id": 3387,
+                  "id": 3553,
                   "name": "uint8",
                   "nodeType": "ElementaryTypeName",
-                  "src": "862:5:13",
+                  "src": "867:5:13",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint8",
                     "typeString": "uint8"
@@ -592,13 +620,13 @@
               },
               {
                 "constant": false,
-                "id": 3390,
+                "id": 3556,
                 "mutability": "mutable",
                 "name": "minimumVotingTime",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 3401,
-                "src": "981:24:13",
+                "scope": 3567,
+                "src": "986:24:13",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -606,10 +634,10 @@
                   "typeString": "uint16"
                 },
                 "typeName": {
-                  "id": 3389,
+                  "id": 3555,
                   "name": "uint16",
                   "nodeType": "ElementaryTypeName",
-                  "src": "981:6:13",
+                  "src": "986:6:13",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint16",
                     "typeString": "uint16"
@@ -620,13 +648,13 @@
               },
               {
                 "constant": false,
-                "id": 3392,
+                "id": 3558,
                 "mutability": "mutable",
                 "name": "maximumVotingTime",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 3401,
-                "src": "1094:24:13",
+                "scope": 3567,
+                "src": "1099:24:13",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -634,10 +662,10 @@
                   "typeString": "uint16"
                 },
                 "typeName": {
-                  "id": 3391,
+                  "id": 3557,
                   "name": "uint16",
                   "nodeType": "ElementaryTypeName",
-                  "src": "1094:6:13",
+                  "src": "1099:6:13",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint16",
                     "typeString": "uint16"
@@ -648,13 +676,13 @@
               },
               {
                 "constant": false,
-                "id": 3394,
+                "id": 3560,
                 "mutability": "mutable",
                 "name": "quorumDivisor",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 3401,
-                "src": "1209:19:13",
+                "scope": 3567,
+                "src": "1214:19:13",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -662,10 +690,10 @@
                   "typeString": "uint8"
                 },
                 "typeName": {
-                  "id": 3393,
+                  "id": 3559,
                   "name": "uint8",
                   "nodeType": "ElementaryTypeName",
-                  "src": "1209:5:13",
+                  "src": "1214:5:13",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint8",
                     "typeString": "uint8"
@@ -676,13 +704,13 @@
               },
               {
                 "constant": false,
-                "id": 3396,
+                "id": 3562,
                 "mutability": "mutable",
                 "name": "proposerAwardDivisor",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 3401,
-                "src": "1315:26:13",
+                "scope": 3567,
+                "src": "1320:26:13",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -690,10 +718,10 @@
                   "typeString": "uint8"
                 },
                 "typeName": {
-                  "id": 3395,
+                  "id": 3561,
                   "name": "uint8",
                   "nodeType": "ElementaryTypeName",
-                  "src": "1315:5:13",
+                  "src": "1320:5:13",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint8",
                     "typeString": "uint8"
@@ -704,13 +732,13 @@
               },
               {
                 "constant": false,
-                "id": 3398,
+                "id": 3564,
                 "mutability": "mutable",
                 "name": "voterAwardDivisor",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 3401,
-                "src": "1432:23:13",
+                "scope": 3567,
+                "src": "1437:23:13",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -718,10 +746,10 @@
                   "typeString": "uint8"
                 },
                 "typeName": {
-                  "id": 3397,
+                  "id": 3563,
                   "name": "uint8",
                   "nodeType": "ElementaryTypeName",
-                  "src": "1432:5:13",
+                  "src": "1437:5:13",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint8",
                     "typeString": "uint8"
@@ -732,13 +760,13 @@
               },
               {
                 "constant": false,
-                "id": 3400,
+                "id": 3566,
                 "mutability": "mutable",
                 "name": "voteAwardCapDivisor",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 3401,
-                "src": "1571:25:13",
+                "scope": 3567,
+                "src": "1576:25:13",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -746,10 +774,10 @@
                   "typeString": "uint8"
                 },
                 "typeName": {
-                  "id": 3399,
+                  "id": 3565,
                   "name": "uint8",
                   "nodeType": "ElementaryTypeName",
-                  "src": "1571:5:13",
+                  "src": "1576:5:13",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint8",
                     "typeString": "uint8"
@@ -761,30 +789,30 @@
             ],
             "name": "GovernanceStorage",
             "nodeType": "StructDefinition",
-            "scope": 3413,
-            "src": "620:984:13",
+            "scope": 3579,
+            "src": "625:984:13",
             "visibility": "public"
           },
           {
             "body": {
-              "id": 3411,
+              "id": 3577,
               "nodeType": "Block",
-              "src": "1693:107:13",
+              "src": "1698:107:13",
               "statements": [
                 {
                   "assignments": [
-                    3407
+                    3573
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 3407,
+                      "id": 3573,
                       "mutability": "mutable",
                       "name": "position",
                       "nodeType": "VariableDeclaration",
                       "overrides": null,
-                      "scope": 3411,
-                      "src": "1704:16:13",
+                      "scope": 3577,
+                      "src": "1709:16:13",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -792,10 +820,10 @@
                         "typeString": "bytes32"
                       },
                       "typeName": {
-                        "id": 3406,
+                        "id": 3572,
                         "name": "bytes32",
                         "nodeType": "ElementaryTypeName",
-                        "src": "1704:7:13",
+                        "src": "1709:7:13",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes32",
                           "typeString": "bytes32"
@@ -805,41 +833,41 @@
                       "visibility": "internal"
                     }
                   ],
-                  "id": 3409,
+                  "id": 3575,
                   "initialValue": {
                     "argumentTypes": null,
-                    "id": 3408,
+                    "id": 3574,
                     "name": "GOVERNANCE_STORAGE_POSITION",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 3353,
-                    "src": "1723:27:13",
+                    "referencedDeclaration": 3517,
+                    "src": "1728:27:13",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "1704:46:13"
+                  "src": "1709:46:13"
                 },
                 {
                   "AST": {
                     "nodeType": "YulBlock",
-                    "src": "1770:23:13",
+                    "src": "1775:23:13",
                     "statements": [
                       {
                         "nodeType": "YulAssignment",
-                        "src": "1772:19:13",
+                        "src": "1777:19:13",
                         "value": {
                           "name": "position",
                           "nodeType": "YulIdentifier",
-                          "src": "1783:8:13"
+                          "src": "1788:8:13"
                         },
                         "variableNames": [
                           {
                             "name": "ds.slot",
                             "nodeType": "YulIdentifier",
-                            "src": "1772:7:13"
+                            "src": "1777:7:13"
                           }
                         ]
                       }
@@ -848,28 +876,28 @@
                   "evmVersion": "istanbul",
                   "externalReferences": [
                     {
-                      "declaration": 3404,
+                      "declaration": 3570,
                       "isOffset": false,
                       "isSlot": true,
-                      "src": "1772:7:13",
+                      "src": "1777:7:13",
                       "valueSize": 1
                     },
                     {
-                      "declaration": 3407,
+                      "declaration": 3573,
                       "isOffset": false,
                       "isSlot": false,
-                      "src": "1783:8:13",
+                      "src": "1788:8:13",
                       "valueSize": 1
                     }
                   ],
-                  "id": 3410,
+                  "id": 3576,
                   "nodeType": "InlineAssembly",
-                  "src": "1761:32:13"
+                  "src": "1766:32:13"
                 }
               ]
             },
             "documentation": null,
-            "id": 3412,
+            "id": 3578,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -877,39 +905,39 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 3402,
+              "id": 3568,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1638:2:13"
+              "src": "1643:2:13"
             },
             "returnParameters": {
-              "id": 3405,
+              "id": 3571,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3404,
+                  "id": 3570,
                   "mutability": "mutable",
                   "name": "ds",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 3412,
-                  "src": "1663:28:13",
+                  "scope": 3578,
+                  "src": "1668:28:13",
                   "stateVariable": false,
                   "storageLocation": "storage",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_GovernanceStorage_$3401_storage_ptr",
+                    "typeIdentifier": "t_struct$_GovernanceStorage_$3567_storage_ptr",
                     "typeString": "struct GovernanceStorageContract.GovernanceStorage"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 3403,
+                    "id": 3569,
                     "name": "GovernanceStorage",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 3401,
-                    "src": "1663:17:13",
+                    "referencedDeclaration": 3567,
+                    "src": "1668:17:13",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_GovernanceStorage_$3401_storage_ptr",
+                      "typeIdentifier": "t_struct$_GovernanceStorage_$3567_storage_ptr",
                       "typeString": "struct GovernanceStorageContract.GovernanceStorage"
                     }
                   },
@@ -917,34 +945,34 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1662:30:13"
+              "src": "1667:30:13"
             },
-            "scope": 3413,
-            "src": "1612:188:13",
+            "scope": 3579,
+            "src": "1617:188:13",
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           }
         ],
-        "scope": 3414,
-        "src": "60:1743:13"
+        "scope": 3580,
+        "src": "60:1748:13"
       }
     ],
-    "src": "33:1772:13"
+    "src": "33:1777:13"
   },
   "legacyAST": {
     "absolutePath": "/C/Users/mudge/projects/governance-token-diamond/contracts/storage/GovernanceStorageContract.sol",
     "exportedSymbols": {
       "GovernanceStorageContract": [
-        3413
+        3579
       ]
     },
-    "id": 3414,
+    "id": 3580,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 3348,
+        "id": 3512,
         "literals": [
           "solidity",
           "^",
@@ -961,21 +989,21 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 3413,
+        "id": 3579,
         "linearizedBaseContracts": [
-          3413
+          3579
         ],
         "name": "GovernanceStorageContract",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": true,
-            "id": 3353,
+            "id": 3517,
             "mutability": "constant",
             "name": "GOVERNANCE_STORAGE_POSITION",
             "nodeType": "VariableDeclaration",
             "overrides": null,
-            "scope": 3413,
+            "scope": 3579,
             "src": "115:104:13",
             "stateVariable": true,
             "storageLocation": "default",
@@ -984,7 +1012,7 @@
               "typeString": "bytes32"
             },
             "typeName": {
-              "id": 3349,
+              "id": 3513,
               "name": "bytes32",
               "nodeType": "ElementaryTypeName",
               "src": "115:7:13",
@@ -999,7 +1027,7 @@
                 {
                   "argumentTypes": null,
                   "hexValue": "676f7665726e616e63652e746f6b656e2e6469616d6f6e642e676f7665726e616e6365",
-                  "id": 3351,
+                  "id": 3515,
                   "isConstant": false,
                   "isLValue": false,
                   "isPure": true,
@@ -1022,7 +1050,7 @@
                     "typeString": "literal_string \"governance.token.diamond.governance\""
                   }
                 ],
-                "id": 3350,
+                "id": 3514,
                 "name": "keccak256",
                 "nodeType": "Identifier",
                 "overloadedDeclarations": [],
@@ -1033,7 +1061,7 @@
                   "typeString": "function (bytes memory) pure returns (bytes32)"
                 }
               },
-              "id": 3352,
+              "id": 3516,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
@@ -1052,16 +1080,16 @@
           },
           {
             "canonicalName": "GovernanceStorageContract.Voted",
-            "id": 3358,
+            "id": 3522,
             "members": [
               {
                 "constant": false,
-                "id": 3355,
+                "id": 3519,
                 "mutability": "mutable",
                 "name": "votes",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 3358,
+                "scope": 3522,
                 "src": "264:12:13",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -1070,7 +1098,7 @@
                   "typeString": "uint96"
                 },
                 "typeName": {
-                  "id": 3354,
+                  "id": 3518,
                   "name": "uint96",
                   "nodeType": "ElementaryTypeName",
                   "src": "264:6:13",
@@ -1084,12 +1112,12 @@
               },
               {
                 "constant": false,
-                "id": 3357,
+                "id": 3521,
                 "mutability": "mutable",
                 "name": "support",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 3358,
+                "scope": 3522,
                 "src": "287:12:13",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -1098,7 +1126,7 @@
                   "typeString": "bool"
                 },
                 "typeName": {
-                  "id": 3356,
+                  "id": 3520,
                   "name": "bool",
                   "nodeType": "ElementaryTypeName",
                   "src": "287:4:13",
@@ -1113,33 +1141,33 @@
             ],
             "name": "Voted",
             "nodeType": "StructDefinition",
-            "scope": 3413,
+            "scope": 3579,
             "src": "232:75:13",
             "visibility": "public"
           },
           {
             "canonicalName": "GovernanceStorageContract.Proposal",
-            "id": 3375,
+            "id": 3541,
             "members": [
               {
                 "constant": false,
-                "id": 3362,
+                "id": 3526,
                 "mutability": "mutable",
                 "name": "voted",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 3375,
+                "scope": 3541,
                 "src": "346:31:13",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Voted_$3358_storage_$",
+                  "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Voted_$3522_storage_$",
                   "typeString": "mapping(address => struct GovernanceStorageContract.Voted)"
                 },
                 "typeName": {
-                  "id": 3361,
+                  "id": 3525,
                   "keyType": {
-                    "id": 3359,
+                    "id": 3523,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "354:7:13",
@@ -1151,18 +1179,18 @@
                   "nodeType": "Mapping",
                   "src": "346:25:13",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Voted_$3358_storage_$",
+                    "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Voted_$3522_storage_$",
                     "typeString": "mapping(address => struct GovernanceStorageContract.Voted)"
                   },
                   "valueType": {
                     "contractScope": null,
-                    "id": 3360,
+                    "id": 3524,
                     "name": "Voted",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 3358,
+                    "referencedDeclaration": 3522,
                     "src": "365:5:13",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_Voted_$3358_storage_ptr",
+                      "typeIdentifier": "t_struct$_Voted_$3522_storage_ptr",
                       "typeString": "struct GovernanceStorageContract.Voted"
                     }
                   }
@@ -1172,13 +1200,13 @@
               },
               {
                 "constant": false,
-                "id": 3364,
+                "id": 3528,
                 "mutability": "mutable",
-                "name": "proposer",
+                "name": "proposalContract",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 3375,
-                "src": "388:16:13",
+                "scope": 3541,
+                "src": "388:24:13",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -1186,7 +1214,7 @@
                   "typeString": "address"
                 },
                 "typeName": {
-                  "id": 3363,
+                  "id": 3527,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
                   "src": "388:7:13",
@@ -1201,13 +1229,13 @@
               },
               {
                 "constant": false,
-                "id": 3366,
+                "id": 3530,
                 "mutability": "mutable",
-                "name": "proposalContract",
+                "name": "proposer",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 3375,
-                "src": "423:24:13",
+                "scope": 3541,
+                "src": "423:16:13",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -1215,7 +1243,7 @@
                   "typeString": "address"
                 },
                 "typeName": {
-                  "id": 3365,
+                  "id": 3529,
                   "name": "address",
                   "nodeType": "ElementaryTypeName",
                   "src": "423:7:13",
@@ -1230,13 +1258,13 @@
               },
               {
                 "constant": false,
-                "id": 3368,
+                "id": 3532,
                 "mutability": "mutable",
                 "name": "endTime",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 3375,
-                "src": "474:14:13",
+                "scope": 3541,
+                "src": "450:14:13",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -1244,10 +1272,10 @@
                   "typeString": "uint64"
                 },
                 "typeName": {
-                  "id": 3367,
+                  "id": 3531,
                   "name": "uint64",
                   "nodeType": "ElementaryTypeName",
-                  "src": "474:6:13",
+                  "src": "450:6:13",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint64",
                     "typeString": "uint64"
@@ -1258,13 +1286,13 @@
               },
               {
                 "constant": false,
-                "id": 3370,
+                "id": 3534,
                 "mutability": "mutable",
                 "name": "executed",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 3375,
-                "src": "499:13:13",
+                "scope": 3541,
+                "src": "475:13:13",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -1272,10 +1300,10 @@
                   "typeString": "bool"
                 },
                 "typeName": {
-                  "id": 3369,
+                  "id": 3533,
                   "name": "bool",
                   "nodeType": "ElementaryTypeName",
-                  "src": "499:4:13",
+                  "src": "475:4:13",
                   "typeDescriptions": {
                     "typeIdentifier": "t_bool",
                     "typeString": "bool"
@@ -1286,13 +1314,41 @@
               },
               {
                 "constant": false,
-                "id": 3372,
+                "id": 3536,
+                "mutability": "mutable",
+                "name": "stuck",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 3541,
+                "src": "507:10:13",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                },
+                "typeName": {
+                  "id": 3535,
+                  "name": "bool",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "507:4:13",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 3538,
                 "mutability": "mutable",
                 "name": "againstVotes",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 3375,
-                "src": "523:19:13",
+                "scope": 3541,
+                "src": "528:19:13",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -1300,10 +1356,10 @@
                   "typeString": "uint96"
                 },
                 "typeName": {
-                  "id": 3371,
+                  "id": 3537,
                   "name": "uint96",
                   "nodeType": "ElementaryTypeName",
-                  "src": "523:6:13",
+                  "src": "528:6:13",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint96",
                     "typeString": "uint96"
@@ -1314,13 +1370,13 @@
               },
               {
                 "constant": false,
-                "id": 3374,
+                "id": 3540,
                 "mutability": "mutable",
                 "name": "forVotes",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 3375,
-                "src": "553:15:13",
+                "scope": 3541,
+                "src": "558:15:13",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -1328,10 +1384,10 @@
                   "typeString": "uint96"
                 },
                 "typeName": {
-                  "id": 3373,
+                  "id": 3539,
                   "name": "uint96",
                   "nodeType": "ElementaryTypeName",
-                  "src": "553:6:13",
+                  "src": "558:6:13",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint96",
                     "typeString": "uint96"
@@ -1343,56 +1399,56 @@
             ],
             "name": "Proposal",
             "nodeType": "StructDefinition",
-            "scope": 3413,
-            "src": "319:286:13",
+            "scope": 3579,
+            "src": "319:291:13",
             "visibility": "public"
           },
           {
             "canonicalName": "GovernanceStorageContract.GovernanceStorage",
-            "id": 3401,
+            "id": 3567,
             "members": [
               {
                 "constant": false,
-                "id": 3379,
+                "id": 3545,
                 "mutability": "mutable",
                 "name": "proposals",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 3401,
-                "src": "664:35:13",
+                "scope": 3567,
+                "src": "669:35:13",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Proposal_$3375_storage_$",
+                  "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Proposal_$3541_storage_$",
                   "typeString": "mapping(uint256 => struct GovernanceStorageContract.Proposal)"
                 },
                 "typeName": {
-                  "id": 3378,
+                  "id": 3544,
                   "keyType": {
-                    "id": 3376,
+                    "id": 3542,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "672:4:13",
+                    "src": "677:4:13",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
                   "nodeType": "Mapping",
-                  "src": "664:25:13",
+                  "src": "669:25:13",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Proposal_$3375_storage_$",
+                    "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Proposal_$3541_storage_$",
                     "typeString": "mapping(uint256 => struct GovernanceStorageContract.Proposal)"
                   },
                   "valueType": {
                     "contractScope": null,
-                    "id": 3377,
+                    "id": 3543,
                     "name": "Proposal",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 3375,
-                    "src": "680:8:13",
+                    "referencedDeclaration": 3541,
+                    "src": "685:8:13",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_Proposal_$3375_storage_ptr",
+                      "typeIdentifier": "t_struct$_Proposal_$3541_storage_ptr",
                       "typeString": "struct GovernanceStorageContract.Proposal"
                     }
                   }
@@ -1402,13 +1458,13 @@
               },
               {
                 "constant": false,
-                "id": 3384,
+                "id": 3550,
                 "mutability": "mutable",
                 "name": "votedProposalIds",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 3401,
-                "src": "710:45:13",
+                "scope": 3567,
+                "src": "715:45:13",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -1416,38 +1472,38 @@
                   "typeString": "mapping(address => uint24[])"
                 },
                 "typeName": {
-                  "id": 3383,
+                  "id": 3549,
                   "keyType": {
-                    "id": 3380,
+                    "id": 3546,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "718:7:13",
+                    "src": "723:7:13",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
                     }
                   },
                   "nodeType": "Mapping",
-                  "src": "710:28:13",
+                  "src": "715:28:13",
                   "typeDescriptions": {
                     "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_uint24_$dyn_storage_$",
                     "typeString": "mapping(address => uint24[])"
                   },
                   "valueType": {
                     "baseType": {
-                      "id": 3381,
+                      "id": 3547,
                       "name": "uint24",
                       "nodeType": "ElementaryTypeName",
-                      "src": "729:6:13",
+                      "src": "734:6:13",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint24",
                         "typeString": "uint24"
                       }
                     },
-                    "id": 3382,
+                    "id": 3548,
                     "length": null,
                     "nodeType": "ArrayTypeName",
-                    "src": "729:8:13",
+                    "src": "734:8:13",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_uint24_$dyn_storage_ptr",
                       "typeString": "uint24[]"
@@ -1459,13 +1515,13 @@
               },
               {
                 "constant": false,
-                "id": 3386,
+                "id": 3552,
                 "mutability": "mutable",
                 "name": "proposalCount",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 3401,
-                "src": "766:20:13",
+                "scope": 3567,
+                "src": "771:20:13",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -1473,10 +1529,10 @@
                   "typeString": "uint24"
                 },
                 "typeName": {
-                  "id": 3385,
+                  "id": 3551,
                   "name": "uint24",
                   "nodeType": "ElementaryTypeName",
-                  "src": "766:6:13",
+                  "src": "771:6:13",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint24",
                     "typeString": "uint24"
@@ -1487,13 +1543,13 @@
               },
               {
                 "constant": false,
-                "id": 3388,
+                "id": 3554,
                 "mutability": "mutable",
                 "name": "proposalThresholdDivisor",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 3401,
-                "src": "862:30:13",
+                "scope": 3567,
+                "src": "867:30:13",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -1501,10 +1557,10 @@
                   "typeString": "uint8"
                 },
                 "typeName": {
-                  "id": 3387,
+                  "id": 3553,
                   "name": "uint8",
                   "nodeType": "ElementaryTypeName",
-                  "src": "862:5:13",
+                  "src": "867:5:13",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint8",
                     "typeString": "uint8"
@@ -1515,13 +1571,13 @@
               },
               {
                 "constant": false,
-                "id": 3390,
+                "id": 3556,
                 "mutability": "mutable",
                 "name": "minimumVotingTime",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 3401,
-                "src": "981:24:13",
+                "scope": 3567,
+                "src": "986:24:13",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -1529,10 +1585,10 @@
                   "typeString": "uint16"
                 },
                 "typeName": {
-                  "id": 3389,
+                  "id": 3555,
                   "name": "uint16",
                   "nodeType": "ElementaryTypeName",
-                  "src": "981:6:13",
+                  "src": "986:6:13",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint16",
                     "typeString": "uint16"
@@ -1543,13 +1599,13 @@
               },
               {
                 "constant": false,
-                "id": 3392,
+                "id": 3558,
                 "mutability": "mutable",
                 "name": "maximumVotingTime",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 3401,
-                "src": "1094:24:13",
+                "scope": 3567,
+                "src": "1099:24:13",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -1557,10 +1613,10 @@
                   "typeString": "uint16"
                 },
                 "typeName": {
-                  "id": 3391,
+                  "id": 3557,
                   "name": "uint16",
                   "nodeType": "ElementaryTypeName",
-                  "src": "1094:6:13",
+                  "src": "1099:6:13",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint16",
                     "typeString": "uint16"
@@ -1571,13 +1627,13 @@
               },
               {
                 "constant": false,
-                "id": 3394,
+                "id": 3560,
                 "mutability": "mutable",
                 "name": "quorumDivisor",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 3401,
-                "src": "1209:19:13",
+                "scope": 3567,
+                "src": "1214:19:13",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -1585,10 +1641,10 @@
                   "typeString": "uint8"
                 },
                 "typeName": {
-                  "id": 3393,
+                  "id": 3559,
                   "name": "uint8",
                   "nodeType": "ElementaryTypeName",
-                  "src": "1209:5:13",
+                  "src": "1214:5:13",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint8",
                     "typeString": "uint8"
@@ -1599,13 +1655,13 @@
               },
               {
                 "constant": false,
-                "id": 3396,
+                "id": 3562,
                 "mutability": "mutable",
                 "name": "proposerAwardDivisor",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 3401,
-                "src": "1315:26:13",
+                "scope": 3567,
+                "src": "1320:26:13",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -1613,10 +1669,10 @@
                   "typeString": "uint8"
                 },
                 "typeName": {
-                  "id": 3395,
+                  "id": 3561,
                   "name": "uint8",
                   "nodeType": "ElementaryTypeName",
-                  "src": "1315:5:13",
+                  "src": "1320:5:13",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint8",
                     "typeString": "uint8"
@@ -1627,13 +1683,13 @@
               },
               {
                 "constant": false,
-                "id": 3398,
+                "id": 3564,
                 "mutability": "mutable",
                 "name": "voterAwardDivisor",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 3401,
-                "src": "1432:23:13",
+                "scope": 3567,
+                "src": "1437:23:13",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -1641,10 +1697,10 @@
                   "typeString": "uint8"
                 },
                 "typeName": {
-                  "id": 3397,
+                  "id": 3563,
                   "name": "uint8",
                   "nodeType": "ElementaryTypeName",
-                  "src": "1432:5:13",
+                  "src": "1437:5:13",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint8",
                     "typeString": "uint8"
@@ -1655,13 +1711,13 @@
               },
               {
                 "constant": false,
-                "id": 3400,
+                "id": 3566,
                 "mutability": "mutable",
                 "name": "voteAwardCapDivisor",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 3401,
-                "src": "1571:25:13",
+                "scope": 3567,
+                "src": "1576:25:13",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -1669,10 +1725,10 @@
                   "typeString": "uint8"
                 },
                 "typeName": {
-                  "id": 3399,
+                  "id": 3565,
                   "name": "uint8",
                   "nodeType": "ElementaryTypeName",
-                  "src": "1571:5:13",
+                  "src": "1576:5:13",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint8",
                     "typeString": "uint8"
@@ -1684,30 +1740,30 @@
             ],
             "name": "GovernanceStorage",
             "nodeType": "StructDefinition",
-            "scope": 3413,
-            "src": "620:984:13",
+            "scope": 3579,
+            "src": "625:984:13",
             "visibility": "public"
           },
           {
             "body": {
-              "id": 3411,
+              "id": 3577,
               "nodeType": "Block",
-              "src": "1693:107:13",
+              "src": "1698:107:13",
               "statements": [
                 {
                   "assignments": [
-                    3407
+                    3573
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 3407,
+                      "id": 3573,
                       "mutability": "mutable",
                       "name": "position",
                       "nodeType": "VariableDeclaration",
                       "overrides": null,
-                      "scope": 3411,
-                      "src": "1704:16:13",
+                      "scope": 3577,
+                      "src": "1709:16:13",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -1715,10 +1771,10 @@
                         "typeString": "bytes32"
                       },
                       "typeName": {
-                        "id": 3406,
+                        "id": 3572,
                         "name": "bytes32",
                         "nodeType": "ElementaryTypeName",
-                        "src": "1704:7:13",
+                        "src": "1709:7:13",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes32",
                           "typeString": "bytes32"
@@ -1728,41 +1784,41 @@
                       "visibility": "internal"
                     }
                   ],
-                  "id": 3409,
+                  "id": 3575,
                   "initialValue": {
                     "argumentTypes": null,
-                    "id": 3408,
+                    "id": 3574,
                     "name": "GOVERNANCE_STORAGE_POSITION",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 3353,
-                    "src": "1723:27:13",
+                    "referencedDeclaration": 3517,
+                    "src": "1728:27:13",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "1704:46:13"
+                  "src": "1709:46:13"
                 },
                 {
                   "AST": {
                     "nodeType": "YulBlock",
-                    "src": "1770:23:13",
+                    "src": "1775:23:13",
                     "statements": [
                       {
                         "nodeType": "YulAssignment",
-                        "src": "1772:19:13",
+                        "src": "1777:19:13",
                         "value": {
                           "name": "position",
                           "nodeType": "YulIdentifier",
-                          "src": "1783:8:13"
+                          "src": "1788:8:13"
                         },
                         "variableNames": [
                           {
                             "name": "ds.slot",
                             "nodeType": "YulIdentifier",
-                            "src": "1772:7:13"
+                            "src": "1777:7:13"
                           }
                         ]
                       }
@@ -1771,28 +1827,28 @@
                   "evmVersion": "istanbul",
                   "externalReferences": [
                     {
-                      "declaration": 3404,
+                      "declaration": 3570,
                       "isOffset": false,
                       "isSlot": true,
-                      "src": "1772:7:13",
+                      "src": "1777:7:13",
                       "valueSize": 1
                     },
                     {
-                      "declaration": 3407,
+                      "declaration": 3573,
                       "isOffset": false,
                       "isSlot": false,
-                      "src": "1783:8:13",
+                      "src": "1788:8:13",
                       "valueSize": 1
                     }
                   ],
-                  "id": 3410,
+                  "id": 3576,
                   "nodeType": "InlineAssembly",
-                  "src": "1761:32:13"
+                  "src": "1766:32:13"
                 }
               ]
             },
             "documentation": null,
-            "id": 3412,
+            "id": 3578,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -1800,39 +1856,39 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 3402,
+              "id": 3568,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1638:2:13"
+              "src": "1643:2:13"
             },
             "returnParameters": {
-              "id": 3405,
+              "id": 3571,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3404,
+                  "id": 3570,
                   "mutability": "mutable",
                   "name": "ds",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 3412,
-                  "src": "1663:28:13",
+                  "scope": 3578,
+                  "src": "1668:28:13",
                   "stateVariable": false,
                   "storageLocation": "storage",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_GovernanceStorage_$3401_storage_ptr",
+                    "typeIdentifier": "t_struct$_GovernanceStorage_$3567_storage_ptr",
                     "typeString": "struct GovernanceStorageContract.GovernanceStorage"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 3403,
+                    "id": 3569,
                     "name": "GovernanceStorage",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 3401,
-                    "src": "1663:17:13",
+                    "referencedDeclaration": 3567,
+                    "src": "1668:17:13",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_GovernanceStorage_$3401_storage_ptr",
+                      "typeIdentifier": "t_struct$_GovernanceStorage_$3567_storage_ptr",
                       "typeString": "struct GovernanceStorageContract.GovernanceStorage"
                     }
                   },
@@ -1840,20 +1896,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1662:30:13"
+              "src": "1667:30:13"
             },
-            "scope": 3413,
-            "src": "1612:188:13",
+            "scope": 3579,
+            "src": "1617:188:13",
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           }
         ],
-        "scope": 3414,
-        "src": "60:1743:13"
+        "scope": 3580,
+        "src": "60:1748:13"
       }
     ],
-    "src": "33:1772:13"
+    "src": "33:1777:13"
   },
   "compiler": {
     "name": "solc",
@@ -1861,7 +1917,7 @@
   },
   "networks": {},
   "schemaVersion": "3.1.0",
-  "updatedAt": "2020-08-07T04:57:34.774Z",
+  "updatedAt": "2020-08-07T18:06:06.955Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},

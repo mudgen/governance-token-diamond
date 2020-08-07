@@ -9,99 +9,120 @@ import { InternalFunctions } from '../lib/InternalFunctions.sol';
 
 contract Governance is InternalFunctions {
     
+    event Propose(address _proposer, address _proposalContract, uint _endTime);
     event Vote(uint indexed _proposalId, address indexed _voter, uint _votes, bool _support);
-    event UnVote(uint indexed _proposalId, address indexed _voter, uint _votes, bool _support);  
-    
-    function mint(address _to, uint96 _value) internal {
-        ERC20TokenStorage storage ets = erc20TokenStorage();        
-        ets.totalSupply += _value;
-        ets.balances[_to] += _value;
-    }
+    event UnVote(uint indexed _proposalId, address indexed _voter, uint _votes, bool _support);     
+    event ProposalExecutionSuccessful(uint _proposalId, bool _passed);
+    event ProposalExecutionFailed(uint _proposalId, bytes _error);     
 
     function proposalCount() external view returns (uint) {
         return governanceStorage().proposalCount;
     }
 
     function propose(address _proposalContract, uint _endTime) external {
+        uint contractSize;
+        assembly { contractSize := extcodesize(_proposalContract) }
+        require(contractSize > 0, 'Governance: Proposed contract is empty');
         (ERC20TokenStorage storage ets,
         GovernanceStorage storage gs) = governanceTokenStorage();        
         require(_endTime > block.timestamp + (gs.minimumVotingTime * 3600), 'Governance: Voting time must be longer');
         require(_endTime < block.timestamp + (gs.maximumVotingTime * 3600), 'Governance: Voting time must be shorter');
        
-        uint balance = ets.balances[msg.sender];
+        uint proposerBalance = ets.balances[msg.sender];
         uint totalSupply = ets.totalSupply;
         // proposalThreshold is 1 percent of totalSupply
-        require(balance >= (totalSupply / gs.proposalThresholdDivisor), 'Governance: Balance less than proposer threshold');
+        require(proposerBalance >= (totalSupply / gs.proposalThresholdDivisor), 'Governance: Balance less than proposer threshold');
         uint proposalId = gs.proposalCount++;
-        Proposal storage proposal = gs.proposals[proposalId];
-        proposal.proposer = msg.sender;
-        proposal.proposalContract = _proposalContract;
-        proposal.endTime = uint64(_endTime);
+        Proposal storage proposalStorage = gs.proposals[proposalId];
+        proposalStorage.proposer = msg.sender;
+        proposalStorage.proposalContract = _proposalContract;
+        proposalStorage.endTime = uint64(_endTime);
         // adding vote
-        proposal.forVotes = uint96(balance);
-        proposal.voted[msg.sender] = Voted(uint96(balance), true);
+        proposalStorage.forVotes = uint96(proposerBalance);
+        proposalStorage.voted[msg.sender] = Voted(uint96(proposerBalance), true);
         gs.votedProposalIds[msg.sender].push(uint24(proposalId));
-        emit Vote(proposalId, msg.sender, balance, true);
+        emit Vote(proposalId, msg.sender, proposerBalance, true);
     }
 
     function executeProposal(uint _proposalId) external {
         (ERC20TokenStorage storage ets,
         GovernanceStorage storage gs) = governanceTokenStorage();
-        Proposal storage proposal = gs.proposals[_proposalId];
-        address proposer = proposal.proposer;
+        Proposal storage proposalStorage = gs.proposals[_proposalId];
+        address proposer = proposalStorage.proposer;
         require(proposer != address(0), 'Governance: Proposal does not exist');
-        require(block.timestamp > proposal.endTime, 'Governance: Voting hasn\'t ended');        
-        require(proposal.executed != true, 'Governance: Proposal has already been executed');
-        proposal.executed = true;        
+        require(block.timestamp > proposalStorage.endTime, 'Governance: Voting hasn\'t ended');        
+        require(proposalStorage.executed != true, 'Governance: Proposal has already been executed');
+        proposalStorage.executed = true;
         uint totalSupply = ets.totalSupply;
-        uint forVotes = proposal.forVotes;
-        uint againstVotes = proposal.againstVotes;
-        bool proposalSuccess = forVotes > againstVotes && forVotes > ets.totalSupply / gs.quorumDivisor;
-        uint votes = proposal.voted[proposer].votes;        
-        if(proposalSuccess) {
-            (proposalSuccess,) = proposal.proposalContract.delegatecall(abi.encodeWithSignature('execute', _proposalId));
-        }
-        if(proposalSuccess) {
-            if(totalSupply < ets.totalSupplyCap) {
-                uint fractionOfTotalSupply = totalSupply / gs.voteAwardCapDivisor;
-                if(votes > fractionOfTotalSupply) {
-                    votes = fractionOfTotalSupply;
+        uint forVotes = proposalStorage.forVotes;
+        uint againstVotes = proposalStorage.againstVotes;
+        bool proposalPassed = forVotes > againstVotes && forVotes > ets.totalSupply / gs.quorumDivisor;
+        uint votes = proposalStorage.voted[proposer].votes;        
+        if(proposalPassed) {
+            address proposalContract = proposalStorage.proposalContract;
+            uint contractSize;            
+            assembly { contractSize := extcodesize(proposalContract) }
+            if(contractSize > 0) {                        
+                (bool success, bytes memory error) = proposalContract.delegatecall(abi.encodeWithSignature('execute', _proposalId));                
+                if(success) {
+                    if(totalSupply < ets.totalSupplyCap) {
+                        uint fractionOfTotalSupply = totalSupply / gs.voteAwardCapDivisor;
+                        if(votes > fractionOfTotalSupply) {
+                            votes = fractionOfTotalSupply;
+                        }
+                        // 5 percent reward
+                        uint proposerAwardDivisor = gs.proposerAwardDivisor;
+                        ets.totalSupply += uint96(votes / proposerAwardDivisor);
+                        ets.balances[proposer] += votes / proposerAwardDivisor;
+                    }
+                    emit ProposalExecutionSuccessful(_proposalId, true);
                 }
-                // 5 percent reward
-                uint proposerAwardDivisor = gs.proposerAwardDivisor;
-                ets.totalSupply += uint96(votes / proposerAwardDivisor);
-                ets.balances[proposer] += votes / proposerAwardDivisor;
+                else {
+                    proposalStorage.stuck = true;
+                    proposalStorage.executed = false;
+                    emit ProposalExecutionFailed(_proposalId, error);                                
+                }
+            }
+            else {
+                proposalStorage.stuck = true;
+                proposalStorage.executed = false;
+                emit ProposalExecutionFailed(_proposalId, bytes('Proposal contract size is 0'));
             }
         }
         else {
             ets.balances[proposer] -= votes;
-        }
+            emit ProposalExecutionSuccessful(_proposalId, false);
+        }                
     }
 
     enum ProposalStatus { 
         NoProposal,
         PassedAndReadyForExecution, 
         RejectedAndReadyForExecution,
+        PassedAndExecutionStuck,
         VotePending,
         Passed,  
         Rejected        
     }
 
-    function proposalStatus(uint _proposalId) external view returns (ProposalStatus status) {
+    function proposalStatus(uint _proposalId) public view returns (ProposalStatus status) {
         (ERC20TokenStorage storage ets,
         GovernanceStorage storage gs) = governanceTokenStorage();
-        Proposal storage proposal = gs.proposals[_proposalId];
-        uint endTime = proposal.endTime;
+        Proposal storage proposalStorage = gs.proposals[_proposalId];
+        uint endTime = proposalStorage.endTime;
         if(endTime == 0) {
             status = ProposalStatus.NoProposal;
         }
         else if(block.number < endTime) {
             status = ProposalStatus.VotePending;
         }
+        else if(proposalStorage.stuck) {
+            status = ProposalStatus.PassedAndExecutionStuck;
+        }
         else {
-            uint forVotes = proposal.forVotes;
-            bool passed = forVotes > proposal.againstVotes && forVotes > ets.totalSupply / gs.quorumDivisor;
-            if(proposal.executed) {
+            uint forVotes = proposalStorage.forVotes;
+            bool passed = forVotes > proposalStorage.againstVotes && forVotes > ets.totalSupply / gs.quorumDivisor;
+            if(proposalStorage.executed) {
                 if(passed) {
                     status = ProposalStatus.Passed;
                 }
@@ -119,22 +140,44 @@ contract Governance is InternalFunctions {
             }
         }
     }
+    
+    struct RetrievedProposal {
+        address proposalContract;
+        address proposer;
+        uint64 endTime;                
+        uint96 againstVotes;
+        uint96 forVotes;
+        ProposalStatus status;
+    }
+
+    function proposal(uint _proposalId) external view returns (RetrievedProposal memory retrievedProposal) {
+        GovernanceStorage storage gs = governanceStorage();
+        Proposal storage proposalStorage = gs.proposals[_proposalId];
+        retrievedProposal = RetrievedProposal({
+            proposalContract: proposalStorage.proposalContract,
+            proposer: proposalStorage.proposer,
+            endTime: proposalStorage.endTime,                        
+            againstVotes: proposalStorage.againstVotes,
+            forVotes: proposalStorage.forVotes,
+            status: proposalStatus(_proposalId)
+        });        
+    }
 
     function vote(uint _proposalId, bool _support) external {
         (ERC20TokenStorage storage ets,
         GovernanceStorage storage gs) = governanceTokenStorage();
         require(_proposalId < gs.proposalCount, 'Governance: _proposalId does not exist');
-        Proposal storage proposal = gs.proposals[_proposalId];
-        require(block.timestamp < proposal.endTime, 'Governance: Voting ended');
-        require(proposal.voted[msg.sender].votes == 0, 'Governance: Already voted');        
+        Proposal storage proposalStorage = gs.proposals[_proposalId];
+        require(block.timestamp < proposalStorage.endTime, 'Governance: Voting ended');
+        require(proposalStorage.voted[msg.sender].votes == 0, 'Governance: Already voted');        
         uint balance = ets.balances[msg.sender];
         if(_support) {
-            proposal.forVotes += uint96(balance);
+            proposalStorage.forVotes += uint96(balance);
         }
         else {
-            proposal.againstVotes += uint96(balance);
+            proposalStorage.againstVotes += uint96(balance);
         }
-        proposal.voted[msg.sender] = Voted(uint96(balance), _support);
+        proposalStorage.voted[msg.sender] = Voted(uint96(balance), _support);
         gs.votedProposalIds[msg.sender].push(uint24(_proposalId));
         emit Vote(_proposalId, msg.sender, balance, _support);        
         uint totalSupply = ets.totalSupply;
@@ -154,18 +197,19 @@ contract Governance is InternalFunctions {
         (ERC20TokenStorage storage ets,
         GovernanceStorage storage gs) = governanceTokenStorage();
         require(_proposalId < gs.proposalCount, 'Governance: _proposalId does not exist');
-        Proposal storage proposal = gs.proposals[_proposalId];
-        require(block.timestamp < proposal.endTime, 'Governance: Voting ended');        
-        uint votes = proposal.voted[msg.sender].votes;
-        bool support = proposal.voted[msg.sender].support;
+        Proposal storage proposalStorage = gs.proposals[_proposalId];
+        require(block.timestamp < proposalStorage.endTime, 'Governance: Voting ended'); 
+        require(proposalStorage.proposer != msg.sender, 'Governance: Can\'t unvote your own proposal');       
+        uint votes = proposalStorage.voted[msg.sender].votes;
+        bool support = proposalStorage.voted[msg.sender].support;
         require(votes > 0, 'Governance: Did not vote');                
         if(support) {
-            proposal.forVotes -= uint96(votes);
+            proposalStorage.forVotes -= uint96(votes);
         }
         else {
-            proposal.againstVotes -= uint96(votes);
+            proposalStorage.againstVotes -= uint96(votes);
         }
-        delete proposal.voted[msg.sender];
+        delete proposalStorage.voted[msg.sender];
         uint24[] storage proposalIds = gs.votedProposalIds[msg.sender];
         uint length = proposalIds.length;
         uint index;

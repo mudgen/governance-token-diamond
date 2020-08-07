@@ -13,15 +13,15 @@
     "absolutePath": "/C/Users/mudge/projects/governance-token-diamond/contracts/storage/DiamondStorageContract.sol",
     "exportedSymbols": {
       "DiamondStorageContract": [
-        3312
+        3476
       ]
     },
-    "id": 3313,
+    "id": 3477,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 3280,
+        "id": 3444,
         "literals": [
           "solidity",
           "^",
@@ -38,21 +38,21 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 3312,
+        "id": 3476,
         "linearizedBaseContracts": [
-          3312
+          3476
         ],
         "name": "DiamondStorageContract",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": true,
-            "id": 3285,
+            "id": 3449,
             "mutability": "constant",
             "name": "DIAMOND_STORAGE_POSITION",
             "nodeType": "VariableDeclaration",
             "overrides": null,
-            "scope": 3312,
+            "scope": 3476,
             "src": "101:89:11",
             "stateVariable": true,
             "storageLocation": "default",
@@ -61,7 +61,7 @@
               "typeString": "bytes32"
             },
             "typeName": {
-              "id": 3281,
+              "id": 3445,
               "name": "bytes32",
               "nodeType": "ElementaryTypeName",
               "src": "101:7:11",
@@ -76,7 +76,7 @@
                 {
                   "argumentTypes": null,
                   "hexValue": "6469616d6f6e642e7374616e646172642e6469616d6f6e642e73746f72616765",
-                  "id": 3283,
+                  "id": 3447,
                   "isConstant": false,
                   "isLValue": false,
                   "isPure": true,
@@ -99,7 +99,7 @@
                     "typeString": "literal_string \"diamond.standard.diamond.storage\""
                   }
                 ],
-                "id": 3282,
+                "id": 3446,
                 "name": "keccak256",
                 "nodeType": "Identifier",
                 "overloadedDeclarations": [],
@@ -110,7 +110,7 @@
                   "typeString": "function (bytes memory) pure returns (bytes32)"
                 }
               },
-              "id": 3284,
+              "id": 3448,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
@@ -129,16 +129,16 @@
           },
           {
             "canonicalName": "DiamondStorageContract.DiamondStorage",
-            "id": 3300,
+            "id": 3464,
             "members": [
               {
                 "constant": false,
-                "id": 3289,
+                "id": 3453,
                 "mutability": "mutable",
                 "name": "supportedInterfaces",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 3300,
+                "scope": 3464,
                 "src": "338:43:11",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -147,9 +147,9 @@
                   "typeString": "mapping(bytes4 => bool)"
                 },
                 "typeName": {
-                  "id": 3288,
+                  "id": 3452,
                   "keyType": {
-                    "id": 3286,
+                    "id": 3450,
                     "name": "bytes4",
                     "nodeType": "ElementaryTypeName",
                     "src": "346:6:11",
@@ -165,7 +165,7 @@
                     "typeString": "mapping(bytes4 => bool)"
                   },
                   "valueType": {
-                    "id": 3287,
+                    "id": 3451,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "356:4:11",
@@ -180,12 +180,12 @@
               },
               {
                 "constant": false,
-                "id": 3293,
+                "id": 3457,
                 "mutability": "mutable",
                 "name": "facets",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 3300,
+                "scope": 3464,
                 "src": "691:33:11",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -194,9 +194,9 @@
                   "typeString": "mapping(bytes4 => bytes32)"
                 },
                 "typeName": {
-                  "id": 3292,
+                  "id": 3456,
                   "keyType": {
-                    "id": 3290,
+                    "id": 3454,
                     "name": "bytes4",
                     "nodeType": "ElementaryTypeName",
                     "src": "699:6:11",
@@ -212,7 +212,7 @@
                     "typeString": "mapping(bytes4 => bytes32)"
                   },
                   "valueType": {
-                    "id": 3291,
+                    "id": 3455,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
                     "src": "709:7:11",
@@ -227,12 +227,12 @@
               },
               {
                 "constant": false,
-                "id": 3297,
+                "id": 3461,
                 "mutability": "mutable",
                 "name": "selectorSlots",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 3300,
+                "scope": 3464,
                 "src": "837:38:11",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -241,9 +241,9 @@
                   "typeString": "mapping(uint256 => bytes32)"
                 },
                 "typeName": {
-                  "id": 3296,
+                  "id": 3460,
                   "keyType": {
-                    "id": 3294,
+                    "id": 3458,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "845:4:11",
@@ -259,7 +259,7 @@
                     "typeString": "mapping(uint256 => bytes32)"
                   },
                   "valueType": {
-                    "id": 3295,
+                    "id": 3459,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
                     "src": "853:7:11",
@@ -274,12 +274,12 @@
               },
               {
                 "constant": false,
-                "id": 3299,
+                "id": 3463,
                 "mutability": "mutable",
                 "name": "selectorSlotsLength",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 3300,
+                "scope": 3464,
                 "src": "1142:24:11",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -288,7 +288,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 3298,
+                  "id": 3462,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
                   "src": "1142:4:11",
@@ -303,29 +303,29 @@
             ],
             "name": "DiamondStorage",
             "nodeType": "StructDefinition",
-            "scope": 3312,
+            "scope": 3476,
             "src": "199:983:11",
             "visibility": "public"
           },
           {
             "body": {
-              "id": 3310,
+              "id": 3474,
               "nodeType": "Block",
               "src": "1265:104:11",
               "statements": [
                 {
                   "assignments": [
-                    3306
+                    3470
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 3306,
+                      "id": 3470,
                       "mutability": "mutable",
                       "name": "position",
                       "nodeType": "VariableDeclaration",
                       "overrides": null,
-                      "scope": 3310,
+                      "scope": 3474,
                       "src": "1276:16:11",
                       "stateVariable": false,
                       "storageLocation": "default",
@@ -334,7 +334,7 @@
                         "typeString": "bytes32"
                       },
                       "typeName": {
-                        "id": 3305,
+                        "id": 3469,
                         "name": "bytes32",
                         "nodeType": "ElementaryTypeName",
                         "src": "1276:7:11",
@@ -347,14 +347,14 @@
                       "visibility": "internal"
                     }
                   ],
-                  "id": 3308,
+                  "id": 3472,
                   "initialValue": {
                     "argumentTypes": null,
-                    "id": 3307,
+                    "id": 3471,
                     "name": "DIAMOND_STORAGE_POSITION",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 3285,
+                    "referencedDeclaration": 3449,
                     "src": "1295:24:11",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
@@ -390,28 +390,28 @@
                   "evmVersion": "istanbul",
                   "externalReferences": [
                     {
-                      "declaration": 3303,
+                      "declaration": 3467,
                       "isOffset": false,
                       "isSlot": true,
                       "src": "1341:7:11",
                       "valueSize": 1
                     },
                     {
-                      "declaration": 3306,
+                      "declaration": 3470,
                       "isOffset": false,
                       "isSlot": false,
                       "src": "1352:8:11",
                       "valueSize": 1
                     }
                   ],
-                  "id": 3309,
+                  "id": 3473,
                   "nodeType": "InlineAssembly",
                   "src": "1330:32:11"
                 }
               ]
             },
             "documentation": null,
-            "id": 3311,
+            "id": 3475,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -419,39 +419,39 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 3301,
+              "id": 3465,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1213:2:11"
             },
             "returnParameters": {
-              "id": 3304,
+              "id": 3468,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3303,
+                  "id": 3467,
                   "mutability": "mutable",
                   "name": "ds",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 3311,
+                  "scope": 3475,
                   "src": "1238:25:11",
                   "stateVariable": false,
                   "storageLocation": "storage",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_DiamondStorage_$3300_storage_ptr",
+                    "typeIdentifier": "t_struct$_DiamondStorage_$3464_storage_ptr",
                     "typeString": "struct DiamondStorageContract.DiamondStorage"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 3302,
+                    "id": 3466,
                     "name": "DiamondStorage",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 3300,
+                    "referencedDeclaration": 3464,
                     "src": "1238:14:11",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_DiamondStorage_$3300_storage_ptr",
+                      "typeIdentifier": "t_struct$_DiamondStorage_$3464_storage_ptr",
                       "typeString": "struct DiamondStorageContract.DiamondStorage"
                     }
                   },
@@ -461,14 +461,14 @@
               ],
               "src": "1237:27:11"
             },
-            "scope": 3312,
+            "scope": 3476,
             "src": "1190:179:11",
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           }
         ],
-        "scope": 3313,
+        "scope": 3477,
         "src": "60:1312:11"
       }
     ],
@@ -478,15 +478,15 @@
     "absolutePath": "/C/Users/mudge/projects/governance-token-diamond/contracts/storage/DiamondStorageContract.sol",
     "exportedSymbols": {
       "DiamondStorageContract": [
-        3312
+        3476
       ]
     },
-    "id": 3313,
+    "id": 3477,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 3280,
+        "id": 3444,
         "literals": [
           "solidity",
           "^",
@@ -503,21 +503,21 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 3312,
+        "id": 3476,
         "linearizedBaseContracts": [
-          3312
+          3476
         ],
         "name": "DiamondStorageContract",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": true,
-            "id": 3285,
+            "id": 3449,
             "mutability": "constant",
             "name": "DIAMOND_STORAGE_POSITION",
             "nodeType": "VariableDeclaration",
             "overrides": null,
-            "scope": 3312,
+            "scope": 3476,
             "src": "101:89:11",
             "stateVariable": true,
             "storageLocation": "default",
@@ -526,7 +526,7 @@
               "typeString": "bytes32"
             },
             "typeName": {
-              "id": 3281,
+              "id": 3445,
               "name": "bytes32",
               "nodeType": "ElementaryTypeName",
               "src": "101:7:11",
@@ -541,7 +541,7 @@
                 {
                   "argumentTypes": null,
                   "hexValue": "6469616d6f6e642e7374616e646172642e6469616d6f6e642e73746f72616765",
-                  "id": 3283,
+                  "id": 3447,
                   "isConstant": false,
                   "isLValue": false,
                   "isPure": true,
@@ -564,7 +564,7 @@
                     "typeString": "literal_string \"diamond.standard.diamond.storage\""
                   }
                 ],
-                "id": 3282,
+                "id": 3446,
                 "name": "keccak256",
                 "nodeType": "Identifier",
                 "overloadedDeclarations": [],
@@ -575,7 +575,7 @@
                   "typeString": "function (bytes memory) pure returns (bytes32)"
                 }
               },
-              "id": 3284,
+              "id": 3448,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
@@ -594,16 +594,16 @@
           },
           {
             "canonicalName": "DiamondStorageContract.DiamondStorage",
-            "id": 3300,
+            "id": 3464,
             "members": [
               {
                 "constant": false,
-                "id": 3289,
+                "id": 3453,
                 "mutability": "mutable",
                 "name": "supportedInterfaces",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 3300,
+                "scope": 3464,
                 "src": "338:43:11",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -612,9 +612,9 @@
                   "typeString": "mapping(bytes4 => bool)"
                 },
                 "typeName": {
-                  "id": 3288,
+                  "id": 3452,
                   "keyType": {
-                    "id": 3286,
+                    "id": 3450,
                     "name": "bytes4",
                     "nodeType": "ElementaryTypeName",
                     "src": "346:6:11",
@@ -630,7 +630,7 @@
                     "typeString": "mapping(bytes4 => bool)"
                   },
                   "valueType": {
-                    "id": 3287,
+                    "id": 3451,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "356:4:11",
@@ -645,12 +645,12 @@
               },
               {
                 "constant": false,
-                "id": 3293,
+                "id": 3457,
                 "mutability": "mutable",
                 "name": "facets",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 3300,
+                "scope": 3464,
                 "src": "691:33:11",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -659,9 +659,9 @@
                   "typeString": "mapping(bytes4 => bytes32)"
                 },
                 "typeName": {
-                  "id": 3292,
+                  "id": 3456,
                   "keyType": {
-                    "id": 3290,
+                    "id": 3454,
                     "name": "bytes4",
                     "nodeType": "ElementaryTypeName",
                     "src": "699:6:11",
@@ -677,7 +677,7 @@
                     "typeString": "mapping(bytes4 => bytes32)"
                   },
                   "valueType": {
-                    "id": 3291,
+                    "id": 3455,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
                     "src": "709:7:11",
@@ -692,12 +692,12 @@
               },
               {
                 "constant": false,
-                "id": 3297,
+                "id": 3461,
                 "mutability": "mutable",
                 "name": "selectorSlots",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 3300,
+                "scope": 3464,
                 "src": "837:38:11",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -706,9 +706,9 @@
                   "typeString": "mapping(uint256 => bytes32)"
                 },
                 "typeName": {
-                  "id": 3296,
+                  "id": 3460,
                   "keyType": {
-                    "id": 3294,
+                    "id": 3458,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "845:4:11",
@@ -724,7 +724,7 @@
                     "typeString": "mapping(uint256 => bytes32)"
                   },
                   "valueType": {
-                    "id": 3295,
+                    "id": 3459,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
                     "src": "853:7:11",
@@ -739,12 +739,12 @@
               },
               {
                 "constant": false,
-                "id": 3299,
+                "id": 3463,
                 "mutability": "mutable",
                 "name": "selectorSlotsLength",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 3300,
+                "scope": 3464,
                 "src": "1142:24:11",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -753,7 +753,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 3298,
+                  "id": 3462,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
                   "src": "1142:4:11",
@@ -768,29 +768,29 @@
             ],
             "name": "DiamondStorage",
             "nodeType": "StructDefinition",
-            "scope": 3312,
+            "scope": 3476,
             "src": "199:983:11",
             "visibility": "public"
           },
           {
             "body": {
-              "id": 3310,
+              "id": 3474,
               "nodeType": "Block",
               "src": "1265:104:11",
               "statements": [
                 {
                   "assignments": [
-                    3306
+                    3470
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 3306,
+                      "id": 3470,
                       "mutability": "mutable",
                       "name": "position",
                       "nodeType": "VariableDeclaration",
                       "overrides": null,
-                      "scope": 3310,
+                      "scope": 3474,
                       "src": "1276:16:11",
                       "stateVariable": false,
                       "storageLocation": "default",
@@ -799,7 +799,7 @@
                         "typeString": "bytes32"
                       },
                       "typeName": {
-                        "id": 3305,
+                        "id": 3469,
                         "name": "bytes32",
                         "nodeType": "ElementaryTypeName",
                         "src": "1276:7:11",
@@ -812,14 +812,14 @@
                       "visibility": "internal"
                     }
                   ],
-                  "id": 3308,
+                  "id": 3472,
                   "initialValue": {
                     "argumentTypes": null,
-                    "id": 3307,
+                    "id": 3471,
                     "name": "DIAMOND_STORAGE_POSITION",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 3285,
+                    "referencedDeclaration": 3449,
                     "src": "1295:24:11",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
@@ -855,28 +855,28 @@
                   "evmVersion": "istanbul",
                   "externalReferences": [
                     {
-                      "declaration": 3303,
+                      "declaration": 3467,
                       "isOffset": false,
                       "isSlot": true,
                       "src": "1341:7:11",
                       "valueSize": 1
                     },
                     {
-                      "declaration": 3306,
+                      "declaration": 3470,
                       "isOffset": false,
                       "isSlot": false,
                       "src": "1352:8:11",
                       "valueSize": 1
                     }
                   ],
-                  "id": 3309,
+                  "id": 3473,
                   "nodeType": "InlineAssembly",
                   "src": "1330:32:11"
                 }
               ]
             },
             "documentation": null,
-            "id": 3311,
+            "id": 3475,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -884,39 +884,39 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 3301,
+              "id": 3465,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1213:2:11"
             },
             "returnParameters": {
-              "id": 3304,
+              "id": 3468,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3303,
+                  "id": 3467,
                   "mutability": "mutable",
                   "name": "ds",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 3311,
+                  "scope": 3475,
                   "src": "1238:25:11",
                   "stateVariable": false,
                   "storageLocation": "storage",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_DiamondStorage_$3300_storage_ptr",
+                    "typeIdentifier": "t_struct$_DiamondStorage_$3464_storage_ptr",
                     "typeString": "struct DiamondStorageContract.DiamondStorage"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 3302,
+                    "id": 3466,
                     "name": "DiamondStorage",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 3300,
+                    "referencedDeclaration": 3464,
                     "src": "1238:14:11",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_DiamondStorage_$3300_storage_ptr",
+                      "typeIdentifier": "t_struct$_DiamondStorage_$3464_storage_ptr",
                       "typeString": "struct DiamondStorageContract.DiamondStorage"
                     }
                   },
@@ -926,14 +926,14 @@
               ],
               "src": "1237:27:11"
             },
-            "scope": 3312,
+            "scope": 3476,
             "src": "1190:179:11",
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           }
         ],
-        "scope": 3313,
+        "scope": 3477,
         "src": "60:1312:11"
       }
     ],
@@ -945,7 +945,7 @@
   },
   "networks": {},
   "schemaVersion": "3.1.0",
-  "updatedAt": "2020-08-07T04:57:34.720Z",
+  "updatedAt": "2020-08-07T18:06:06.902Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},

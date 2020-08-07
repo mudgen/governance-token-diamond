@@ -13,15 +13,15 @@
     "absolutePath": "/C/Users/mudge/projects/governance-token-diamond/contracts/storage/ERC20TokenStorageContract.sol",
     "exportedSymbols": {
       "ERC20TokenStorageContract": [
-        3346
+        3510
       ]
     },
-    "id": 3347,
+    "id": 3511,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 3314,
+        "id": 3478,
         "literals": [
           "solidity",
           "^",
@@ -38,21 +38,21 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 3346,
+        "id": 3510,
         "linearizedBaseContracts": [
-          3346
+          3510
         ],
         "name": "ERC20TokenStorageContract",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": true,
-            "id": 3319,
+            "id": 3483,
             "mutability": "constant",
             "name": "ERC20TOKEN_STORAGE_POSITION",
             "nodeType": "VariableDeclaration",
             "overrides": null,
-            "scope": 3346,
+            "scope": 3510,
             "src": "115:104:12",
             "stateVariable": true,
             "storageLocation": "default",
@@ -61,7 +61,7 @@
               "typeString": "bytes32"
             },
             "typeName": {
-              "id": 3315,
+              "id": 3479,
               "name": "bytes32",
               "nodeType": "ElementaryTypeName",
               "src": "115:7:12",
@@ -76,7 +76,7 @@
                 {
                   "argumentTypes": null,
                   "hexValue": "676f7665726e616e63652e746f6b656e2e6469616d6f6e642e4552433230546f6b656e",
-                  "id": 3317,
+                  "id": 3481,
                   "isConstant": false,
                   "isLValue": false,
                   "isPure": true,
@@ -99,7 +99,7 @@
                     "typeString": "literal_string \"governance.token.diamond.ERC20Token\""
                   }
                 ],
-                "id": 3316,
+                "id": 3480,
                 "name": "keccak256",
                 "nodeType": "Identifier",
                 "overloadedDeclarations": [],
@@ -110,7 +110,7 @@
                   "typeString": "function (bytes memory) pure returns (bytes32)"
                 }
               },
-              "id": 3318,
+              "id": 3482,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
@@ -129,16 +129,16 @@
           },
           {
             "canonicalName": "ERC20TokenStorageContract.ERC20TokenStorage",
-            "id": 3334,
+            "id": 3498,
             "members": [
               {
                 "constant": false,
-                "id": 3323,
+                "id": 3487,
                 "mutability": "mutable",
                 "name": "balances",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 3334,
+                "scope": 3498,
                 "src": "270:33:12",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -147,9 +147,9 @@
                   "typeString": "mapping(address => uint256)"
                 },
                 "typeName": {
-                  "id": 3322,
+                  "id": 3486,
                   "keyType": {
-                    "id": 3320,
+                    "id": 3484,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "278:7:12",
@@ -165,7 +165,7 @@
                     "typeString": "mapping(address => uint256)"
                   },
                   "valueType": {
-                    "id": 3321,
+                    "id": 3485,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "289:4:12",
@@ -180,12 +180,12 @@
               },
               {
                 "constant": false,
-                "id": 3329,
+                "id": 3493,
                 "mutability": "mutable",
                 "name": "approved",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 3334,
+                "scope": 3498,
                 "src": "320:53:12",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -194,9 +194,9 @@
                   "typeString": "mapping(address => mapping(address => uint256))"
                 },
                 "typeName": {
-                  "id": 3328,
+                  "id": 3492,
                   "keyType": {
-                    "id": 3324,
+                    "id": 3488,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "328:7:12",
@@ -212,9 +212,9 @@
                     "typeString": "mapping(address => mapping(address => uint256))"
                   },
                   "valueType": {
-                    "id": 3327,
+                    "id": 3491,
                     "keyType": {
-                      "id": 3325,
+                      "id": 3489,
                       "name": "address",
                       "nodeType": "ElementaryTypeName",
                       "src": "347:7:12",
@@ -230,7 +230,7 @@
                       "typeString": "mapping(address => uint256)"
                     },
                     "valueType": {
-                      "id": 3326,
+                      "id": 3490,
                       "name": "uint",
                       "nodeType": "ElementaryTypeName",
                       "src": "358:4:12",
@@ -246,12 +246,12 @@
               },
               {
                 "constant": false,
-                "id": 3331,
+                "id": 3495,
                 "mutability": "mutable",
                 "name": "totalSupplyCap",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 3334,
+                "scope": 3498,
                 "src": "392:21:12",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -260,7 +260,7 @@
                   "typeString": "uint96"
                 },
                 "typeName": {
-                  "id": 3330,
+                  "id": 3494,
                   "name": "uint96",
                   "nodeType": "ElementaryTypeName",
                   "src": "392:6:12",
@@ -274,12 +274,12 @@
               },
               {
                 "constant": false,
-                "id": 3333,
+                "id": 3497,
                 "mutability": "mutable",
                 "name": "totalSupply",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 3334,
+                "scope": 3498,
                 "src": "430:18:12",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -288,7 +288,7 @@
                   "typeString": "uint96"
                 },
                 "typeName": {
-                  "id": 3332,
+                  "id": 3496,
                   "name": "uint96",
                   "nodeType": "ElementaryTypeName",
                   "src": "430:6:12",
@@ -303,29 +303,29 @@
             ],
             "name": "ERC20TokenStorage",
             "nodeType": "StructDefinition",
-            "scope": 3346,
+            "scope": 3510,
             "src": "232:240:12",
             "visibility": "public"
           },
           {
             "body": {
-              "id": 3344,
+              "id": 3508,
               "nodeType": "Block",
               "src": "561:107:12",
               "statements": [
                 {
                   "assignments": [
-                    3340
+                    3504
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 3340,
+                      "id": 3504,
                       "mutability": "mutable",
                       "name": "position",
                       "nodeType": "VariableDeclaration",
                       "overrides": null,
-                      "scope": 3344,
+                      "scope": 3508,
                       "src": "572:16:12",
                       "stateVariable": false,
                       "storageLocation": "default",
@@ -334,7 +334,7 @@
                         "typeString": "bytes32"
                       },
                       "typeName": {
-                        "id": 3339,
+                        "id": 3503,
                         "name": "bytes32",
                         "nodeType": "ElementaryTypeName",
                         "src": "572:7:12",
@@ -347,14 +347,14 @@
                       "visibility": "internal"
                     }
                   ],
-                  "id": 3342,
+                  "id": 3506,
                   "initialValue": {
                     "argumentTypes": null,
-                    "id": 3341,
+                    "id": 3505,
                     "name": "ERC20TOKEN_STORAGE_POSITION",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 3319,
+                    "referencedDeclaration": 3483,
                     "src": "591:27:12",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
@@ -390,28 +390,28 @@
                   "evmVersion": "istanbul",
                   "externalReferences": [
                     {
-                      "declaration": 3337,
+                      "declaration": 3501,
                       "isOffset": false,
                       "isSlot": true,
                       "src": "640:7:12",
                       "valueSize": 1
                     },
                     {
-                      "declaration": 3340,
+                      "declaration": 3504,
                       "isOffset": false,
                       "isSlot": false,
                       "src": "651:8:12",
                       "valueSize": 1
                     }
                   ],
-                  "id": 3343,
+                  "id": 3507,
                   "nodeType": "InlineAssembly",
                   "src": "629:32:12"
                 }
               ]
             },
             "documentation": null,
-            "id": 3345,
+            "id": 3509,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -419,39 +419,39 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 3335,
+              "id": 3499,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "506:2:12"
             },
             "returnParameters": {
-              "id": 3338,
+              "id": 3502,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3337,
+                  "id": 3501,
                   "mutability": "mutable",
                   "name": "ds",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 3345,
+                  "scope": 3509,
                   "src": "531:28:12",
                   "stateVariable": false,
                   "storageLocation": "storage",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_ERC20TokenStorage_$3334_storage_ptr",
+                    "typeIdentifier": "t_struct$_ERC20TokenStorage_$3498_storage_ptr",
                     "typeString": "struct ERC20TokenStorageContract.ERC20TokenStorage"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 3336,
+                    "id": 3500,
                     "name": "ERC20TokenStorage",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 3334,
+                    "referencedDeclaration": 3498,
                     "src": "531:17:12",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_ERC20TokenStorage_$3334_storage_ptr",
+                      "typeIdentifier": "t_struct$_ERC20TokenStorage_$3498_storage_ptr",
                       "typeString": "struct ERC20TokenStorageContract.ERC20TokenStorage"
                     }
                   },
@@ -461,14 +461,14 @@
               ],
               "src": "530:30:12"
             },
-            "scope": 3346,
+            "scope": 3510,
             "src": "480:188:12",
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           }
         ],
-        "scope": 3347,
+        "scope": 3511,
         "src": "60:615:12"
       }
     ],
@@ -478,15 +478,15 @@
     "absolutePath": "/C/Users/mudge/projects/governance-token-diamond/contracts/storage/ERC20TokenStorageContract.sol",
     "exportedSymbols": {
       "ERC20TokenStorageContract": [
-        3346
+        3510
       ]
     },
-    "id": 3347,
+    "id": 3511,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 3314,
+        "id": 3478,
         "literals": [
           "solidity",
           "^",
@@ -503,21 +503,21 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 3346,
+        "id": 3510,
         "linearizedBaseContracts": [
-          3346
+          3510
         ],
         "name": "ERC20TokenStorageContract",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": true,
-            "id": 3319,
+            "id": 3483,
             "mutability": "constant",
             "name": "ERC20TOKEN_STORAGE_POSITION",
             "nodeType": "VariableDeclaration",
             "overrides": null,
-            "scope": 3346,
+            "scope": 3510,
             "src": "115:104:12",
             "stateVariable": true,
             "storageLocation": "default",
@@ -526,7 +526,7 @@
               "typeString": "bytes32"
             },
             "typeName": {
-              "id": 3315,
+              "id": 3479,
               "name": "bytes32",
               "nodeType": "ElementaryTypeName",
               "src": "115:7:12",
@@ -541,7 +541,7 @@
                 {
                   "argumentTypes": null,
                   "hexValue": "676f7665726e616e63652e746f6b656e2e6469616d6f6e642e4552433230546f6b656e",
-                  "id": 3317,
+                  "id": 3481,
                   "isConstant": false,
                   "isLValue": false,
                   "isPure": true,
@@ -564,7 +564,7 @@
                     "typeString": "literal_string \"governance.token.diamond.ERC20Token\""
                   }
                 ],
-                "id": 3316,
+                "id": 3480,
                 "name": "keccak256",
                 "nodeType": "Identifier",
                 "overloadedDeclarations": [],
@@ -575,7 +575,7 @@
                   "typeString": "function (bytes memory) pure returns (bytes32)"
                 }
               },
-              "id": 3318,
+              "id": 3482,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
@@ -594,16 +594,16 @@
           },
           {
             "canonicalName": "ERC20TokenStorageContract.ERC20TokenStorage",
-            "id": 3334,
+            "id": 3498,
             "members": [
               {
                 "constant": false,
-                "id": 3323,
+                "id": 3487,
                 "mutability": "mutable",
                 "name": "balances",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 3334,
+                "scope": 3498,
                 "src": "270:33:12",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -612,9 +612,9 @@
                   "typeString": "mapping(address => uint256)"
                 },
                 "typeName": {
-                  "id": 3322,
+                  "id": 3486,
                   "keyType": {
-                    "id": 3320,
+                    "id": 3484,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "278:7:12",
@@ -630,7 +630,7 @@
                     "typeString": "mapping(address => uint256)"
                   },
                   "valueType": {
-                    "id": 3321,
+                    "id": 3485,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "289:4:12",
@@ -645,12 +645,12 @@
               },
               {
                 "constant": false,
-                "id": 3329,
+                "id": 3493,
                 "mutability": "mutable",
                 "name": "approved",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 3334,
+                "scope": 3498,
                 "src": "320:53:12",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -659,9 +659,9 @@
                   "typeString": "mapping(address => mapping(address => uint256))"
                 },
                 "typeName": {
-                  "id": 3328,
+                  "id": 3492,
                   "keyType": {
-                    "id": 3324,
+                    "id": 3488,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "328:7:12",
@@ -677,9 +677,9 @@
                     "typeString": "mapping(address => mapping(address => uint256))"
                   },
                   "valueType": {
-                    "id": 3327,
+                    "id": 3491,
                     "keyType": {
-                      "id": 3325,
+                      "id": 3489,
                       "name": "address",
                       "nodeType": "ElementaryTypeName",
                       "src": "347:7:12",
@@ -695,7 +695,7 @@
                       "typeString": "mapping(address => uint256)"
                     },
                     "valueType": {
-                      "id": 3326,
+                      "id": 3490,
                       "name": "uint",
                       "nodeType": "ElementaryTypeName",
                       "src": "358:4:12",
@@ -711,12 +711,12 @@
               },
               {
                 "constant": false,
-                "id": 3331,
+                "id": 3495,
                 "mutability": "mutable",
                 "name": "totalSupplyCap",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 3334,
+                "scope": 3498,
                 "src": "392:21:12",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -725,7 +725,7 @@
                   "typeString": "uint96"
                 },
                 "typeName": {
-                  "id": 3330,
+                  "id": 3494,
                   "name": "uint96",
                   "nodeType": "ElementaryTypeName",
                   "src": "392:6:12",
@@ -739,12 +739,12 @@
               },
               {
                 "constant": false,
-                "id": 3333,
+                "id": 3497,
                 "mutability": "mutable",
                 "name": "totalSupply",
                 "nodeType": "VariableDeclaration",
                 "overrides": null,
-                "scope": 3334,
+                "scope": 3498,
                 "src": "430:18:12",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -753,7 +753,7 @@
                   "typeString": "uint96"
                 },
                 "typeName": {
-                  "id": 3332,
+                  "id": 3496,
                   "name": "uint96",
                   "nodeType": "ElementaryTypeName",
                   "src": "430:6:12",
@@ -768,29 +768,29 @@
             ],
             "name": "ERC20TokenStorage",
             "nodeType": "StructDefinition",
-            "scope": 3346,
+            "scope": 3510,
             "src": "232:240:12",
             "visibility": "public"
           },
           {
             "body": {
-              "id": 3344,
+              "id": 3508,
               "nodeType": "Block",
               "src": "561:107:12",
               "statements": [
                 {
                   "assignments": [
-                    3340
+                    3504
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 3340,
+                      "id": 3504,
                       "mutability": "mutable",
                       "name": "position",
                       "nodeType": "VariableDeclaration",
                       "overrides": null,
-                      "scope": 3344,
+                      "scope": 3508,
                       "src": "572:16:12",
                       "stateVariable": false,
                       "storageLocation": "default",
@@ -799,7 +799,7 @@
                         "typeString": "bytes32"
                       },
                       "typeName": {
-                        "id": 3339,
+                        "id": 3503,
                         "name": "bytes32",
                         "nodeType": "ElementaryTypeName",
                         "src": "572:7:12",
@@ -812,14 +812,14 @@
                       "visibility": "internal"
                     }
                   ],
-                  "id": 3342,
+                  "id": 3506,
                   "initialValue": {
                     "argumentTypes": null,
-                    "id": 3341,
+                    "id": 3505,
                     "name": "ERC20TOKEN_STORAGE_POSITION",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 3319,
+                    "referencedDeclaration": 3483,
                     "src": "591:27:12",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
@@ -855,28 +855,28 @@
                   "evmVersion": "istanbul",
                   "externalReferences": [
                     {
-                      "declaration": 3337,
+                      "declaration": 3501,
                       "isOffset": false,
                       "isSlot": true,
                       "src": "640:7:12",
                       "valueSize": 1
                     },
                     {
-                      "declaration": 3340,
+                      "declaration": 3504,
                       "isOffset": false,
                       "isSlot": false,
                       "src": "651:8:12",
                       "valueSize": 1
                     }
                   ],
-                  "id": 3343,
+                  "id": 3507,
                   "nodeType": "InlineAssembly",
                   "src": "629:32:12"
                 }
               ]
             },
             "documentation": null,
-            "id": 3345,
+            "id": 3509,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -884,39 +884,39 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 3335,
+              "id": 3499,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "506:2:12"
             },
             "returnParameters": {
-              "id": 3338,
+              "id": 3502,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3337,
+                  "id": 3501,
                   "mutability": "mutable",
                   "name": "ds",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 3345,
+                  "scope": 3509,
                   "src": "531:28:12",
                   "stateVariable": false,
                   "storageLocation": "storage",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_ERC20TokenStorage_$3334_storage_ptr",
+                    "typeIdentifier": "t_struct$_ERC20TokenStorage_$3498_storage_ptr",
                     "typeString": "struct ERC20TokenStorageContract.ERC20TokenStorage"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 3336,
+                    "id": 3500,
                     "name": "ERC20TokenStorage",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 3334,
+                    "referencedDeclaration": 3498,
                     "src": "531:17:12",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_ERC20TokenStorage_$3334_storage_ptr",
+                      "typeIdentifier": "t_struct$_ERC20TokenStorage_$3498_storage_ptr",
                       "typeString": "struct ERC20TokenStorageContract.ERC20TokenStorage"
                     }
                   },
@@ -926,14 +926,14 @@
               ],
               "src": "530:30:12"
             },
-            "scope": 3346,
+            "scope": 3510,
             "src": "480:188:12",
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           }
         ],
-        "scope": 3347,
+        "scope": 3511,
         "src": "60:615:12"
       }
     ],
@@ -945,7 +945,7 @@
   },
   "networks": {},
   "schemaVersion": "3.1.0",
-  "updatedAt": "2020-08-07T04:57:34.752Z",
+  "updatedAt": "2020-08-07T18:06:06.926Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},

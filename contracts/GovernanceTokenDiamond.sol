@@ -13,6 +13,8 @@ import { IDiamondLoupe } from './interfaces/IDiamondLoupe.sol';
 import { IERC165 } from './interfaces/IERC165.sol';
 import { DiamondLoupe } from './facets/DiamondLoupe.sol';
 import { Diamond, DiamondStorageContract } from './lib/Diamond.sol';
+import { ERC20Token } from './facets/ERC20Token.sol';
+import { Governance } from './facets/Governance.sol';
 
 contract GovernanceTokenDiamond is InternalFunctions {  
     
@@ -25,7 +27,7 @@ contract GovernanceTokenDiamond is InternalFunctions {
         gs.quorumDivisor = 20;
         // Proposers must own 1 percent of totalSupply to submit a proposal
         gs.proposalThresholdDivisor = 100;
-        // Proposers get an additional 5 percent of their balance if proposal passes
+        // Proposers get an additional 5 percent of their balance if their proposal passes
         gs.proposerAwardDivisor = 20;
         // Voters get an additional 1 percent of their balance for voting on a proposal
         gs.voterAwardDivisor = 100;
@@ -39,8 +41,10 @@ contract GovernanceTokenDiamond is InternalFunctions {
 
         // Create a DiamondLoupeFacet contract which implements the Diamond Loupe interface
         DiamondLoupe diamondLoupe = new DiamondLoupe();   
+        ERC20Token erc20Token = new ERC20Token();
+        Governance governance = new Governance();
 
-        bytes[] memory cut = new bytes[](1);
+        bytes[] memory cut = new bytes[](3);
         
         // Adding diamond loupe functions                
         cut[0] = abi.encodePacked(
@@ -50,7 +54,32 @@ contract GovernanceTokenDiamond is InternalFunctions {
             IDiamondLoupe.facetAddress.selector,
             IDiamondLoupe.facetAddresses.selector,
             IERC165.supportsInterface.selector            
-        );    
+        );
+
+        cut[1] = abi.encodePacked(
+            erc20Token,
+            ERC20Token.name.selector,
+            ERC20Token.symbol.selector,
+            ERC20Token.decimals.selector,
+            ERC20Token.totalSupply.selector,
+            ERC20Token.balanceOf.selector,
+            ERC20Token.transfer.selector,
+            ERC20Token.transferFrom.selector,
+            ERC20Token.approve.selector,
+            ERC20Token.allowance.selector,
+            ERC20Token.increaseAllowance.selector,
+            ERC20Token.decreaseAllowance.selector
+        );
+
+        cut[2] = abi.encodePacked(
+            governance,
+            Governance.propose.selector,
+            Governance.executeProposal.selector,
+            Governance.proposalStatus.selector,
+            Governance.proposal.selector,
+            Governance.vote.selector,
+            Governance.unvote.selector
+        );
         
         diamondCut(cut);
         

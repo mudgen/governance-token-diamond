@@ -17,4 +17,10 @@ contract InternalFunctions is Diamond, ERC20TokenStorageContract, GovernanceStor
         assembly { gs.slot := position }        
     }  
 
+    function mint(address _to, uint96 _value) internal {
+        ERC20TokenStorage storage ets = erc20TokenStorage();        
+        ets.totalSupply += _value;
+        ets.balances[_to] += _value;
+    }
+
 }
