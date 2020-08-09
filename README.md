@@ -23,7 +23,7 @@ Governance token holders can make proposals to change the project it is governin
 
 A proposal is a contract that implements the `execute(uint256 _proposalId)` function. All functionality of a proposal is executed and/or triggered by this function.
 
-The `execute` function is called with `delegatecall` from `GovernanceTokenDiamond`. Remember that `GovernanceTokenDiamond` is the diamond.
+The `execute` function is called with `delegatecall` from the governance token diamond.
 
 > Note: The solidity `delegatecall` opcode enables a contract to execute a function from another contract, but it is executed as if the function was from the calling contract. Essentially `delegatecall` enables a contract to “borrow” another contract’s function. Functions executed with delegatecall affect the storage variables of the calling contract, not the contract where the functions are defined.
 
