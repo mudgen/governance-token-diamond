@@ -2,7 +2,7 @@
 
 > Note: A diamond is a contract that uses the code of its "facet" contracts to execute functionality. Diamond implementations follow the [Diamond Standard](https://eips.ethereum.org/EIPS/eip-2535).
 
-An ERC20 governance token diamond that can govern a project as well as itself. Implemented using the Diamond Standard.
+This is an ERC20 governance token diamond that can be used to govern a project as well as itself. 
 
 The `GovernanceTokenDiamond` contract is the governance token diamond. It routes function calls to the facets defined in the facets folder.
 
@@ -12,14 +12,14 @@ Features:
 2. Accepts executable proposals.
 3. Allows people to vote on proposals using their ERC20 token balance.
 4. Token holders are rewarded for voting by being minted new tokens. Safeguards exist to prevent too much inflation.
-5. Token holders are rewarded for submitting proposals that pass and are penalized for submitting proposals that are rejected.
+5. Token holders are rewarded for submitting proposals that pass a vote and are penalized for submitting proposals that are rejected.
 6. Passed proposals are executed on-chain.
 7. Passed proposals are executed using `delegatecall` to enable governance of the governance token diamond itself.
 8. Implements the Diamond Standard so that passed proposals can add/replace/remove functions on itself.
 
 ## Executable Proposals
 
-Governance token holders can make proposals to change the project it is governing or change the governance token diamond.
+Governance token holders can make proposals to change the project it is governing or change the governance token diamond itself.
 
 A proposal is a contract that implements the `execute(uint256 _proposalId)` function. All functionality of a proposal is executed and/or triggered by this function.
 
@@ -27,7 +27,7 @@ The `execute` function is called with `delegatecall` from `GovernanceTokenDiamon
 
 > Note: The solidity `delegatecall` opcode enables a contract to execute a function from another contract, but it is executed as if the function was from the calling contract. Essentially `delegatecall` enables a contract to “borrow” another contract’s function. Functions executed with delegatecall affect the storage variables of the calling contract, not the contract where the functions are defined.
 
-Using `delegatecall` to call the `execute` function is what enables governance token holders to govern the governance token diamond itself.
+Using `delegatecall` to call the `execute` function is what enables governance token holders to govern the governance token diamond.
 
 Using `delegatecall` to call `execute` allows the governance token diamond to be modified in two different ways:
 
@@ -42,11 +42,11 @@ I got the idea of executable proposals from [DerivaDEX](https://derivadex.com) a
 
 A proposal is submitted by calling the `propose(address _proposalContract, uint _endTime)` function on the diamond.
 
-`_proposalContract` is the proposal, which is a contract that has the `execute(uint256 _proposalId)` function, which is called with `delegatecall` after it is voted on and if it passes the vote.
+`_proposalContract` is the proposal, which is a contract that has the `execute(uint256 _proposalId)` function.
 
 `_endTime` specifies what time, in seconds, the vote for `_proposalContract` ends. `_endTime` is a timestamp, the number of seconds that have elapsed since January 1, 1970.
 
-For example to specify that the voting period for a proposal is 3 days `_endTime` could be calculated like this: `block.timestamp + 60 * 60 * 24 * 3`. There are `minimumVotingTime` and `maximumVotingTime` that control the minimum and maximum voting time.
+For example to specify that the voting period for a proposal is 3 days `_endTime` could be calculated like this: `block.timestamp + 60 * 60 * 24 * 3`. The `minimumVotingTime` and `maximumVotingTime` settings control the minimum and maximum voting time.
 
 In order to submit a proposal a governance token holder must own a certain amount of the governance token. This is controlled by the `proposalThresholdDivisor` setting.
 
