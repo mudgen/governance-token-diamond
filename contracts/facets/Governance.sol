@@ -19,7 +19,7 @@ contract Governance is InternalFunctions {
         return governanceStorage().proposalCount;
     }
 
-    function propose(address _proposalContract, uint _endTime) external {
+    function propose(address _proposalContract, uint _endTime) external returns (uint proposalId) {
         uint contractSize;
         assembly { contractSize := extcodesize(_proposalContract) }
         require(contractSize > 0, 'Governance: Proposed contract is empty');
@@ -32,7 +32,7 @@ contract Governance is InternalFunctions {
         uint totalSupply = ets.totalSupply;
         // proposalThreshold is 1 percent of totalSupply
         require(proposerBalance >= (totalSupply / gs.proposalThresholdDivisor), 'Governance: Balance less than proposer threshold');
-        uint proposalId = gs.proposalCount++;
+        proposalId = gs.proposalCount++;
         Proposal storage proposalStorage = gs.proposals[proposalId];
         proposalStorage.proposer = msg.sender;
         proposalStorage.proposalContract = _proposalContract;
