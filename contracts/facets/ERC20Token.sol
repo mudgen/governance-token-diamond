@@ -1,6 +1,5 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.7.0;
-pragma experimental ABIEncoderV2;
 
 import { IERC20 } from '../interfaces/IERC20.sol';
 import { InternalFunctions } from '../lib/InternalFunctions.sol';

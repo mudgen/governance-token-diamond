@@ -15,27 +15,27 @@
       "type": "event"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.7.0+commit.9e61f92b\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"bytes[]\",\"name\":\"_diamondCut\",\"type\":\"bytes[]\"}],\"name\":\"DiamondCut\",\"type\":\"event\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/C/Users/mudge/projects/governance-token-diamond/contracts/lib/InternalFunctions.sol\":\"InternalFunctions\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/mudge/projects/governance-token-diamond/contracts/lib/Diamond.sol\":{\"keccak256\":\"0x14c1106bd852838356738de87ee98ae20f60d23751976631ccdd242aa2b8a1bb\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://36e730ba296555a17b6b6a4d0bf724eec4136128646ea1afd23e97b8836e5717\",\"dweb:/ipfs/QmTVUY6t8j9Tc31k5FAie7tvf9Asu6bYNcYpVb2WTJJ9TC\"]},\"/C/Users/mudge/projects/governance-token-diamond/contracts/lib/InternalFunctions.sol\":{\"keccak256\":\"0x05b6e78dc734c565f7f82cf48ae4cbdc04f214612e1c3a87e7ecdcc3f897f9b0\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://685bacefecbadf2a9a094930da3d8d5f728392c74b9fafcb5b8576e844f980ae\",\"dweb:/ipfs/QmP4v6DfPKqfKybUGrwVtdjCY81uschmjSrHZaz4DoH5di\"]},\"/C/Users/mudge/projects/governance-token-diamond/contracts/storage/DiamondStorageContract.sol\":{\"keccak256\":\"0xbaf5a75c4ed6bf00b8dcb057df7c9b7b9026e9bf9f91368da5d751921263943b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://299dc3f249f279fb37de3108b56454c79dbf10f7c53e870fa5e07f7097afca00\",\"dweb:/ipfs/QmNRKtkTM6PZvA9Spu2qdfYKrCz7DkM1FRjy9ofV7pow2K\"]},\"/C/Users/mudge/projects/governance-token-diamond/contracts/storage/ERC20TokenStorageContract.sol\":{\"keccak256\":\"0xb67135aa3b45c05e822741b7424a1f85dd94414bfd47afe5941df037994fe4bf\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://dadcae7e37ca9cbceff7bf761db1441884b2ae281616452fde175be36b7dffe2\",\"dweb:/ipfs/QmYe6kMtiUFJ9qBh58RAwUbFqou624uiZU7n6KJBGHRudt\"]},\"/C/Users/mudge/projects/governance-token-diamond/contracts/storage/GovernanceStorageContract.sol\":{\"keccak256\":\"0xf69a43858e2038cf7e26f450e9aafd4e566946fc791d680c8029ff775feb639c\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://b48e0e01aeeb118a888b2a8086a6e278d4cbc079160330727ccb9847b3606746\",\"dweb:/ipfs/QmcVQ9cVktu4oxi1Xt6ejDEzAJUmF4y564LhU3shVbHe6x\"]}},\"version\":1}",
-  "bytecode": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea26469706673582212202509cbe4ef366932c0a6e74a40fbdba57f5cad74c59d018fffebc04d9363bc5264736f6c63430007000033",
-  "deployedBytecode": "0x6080604052600080fdfea26469706673582212202509cbe4ef366932c0a6e74a40fbdba57f5cad74c59d018fffebc04d9363bc5264736f6c63430007000033",
+  "metadata": "{\"compiler\":{\"version\":\"0.7.0+commit.9e61f92b\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"bytes[]\",\"name\":\"_diamondCut\",\"type\":\"bytes[]\"}],\"name\":\"DiamondCut\",\"type\":\"event\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/C/Users/mudge/projects/governance-token-diamond/contracts/lib/InternalFunctions.sol\":\"InternalFunctions\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/mudge/projects/governance-token-diamond/contracts/lib/Diamond.sol\":{\"keccak256\":\"0x14c1106bd852838356738de87ee98ae20f60d23751976631ccdd242aa2b8a1bb\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://36e730ba296555a17b6b6a4d0bf724eec4136128646ea1afd23e97b8836e5717\",\"dweb:/ipfs/QmTVUY6t8j9Tc31k5FAie7tvf9Asu6bYNcYpVb2WTJJ9TC\"]},\"/C/Users/mudge/projects/governance-token-diamond/contracts/lib/InternalFunctions.sol\":{\"keccak256\":\"0x630cde00d8e6b20809c1c6b3af5d27a6d55ca4dbacda36e35b1c1ad0cfc5f260\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://e23c1415a4d117548faeed3ba57fec38995e1462264aa70808f7e0438b98c20b\",\"dweb:/ipfs/QmQpcyxqmWuyMo2EeykTssudmEyh13qt4WyJdJVgi18z1a\"]},\"/C/Users/mudge/projects/governance-token-diamond/contracts/storage/DiamondStorageContract.sol\":{\"keccak256\":\"0xbaf5a75c4ed6bf00b8dcb057df7c9b7b9026e9bf9f91368da5d751921263943b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://299dc3f249f279fb37de3108b56454c79dbf10f7c53e870fa5e07f7097afca00\",\"dweb:/ipfs/QmNRKtkTM6PZvA9Spu2qdfYKrCz7DkM1FRjy9ofV7pow2K\"]},\"/C/Users/mudge/projects/governance-token-diamond/contracts/storage/ERC20TokenStorageContract.sol\":{\"keccak256\":\"0xb67135aa3b45c05e822741b7424a1f85dd94414bfd47afe5941df037994fe4bf\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://dadcae7e37ca9cbceff7bf761db1441884b2ae281616452fde175be36b7dffe2\",\"dweb:/ipfs/QmYe6kMtiUFJ9qBh58RAwUbFqou624uiZU7n6KJBGHRudt\"]},\"/C/Users/mudge/projects/governance-token-diamond/contracts/storage/GovernanceStorageContract.sol\":{\"keccak256\":\"0xf69a43858e2038cf7e26f450e9aafd4e566946fc791d680c8029ff775feb639c\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://b48e0e01aeeb118a888b2a8086a6e278d4cbc079160330727ccb9847b3606746\",\"dweb:/ipfs/QmcVQ9cVktu4oxi1Xt6ejDEzAJUmF4y564LhU3shVbHe6x\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea264697066735822122025503b2787bd3e1c168e4995bb4ffdef4865ee11da73500c822412b66b26510a64736f6c63430007000033",
+  "deployedBytecode": "0x6080604052600080fdfea264697066735822122025503b2787bd3e1c168e4995bb4ffdef4865ee11da73500c822412b66b26510a64736f6c63430007000033",
   "immutableReferences": {},
-  "sourceMap": "313:456:10:-:0;;;;;;;;;;;;;;;;;;;",
-  "deployedSourceMap": "313:456:10:-:0;;;;;",
-  "source": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.7.0;\r\npragma experimental ABIEncoderV2;\r\n\r\nimport { Diamond } from './Diamond.sol';\r\nimport { ERC20TokenStorageContract } from '../storage/ERC20TokenStorageContract.sol';\r\nimport { GovernanceStorageContract } from '../storage/GovernanceStorageContract.sol';\r\n\r\ncontract InternalFunctions is Diamond, ERC20TokenStorageContract, GovernanceStorageContract {\r\n    function governanceTokenStorage() internal pure returns(\r\n        ERC20TokenStorage storage ets, \r\n        GovernanceStorage storage gs\r\n    ) {\r\n        bytes32 position = ERC20TOKEN_STORAGE_POSITION;\r\n        assembly { ets.slot := position }\r\n        position = GOVERNANCE_STORAGE_POSITION;\r\n        assembly { gs.slot := position }        \r\n    }  \r\n\r\n}",
+  "sourceMap": "313:667:10:-:0;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "313:667:10:-:0;;;;;",
+  "source": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.7.0;\r\npragma experimental ABIEncoderV2;\r\n\r\nimport { Diamond } from './Diamond.sol';\r\nimport { ERC20TokenStorageContract } from '../storage/ERC20TokenStorageContract.sol';\r\nimport { GovernanceStorageContract } from '../storage/GovernanceStorageContract.sol';\r\n\r\ncontract InternalFunctions is Diamond, ERC20TokenStorageContract, GovernanceStorageContract {\r\n    function governanceTokenStorage() internal pure returns(\r\n        ERC20TokenStorage storage ets, \r\n        GovernanceStorage storage gs\r\n    ) {\r\n        bytes32 position = ERC20TOKEN_STORAGE_POSITION;\r\n        assembly { ets.slot := position }\r\n        position = GOVERNANCE_STORAGE_POSITION;\r\n        assembly { gs.slot := position }        \r\n    }  \r\n\r\n    function mint(address _to, uint96 _value) internal {\r\n        ERC20TokenStorage storage ets = erc20TokenStorage();        \r\n        ets.totalSupply += _value;\r\n        ets.balances[_to] += _value;\r\n    }\r\n\r\n}",
   "sourcePath": "C:\\Users\\mudge\\projects\\governance-token-diamond\\contracts\\lib\\InternalFunctions.sol",
   "ast": {
     "absolutePath": "/C/Users/mudge/projects/governance-token-diamond/contracts/lib/InternalFunctions.sol",
     "exportedSymbols": {
       "InternalFunctions": [
-        3442
+        3535
       ]
     },
-    "id": 3443,
+    "id": 3536,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 3410,
+        "id": 3476,
         "literals": [
           "solidity",
           "^",
@@ -46,7 +46,7 @@
         "src": "33:23:10"
       },
       {
-        "id": 3411,
+        "id": 3477,
         "literals": [
           "experimental",
           "ABIEncoderV2"
@@ -57,16 +57,16 @@
       {
         "absolutePath": "/C/Users/mudge/projects/governance-token-diamond/contracts/lib/Diamond.sol",
         "file": "./Diamond.sol",
-        "id": 3413,
+        "id": 3479,
         "nodeType": "ImportDirective",
-        "scope": 3443,
-        "sourceUnit": 3409,
+        "scope": 3536,
+        "sourceUnit": 3475,
         "src": "95:40:10",
         "symbolAliases": [
           {
             "foreign": {
               "argumentTypes": null,
-              "id": 3412,
+              "id": 3478,
               "name": "Diamond",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
@@ -85,16 +85,16 @@
       {
         "absolutePath": "/C/Users/mudge/projects/governance-token-diamond/contracts/storage/ERC20TokenStorageContract.sol",
         "file": "../storage/ERC20TokenStorageContract.sol",
-        "id": 3415,
+        "id": 3481,
         "nodeType": "ImportDirective",
-        "scope": 3443,
-        "sourceUnit": 3511,
+        "scope": 3536,
+        "sourceUnit": 3604,
         "src": "137:85:10",
         "symbolAliases": [
           {
             "foreign": {
               "argumentTypes": null,
-              "id": 3414,
+              "id": 3480,
               "name": "ERC20TokenStorageContract",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
@@ -113,16 +113,16 @@
       {
         "absolutePath": "/C/Users/mudge/projects/governance-token-diamond/contracts/storage/GovernanceStorageContract.sol",
         "file": "../storage/GovernanceStorageContract.sol",
-        "id": 3417,
+        "id": 3483,
         "nodeType": "ImportDirective",
-        "scope": 3443,
-        "sourceUnit": 3580,
+        "scope": 3536,
+        "sourceUnit": 3673,
         "src": "224:85:10",
         "symbolAliases": [
           {
             "foreign": {
               "argumentTypes": null,
-              "id": 3416,
+              "id": 3482,
               "name": "GovernanceStorageContract",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
@@ -145,17 +145,17 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 3418,
+              "id": 3484,
               "name": "Diamond",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 3408,
+              "referencedDeclaration": 3474,
               "src": "343:7:10",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Diamond_$3408",
+                "typeIdentifier": "t_contract$_Diamond_$3474",
                 "typeString": "contract Diamond"
               }
             },
-            "id": 3419,
+            "id": 3485,
             "nodeType": "InheritanceSpecifier",
             "src": "343:7:10"
           },
@@ -163,17 +163,17 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 3420,
+              "id": 3486,
               "name": "ERC20TokenStorageContract",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 3510,
+              "referencedDeclaration": 3603,
               "src": "352:25:10",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ERC20TokenStorageContract_$3510",
+                "typeIdentifier": "t_contract$_ERC20TokenStorageContract_$3603",
                 "typeString": "contract ERC20TokenStorageContract"
               }
             },
-            "id": 3421,
+            "id": 3487,
             "nodeType": "InheritanceSpecifier",
             "src": "352:25:10"
           },
@@ -181,60 +181,60 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 3422,
+              "id": 3488,
               "name": "GovernanceStorageContract",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 3579,
+              "referencedDeclaration": 3672,
               "src": "379:25:10",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_GovernanceStorageContract_$3579",
+                "typeIdentifier": "t_contract$_GovernanceStorageContract_$3672",
                 "typeString": "contract GovernanceStorageContract"
               }
             },
-            "id": 3423,
+            "id": 3489,
             "nodeType": "InheritanceSpecifier",
             "src": "379:25:10"
           }
         ],
         "contractDependencies": [
-          3408,
-          3476,
-          3510,
-          3579
+          3474,
+          3569,
+          3603,
+          3672
         ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 3442,
+        "id": 3535,
         "linearizedBaseContracts": [
-          3442,
-          3579,
-          3510,
-          3408,
-          3476
+          3535,
+          3672,
+          3603,
+          3474,
+          3569
         ],
         "name": "InternalFunctions",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "body": {
-              "id": 3440,
+              "id": 3506,
               "nodeType": "Block",
               "src": "555:207:10",
               "statements": [
                 {
                   "assignments": [
-                    3431
+                    3497
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 3431,
+                      "id": 3497,
                       "mutability": "mutable",
                       "name": "position",
                       "nodeType": "VariableDeclaration",
                       "overrides": null,
-                      "scope": 3440,
+                      "scope": 3506,
                       "src": "566:16:10",
                       "stateVariable": false,
                       "storageLocation": "default",
@@ -243,7 +243,7 @@
                         "typeString": "bytes32"
                       },
                       "typeName": {
-                        "id": 3430,
+                        "id": 3496,
                         "name": "bytes32",
                         "nodeType": "ElementaryTypeName",
                         "src": "566:7:10",
@@ -256,14 +256,14 @@
                       "visibility": "internal"
                     }
                   ],
-                  "id": 3433,
+                  "id": 3499,
                   "initialValue": {
                     "argumentTypes": null,
-                    "id": 3432,
+                    "id": 3498,
                     "name": "ERC20TOKEN_STORAGE_POSITION",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 3483,
+                    "referencedDeclaration": 3576,
                     "src": "585:27:10",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
@@ -299,39 +299,39 @@
                   "evmVersion": "istanbul",
                   "externalReferences": [
                     {
-                      "declaration": 3426,
+                      "declaration": 3492,
                       "isOffset": false,
                       "isSlot": true,
                       "src": "634:8:10",
                       "valueSize": 1
                     },
                     {
-                      "declaration": 3431,
+                      "declaration": 3497,
                       "isOffset": false,
                       "isSlot": false,
                       "src": "646:8:10",
                       "valueSize": 1
                     }
                   ],
-                  "id": 3434,
+                  "id": 3500,
                   "nodeType": "InlineAssembly",
                   "src": "623:33:10"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 3437,
+                    "id": 3503,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 3435,
+                      "id": 3501,
                       "name": "position",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 3431,
+                      "referencedDeclaration": 3497,
                       "src": "666:8:10",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bytes32",
@@ -342,11 +342,11 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 3436,
+                      "id": 3502,
                       "name": "GOVERNANCE_STORAGE_POSITION",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 3517,
+                      "referencedDeclaration": 3610,
                       "src": "677:27:10",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bytes32",
@@ -359,7 +359,7 @@
                       "typeString": "bytes32"
                     }
                   },
-                  "id": 3438,
+                  "id": 3504,
                   "nodeType": "ExpressionStatement",
                   "src": "666:38:10"
                 },
@@ -389,28 +389,28 @@
                   "evmVersion": "istanbul",
                   "externalReferences": [
                     {
-                      "declaration": 3428,
+                      "declaration": 3494,
                       "isOffset": false,
                       "isSlot": true,
                       "src": "726:7:10",
                       "valueSize": 1
                     },
                     {
-                      "declaration": 3431,
+                      "declaration": 3497,
                       "isOffset": false,
                       "isSlot": false,
                       "src": "737:8:10",
                       "valueSize": 1
                     }
                   ],
-                  "id": 3439,
+                  "id": 3505,
                   "nodeType": "InlineAssembly",
                   "src": "715:32:10"
                 }
               ]
             },
             "documentation": null,
-            "id": 3441,
+            "id": 3507,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -418,39 +418,39 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 3424,
+              "id": 3490,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "443:2:10"
             },
             "returnParameters": {
-              "id": 3429,
+              "id": 3495,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3426,
+                  "id": 3492,
                   "mutability": "mutable",
                   "name": "ets",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 3441,
+                  "scope": 3507,
                   "src": "478:29:10",
                   "stateVariable": false,
                   "storageLocation": "storage",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_ERC20TokenStorage_$3498_storage_ptr",
+                    "typeIdentifier": "t_struct$_ERC20TokenStorage_$3591_storage_ptr",
                     "typeString": "struct ERC20TokenStorageContract.ERC20TokenStorage"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 3425,
+                    "id": 3491,
                     "name": "ERC20TokenStorage",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 3498,
+                    "referencedDeclaration": 3591,
                     "src": "478:17:10",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_ERC20TokenStorage_$3498_storage_ptr",
+                      "typeIdentifier": "t_struct$_ERC20TokenStorage_$3591_storage_ptr",
                       "typeString": "struct ERC20TokenStorageContract.ERC20TokenStorage"
                     }
                   },
@@ -459,28 +459,28 @@
                 },
                 {
                   "constant": false,
-                  "id": 3428,
+                  "id": 3494,
                   "mutability": "mutable",
                   "name": "gs",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 3441,
+                  "scope": 3507,
                   "src": "519:28:10",
                   "stateVariable": false,
                   "storageLocation": "storage",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_GovernanceStorage_$3567_storage_ptr",
+                    "typeIdentifier": "t_struct$_GovernanceStorage_$3660_storage_ptr",
                     "typeString": "struct GovernanceStorageContract.GovernanceStorage"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 3427,
+                    "id": 3493,
                     "name": "GovernanceStorage",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 3567,
+                    "referencedDeclaration": 3660,
                     "src": "519:17:10",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_GovernanceStorage_$3567_storage_ptr",
+                      "typeIdentifier": "t_struct$_GovernanceStorage_$3660_storage_ptr",
                       "typeString": "struct GovernanceStorageContract.GovernanceStorage"
                     }
                   },
@@ -490,32 +490,346 @@
               ],
               "src": "467:87:10"
             },
-            "scope": 3442,
+            "scope": 3535,
             "src": "412:350:10",
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 3533,
+              "nodeType": "Block",
+              "src": "823:152:10",
+              "statements": [
+                {
+                  "assignments": [
+                    3515
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 3515,
+                      "mutability": "mutable",
+                      "name": "ets",
+                      "nodeType": "VariableDeclaration",
+                      "overrides": null,
+                      "scope": 3533,
+                      "src": "834:29:10",
+                      "stateVariable": false,
+                      "storageLocation": "storage",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_ERC20TokenStorage_$3591_storage_ptr",
+                        "typeString": "struct ERC20TokenStorageContract.ERC20TokenStorage"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 3514,
+                        "name": "ERC20TokenStorage",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 3591,
+                        "src": "834:17:10",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_ERC20TokenStorage_$3591_storage_ptr",
+                          "typeString": "struct ERC20TokenStorageContract.ERC20TokenStorage"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 3518,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "id": 3516,
+                      "name": "erc20TokenStorage",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3602,
+                      "src": "866:17:10",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_pure$__$returns$_t_struct$_ERC20TokenStorage_$3591_storage_ptr_$",
+                        "typeString": "function () pure returns (struct ERC20TokenStorageContract.ERC20TokenStorage storage pointer)"
+                      }
+                    },
+                    "id": 3517,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "866:19:10",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_ERC20TokenStorage_$3591_storage_ptr",
+                      "typeString": "struct ERC20TokenStorageContract.ERC20TokenStorage storage pointer"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "834:51:10"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 3523,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 3519,
+                        "name": "ets",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3515,
+                        "src": "904:3:10",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_ERC20TokenStorage_$3591_storage_ptr",
+                          "typeString": "struct ERC20TokenStorageContract.ERC20TokenStorage storage pointer"
+                        }
+                      },
+                      "id": 3521,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "totalSupply",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 3590,
+                      "src": "904:15:10",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint96",
+                        "typeString": "uint96"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "+=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 3522,
+                      "name": "_value",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3511,
+                      "src": "923:6:10",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint96",
+                        "typeString": "uint96"
+                      }
+                    },
+                    "src": "904:25:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint96",
+                      "typeString": "uint96"
+                    }
+                  },
+                  "id": 3524,
+                  "nodeType": "ExpressionStatement",
+                  "src": "904:25:10"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 3531,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 3525,
+                          "name": "ets",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 3515,
+                          "src": "940:3:10",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_ERC20TokenStorage_$3591_storage_ptr",
+                            "typeString": "struct ERC20TokenStorageContract.ERC20TokenStorage storage pointer"
+                          }
+                        },
+                        "id": 3528,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "balances",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 3580,
+                        "src": "940:12:10",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
+                          "typeString": "mapping(address => uint256)"
+                        }
+                      },
+                      "id": 3529,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 3527,
+                        "name": "_to",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3509,
+                        "src": "953:3:10",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "940:17:10",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "+=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 3530,
+                      "name": "_value",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3511,
+                      "src": "961:6:10",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint96",
+                        "typeString": "uint96"
+                      }
+                    },
+                    "src": "940:27:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 3532,
+                  "nodeType": "ExpressionStatement",
+                  "src": "940:27:10"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 3534,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "mint",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 3512,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3509,
+                  "mutability": "mutable",
+                  "name": "_to",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 3534,
+                  "src": "786:11:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3508,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "786:7:10",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3511,
+                  "mutability": "mutable",
+                  "name": "_value",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 3534,
+                  "src": "799:13:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint96",
+                    "typeString": "uint96"
+                  },
+                  "typeName": {
+                    "id": 3510,
+                    "name": "uint96",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "799:6:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint96",
+                      "typeString": "uint96"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "785:28:10"
+            },
+            "returnParameters": {
+              "id": 3513,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "823:0:10"
+            },
+            "scope": 3535,
+            "src": "772:203:10",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "internal"
           }
         ],
-        "scope": 3443,
-        "src": "313:456:10"
+        "scope": 3536,
+        "src": "313:667:10"
       }
     ],
-    "src": "33:736:10"
+    "src": "33:947:10"
   },
   "legacyAST": {
     "absolutePath": "/C/Users/mudge/projects/governance-token-diamond/contracts/lib/InternalFunctions.sol",
     "exportedSymbols": {
       "InternalFunctions": [
-        3442
+        3535
       ]
     },
-    "id": 3443,
+    "id": 3536,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 3410,
+        "id": 3476,
         "literals": [
           "solidity",
           "^",
@@ -526,7 +840,7 @@
         "src": "33:23:10"
       },
       {
-        "id": 3411,
+        "id": 3477,
         "literals": [
           "experimental",
           "ABIEncoderV2"
@@ -537,16 +851,16 @@
       {
         "absolutePath": "/C/Users/mudge/projects/governance-token-diamond/contracts/lib/Diamond.sol",
         "file": "./Diamond.sol",
-        "id": 3413,
+        "id": 3479,
         "nodeType": "ImportDirective",
-        "scope": 3443,
-        "sourceUnit": 3409,
+        "scope": 3536,
+        "sourceUnit": 3475,
         "src": "95:40:10",
         "symbolAliases": [
           {
             "foreign": {
               "argumentTypes": null,
-              "id": 3412,
+              "id": 3478,
               "name": "Diamond",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
@@ -565,16 +879,16 @@
       {
         "absolutePath": "/C/Users/mudge/projects/governance-token-diamond/contracts/storage/ERC20TokenStorageContract.sol",
         "file": "../storage/ERC20TokenStorageContract.sol",
-        "id": 3415,
+        "id": 3481,
         "nodeType": "ImportDirective",
-        "scope": 3443,
-        "sourceUnit": 3511,
+        "scope": 3536,
+        "sourceUnit": 3604,
         "src": "137:85:10",
         "symbolAliases": [
           {
             "foreign": {
               "argumentTypes": null,
-              "id": 3414,
+              "id": 3480,
               "name": "ERC20TokenStorageContract",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
@@ -593,16 +907,16 @@
       {
         "absolutePath": "/C/Users/mudge/projects/governance-token-diamond/contracts/storage/GovernanceStorageContract.sol",
         "file": "../storage/GovernanceStorageContract.sol",
-        "id": 3417,
+        "id": 3483,
         "nodeType": "ImportDirective",
-        "scope": 3443,
-        "sourceUnit": 3580,
+        "scope": 3536,
+        "sourceUnit": 3673,
         "src": "224:85:10",
         "symbolAliases": [
           {
             "foreign": {
               "argumentTypes": null,
-              "id": 3416,
+              "id": 3482,
               "name": "GovernanceStorageContract",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
@@ -625,17 +939,17 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 3418,
+              "id": 3484,
               "name": "Diamond",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 3408,
+              "referencedDeclaration": 3474,
               "src": "343:7:10",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Diamond_$3408",
+                "typeIdentifier": "t_contract$_Diamond_$3474",
                 "typeString": "contract Diamond"
               }
             },
-            "id": 3419,
+            "id": 3485,
             "nodeType": "InheritanceSpecifier",
             "src": "343:7:10"
           },
@@ -643,17 +957,17 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 3420,
+              "id": 3486,
               "name": "ERC20TokenStorageContract",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 3510,
+              "referencedDeclaration": 3603,
               "src": "352:25:10",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ERC20TokenStorageContract_$3510",
+                "typeIdentifier": "t_contract$_ERC20TokenStorageContract_$3603",
                 "typeString": "contract ERC20TokenStorageContract"
               }
             },
-            "id": 3421,
+            "id": 3487,
             "nodeType": "InheritanceSpecifier",
             "src": "352:25:10"
           },
@@ -661,60 +975,60 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 3422,
+              "id": 3488,
               "name": "GovernanceStorageContract",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 3579,
+              "referencedDeclaration": 3672,
               "src": "379:25:10",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_GovernanceStorageContract_$3579",
+                "typeIdentifier": "t_contract$_GovernanceStorageContract_$3672",
                 "typeString": "contract GovernanceStorageContract"
               }
             },
-            "id": 3423,
+            "id": 3489,
             "nodeType": "InheritanceSpecifier",
             "src": "379:25:10"
           }
         ],
         "contractDependencies": [
-          3408,
-          3476,
-          3510,
-          3579
+          3474,
+          3569,
+          3603,
+          3672
         ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 3442,
+        "id": 3535,
         "linearizedBaseContracts": [
-          3442,
-          3579,
-          3510,
-          3408,
-          3476
+          3535,
+          3672,
+          3603,
+          3474,
+          3569
         ],
         "name": "InternalFunctions",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "body": {
-              "id": 3440,
+              "id": 3506,
               "nodeType": "Block",
               "src": "555:207:10",
               "statements": [
                 {
                   "assignments": [
-                    3431
+                    3497
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 3431,
+                      "id": 3497,
                       "mutability": "mutable",
                       "name": "position",
                       "nodeType": "VariableDeclaration",
                       "overrides": null,
-                      "scope": 3440,
+                      "scope": 3506,
                       "src": "566:16:10",
                       "stateVariable": false,
                       "storageLocation": "default",
@@ -723,7 +1037,7 @@
                         "typeString": "bytes32"
                       },
                       "typeName": {
-                        "id": 3430,
+                        "id": 3496,
                         "name": "bytes32",
                         "nodeType": "ElementaryTypeName",
                         "src": "566:7:10",
@@ -736,14 +1050,14 @@
                       "visibility": "internal"
                     }
                   ],
-                  "id": 3433,
+                  "id": 3499,
                   "initialValue": {
                     "argumentTypes": null,
-                    "id": 3432,
+                    "id": 3498,
                     "name": "ERC20TOKEN_STORAGE_POSITION",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 3483,
+                    "referencedDeclaration": 3576,
                     "src": "585:27:10",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
@@ -779,39 +1093,39 @@
                   "evmVersion": "istanbul",
                   "externalReferences": [
                     {
-                      "declaration": 3426,
+                      "declaration": 3492,
                       "isOffset": false,
                       "isSlot": true,
                       "src": "634:8:10",
                       "valueSize": 1
                     },
                     {
-                      "declaration": 3431,
+                      "declaration": 3497,
                       "isOffset": false,
                       "isSlot": false,
                       "src": "646:8:10",
                       "valueSize": 1
                     }
                   ],
-                  "id": 3434,
+                  "id": 3500,
                   "nodeType": "InlineAssembly",
                   "src": "623:33:10"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 3437,
+                    "id": 3503,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 3435,
+                      "id": 3501,
                       "name": "position",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 3431,
+                      "referencedDeclaration": 3497,
                       "src": "666:8:10",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bytes32",
@@ -822,11 +1136,11 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 3436,
+                      "id": 3502,
                       "name": "GOVERNANCE_STORAGE_POSITION",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 3517,
+                      "referencedDeclaration": 3610,
                       "src": "677:27:10",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bytes32",
@@ -839,7 +1153,7 @@
                       "typeString": "bytes32"
                     }
                   },
-                  "id": 3438,
+                  "id": 3504,
                   "nodeType": "ExpressionStatement",
                   "src": "666:38:10"
                 },
@@ -869,28 +1183,28 @@
                   "evmVersion": "istanbul",
                   "externalReferences": [
                     {
-                      "declaration": 3428,
+                      "declaration": 3494,
                       "isOffset": false,
                       "isSlot": true,
                       "src": "726:7:10",
                       "valueSize": 1
                     },
                     {
-                      "declaration": 3431,
+                      "declaration": 3497,
                       "isOffset": false,
                       "isSlot": false,
                       "src": "737:8:10",
                       "valueSize": 1
                     }
                   ],
-                  "id": 3439,
+                  "id": 3505,
                   "nodeType": "InlineAssembly",
                   "src": "715:32:10"
                 }
               ]
             },
             "documentation": null,
-            "id": 3441,
+            "id": 3507,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -898,39 +1212,39 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 3424,
+              "id": 3490,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "443:2:10"
             },
             "returnParameters": {
-              "id": 3429,
+              "id": 3495,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3426,
+                  "id": 3492,
                   "mutability": "mutable",
                   "name": "ets",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 3441,
+                  "scope": 3507,
                   "src": "478:29:10",
                   "stateVariable": false,
                   "storageLocation": "storage",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_ERC20TokenStorage_$3498_storage_ptr",
+                    "typeIdentifier": "t_struct$_ERC20TokenStorage_$3591_storage_ptr",
                     "typeString": "struct ERC20TokenStorageContract.ERC20TokenStorage"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 3425,
+                    "id": 3491,
                     "name": "ERC20TokenStorage",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 3498,
+                    "referencedDeclaration": 3591,
                     "src": "478:17:10",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_ERC20TokenStorage_$3498_storage_ptr",
+                      "typeIdentifier": "t_struct$_ERC20TokenStorage_$3591_storage_ptr",
                       "typeString": "struct ERC20TokenStorageContract.ERC20TokenStorage"
                     }
                   },
@@ -939,28 +1253,28 @@
                 },
                 {
                   "constant": false,
-                  "id": 3428,
+                  "id": 3494,
                   "mutability": "mutable",
                   "name": "gs",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 3441,
+                  "scope": 3507,
                   "src": "519:28:10",
                   "stateVariable": false,
                   "storageLocation": "storage",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_GovernanceStorage_$3567_storage_ptr",
+                    "typeIdentifier": "t_struct$_GovernanceStorage_$3660_storage_ptr",
                     "typeString": "struct GovernanceStorageContract.GovernanceStorage"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 3427,
+                    "id": 3493,
                     "name": "GovernanceStorage",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 3567,
+                    "referencedDeclaration": 3660,
                     "src": "519:17:10",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_GovernanceStorage_$3567_storage_ptr",
+                      "typeIdentifier": "t_struct$_GovernanceStorage_$3660_storage_ptr",
                       "typeString": "struct GovernanceStorageContract.GovernanceStorage"
                     }
                   },
@@ -970,18 +1284,332 @@
               ],
               "src": "467:87:10"
             },
-            "scope": 3442,
+            "scope": 3535,
             "src": "412:350:10",
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 3533,
+              "nodeType": "Block",
+              "src": "823:152:10",
+              "statements": [
+                {
+                  "assignments": [
+                    3515
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 3515,
+                      "mutability": "mutable",
+                      "name": "ets",
+                      "nodeType": "VariableDeclaration",
+                      "overrides": null,
+                      "scope": 3533,
+                      "src": "834:29:10",
+                      "stateVariable": false,
+                      "storageLocation": "storage",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_ERC20TokenStorage_$3591_storage_ptr",
+                        "typeString": "struct ERC20TokenStorageContract.ERC20TokenStorage"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 3514,
+                        "name": "ERC20TokenStorage",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 3591,
+                        "src": "834:17:10",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_ERC20TokenStorage_$3591_storage_ptr",
+                          "typeString": "struct ERC20TokenStorageContract.ERC20TokenStorage"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 3518,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "id": 3516,
+                      "name": "erc20TokenStorage",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3602,
+                      "src": "866:17:10",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_pure$__$returns$_t_struct$_ERC20TokenStorage_$3591_storage_ptr_$",
+                        "typeString": "function () pure returns (struct ERC20TokenStorageContract.ERC20TokenStorage storage pointer)"
+                      }
+                    },
+                    "id": 3517,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "866:19:10",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_ERC20TokenStorage_$3591_storage_ptr",
+                      "typeString": "struct ERC20TokenStorageContract.ERC20TokenStorage storage pointer"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "834:51:10"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 3523,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 3519,
+                        "name": "ets",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3515,
+                        "src": "904:3:10",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_ERC20TokenStorage_$3591_storage_ptr",
+                          "typeString": "struct ERC20TokenStorageContract.ERC20TokenStorage storage pointer"
+                        }
+                      },
+                      "id": 3521,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "totalSupply",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 3590,
+                      "src": "904:15:10",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint96",
+                        "typeString": "uint96"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "+=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 3522,
+                      "name": "_value",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3511,
+                      "src": "923:6:10",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint96",
+                        "typeString": "uint96"
+                      }
+                    },
+                    "src": "904:25:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint96",
+                      "typeString": "uint96"
+                    }
+                  },
+                  "id": 3524,
+                  "nodeType": "ExpressionStatement",
+                  "src": "904:25:10"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 3531,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 3525,
+                          "name": "ets",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 3515,
+                          "src": "940:3:10",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_ERC20TokenStorage_$3591_storage_ptr",
+                            "typeString": "struct ERC20TokenStorageContract.ERC20TokenStorage storage pointer"
+                          }
+                        },
+                        "id": 3528,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "balances",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 3580,
+                        "src": "940:12:10",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
+                          "typeString": "mapping(address => uint256)"
+                        }
+                      },
+                      "id": 3529,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 3527,
+                        "name": "_to",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3509,
+                        "src": "953:3:10",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "940:17:10",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "+=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 3530,
+                      "name": "_value",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3511,
+                      "src": "961:6:10",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint96",
+                        "typeString": "uint96"
+                      }
+                    },
+                    "src": "940:27:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 3532,
+                  "nodeType": "ExpressionStatement",
+                  "src": "940:27:10"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 3534,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "mint",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 3512,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3509,
+                  "mutability": "mutable",
+                  "name": "_to",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 3534,
+                  "src": "786:11:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3508,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "786:7:10",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3511,
+                  "mutability": "mutable",
+                  "name": "_value",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 3534,
+                  "src": "799:13:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint96",
+                    "typeString": "uint96"
+                  },
+                  "typeName": {
+                    "id": 3510,
+                    "name": "uint96",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "799:6:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint96",
+                      "typeString": "uint96"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "785:28:10"
+            },
+            "returnParameters": {
+              "id": 3513,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "823:0:10"
+            },
+            "scope": 3535,
+            "src": "772:203:10",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "internal"
           }
         ],
-        "scope": 3443,
-        "src": "313:456:10"
+        "scope": 3536,
+        "src": "313:667:10"
       }
     ],
-    "src": "33:736:10"
+    "src": "33:947:10"
   },
   "compiler": {
     "name": "solc",
@@ -989,7 +1617,7 @@
   },
   "networks": {},
   "schemaVersion": "3.1.0",
-  "updatedAt": "2020-08-07T18:06:06.883Z",
+  "updatedAt": "2020-08-09T20:02:25.481Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},

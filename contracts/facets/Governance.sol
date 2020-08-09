@@ -29,8 +29,7 @@ contract Governance is InternalFunctions {
         require(_endTime < block.timestamp + (gs.maximumVotingTime * 3600), 'Governance: Voting time must be shorter');
        
         uint proposerBalance = ets.balances[msg.sender];
-        uint totalSupply = ets.totalSupply;
-        // proposalThreshold is 1 percent of totalSupply
+        uint totalSupply = ets.totalSupply;        
         require(proposerBalance >= (totalSupply / gs.proposalThresholdDivisor), 'Governance: Balance less than proposer threshold');
         proposalId = gs.proposalCount++;
         Proposal storage proposalStorage = gs.proposals[proposalId];
