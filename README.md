@@ -11,8 +11,8 @@ Features:
 1. Implements the ERC20 standard.
 2. Accepts executable proposals.
 3. Allows people to vote on proposals using their ERC20 token balance.
-4. Token holders are rewarded for voting by being minted new tokens. Safeguards exist to prevent too much inflation.
-5. Token holders are rewarded for submitting proposals that pass a vote and are penalized for submitting proposals that are rejected.
+4. Token holders are rewarded for submitting good proposals and penalized for submitting bad proposals.
+5. Token holders are rewarded for voting by being minted new tokens. This is "governance mining". Safeguards exist to prevent too much inflation. 
 6. Passed proposals are executed on-chain.
 7. Passed proposals are executed using `delegatecall` to enable governance of the governance token diamond itself.
 8. Implements the Diamond Standard so that passed proposals can add/replace/remove functions on itself.
@@ -38,6 +38,8 @@ The `execute` function can of course interact with other contracts on the networ
 
 I got the idea of executable proposals from [DerivaDEX](https://derivadex.com) and [Compound's governance token contract](https://github.com/compound-finance/compound-protocol/blob/master/contracts/Governance/Comp.sol).
 
+I got the idea of using the Diamond Standard with an ERC20 governance token from [DerivaDEX](https://derivadex.com).
+
 ## Proposals and Voting
 
 A proposal is submitted by calling the `propose(address _proposalContract, uint _endTime)` function on the diamond.
@@ -60,9 +62,11 @@ The voting period for a proposal starts once a proposal is succssfully submitted
 
 Once a proposal is submitted governance token holders can vote on it.
 
-Governance token holders call the `vote(uint _proposalId, bool _support)` function to vote. `_proposalId` is for choosing which proposal to vote on and `_support` is for voting for or againt. The value `true` is voting for, and the value `false` is voting against.
+Governance token holders call the `vote(uint _proposalId, bool _support)` function to vote. `_proposalId` is for choosing which proposal to vote on and `_support` is for voting for or against. The value `true` is voting for, and the value `false` is voting against.
 
 The weight of a token holder's vote is how many governance tokens the token holder owns.
+
+A proposal passes a vote when more votes are for it than against it and the total number of votes is greater than a certain amount determined by the `quorumDivisor` setting.
 
 Once a token holder votes on a proposal their tokens become locked until the voting period for the proposal is over. By "locked" is meant token holders will not be able to transfer governance tokens from the address that they used to vote until the voting period for the proposal they voted on is over. However a token holder can vote for multiple proposals when their tokens are locked.
 
@@ -71,6 +75,26 @@ The reason for locking governance tokens after a vote is to prevent double votin
 Tokens holders are rewarded for voting by being minted new governance tokens. This is "governance mining". How much the reward is, is determined by the `voterAwardDivisor` setting and the `voteAwardCapDivisor` setting.
 
 Token holders can change their mind and undo their vote for a proposal by calling the `unvote(uint _proposalId)` function. That removes the token holder's votes, removes their reward for voting, and unlocks the token holder's tokens so they can be transferred again.
+
+## Executing a Proposal
+
+After the voting period for a proposal is over it can be executed by anyone by calling the `executeProposal(uint _proposalId)` function on the governance token diamond.
+
+After the voting period for a proposal is over any token holders who voted for or against it will automatically have their governance tokens unlocked so they can transfer them again.
+
+The token holder or address that proposed the proposal will not be able to transfer governance tokens until the `executeProposal` function is called for their proposal.
+
+If a proposal did not pass a vote then calling `executeProposal` will cause the proposer's governance tokens to be burned.
+
+If a proposal did pass a vote then calling `executeProposal` will execute the `execute` function from the proposal contract and will reward the proposer by minting new governance tokens and adding them to the proposer's balance.
+
+If a proposal passes a vote but the proposal reverts when executed then the proposal goes into a `PassedAndExecutionStuck` state and the proposer does not receive the governance token award. A new proposal can fix or replace a stuck proposal by modifying state variables of the diamond.
+
+## Preventing Too Much Inflation
+
+The `totalSupplyCap` state variable exists to put a cap on the total supply of governance tokens.  Once the total supply hits this cap then no more governance tokens are minted and awarded for voting or submitting proposals.
+
+Various state variables or settings such as `proposerAwardDivisor`, `voterAwardDivisor`, and `voteAwardCapDivisor` are used to regulate the rate new governance tokens are minted and set appropriate incentives for governance.
 
 
 
