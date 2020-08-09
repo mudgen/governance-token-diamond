@@ -37,6 +37,7 @@ contract Governance is InternalFunctions {
         proposalStorage.proposer = msg.sender;
         proposalStorage.proposalContract = _proposalContract;
         proposalStorage.endTime = uint64(_endTime);
+        emit Propose(msg.sender, _proposalContract, _endTime);
         // adding vote
         proposalStorage.forVotes = uint96(proposerBalance);
         proposalStorage.voted[msg.sender] = Voted(uint96(proposerBalance), true);
