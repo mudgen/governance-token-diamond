@@ -32,7 +32,7 @@ contract ERC20Token is IERC20, InternalFunctions {
         require(allow >= _value || msg.sender == _from, 'ERC20: Not authorized to transfer');
         _transferFrom(_from, _to, _value);
         if(msg.sender != _from && allow != uint(-1)) {
-            allow -= _value;
+            allow -= _value; 
             gts.approved[_from][msg.sender] = allow;
             emit Approval(_from, msg.sender, allow);
         }

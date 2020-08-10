@@ -15,7 +15,7 @@ Features:
 5. Token holders are rewarded for voting by being minted new tokens. This is "governance mining". Safeguards exist to prevent too much inflation. 
 6. Passed proposals are executed on-chain.
 7. Passed proposals are executed using `delegatecall` to enable governance of the governance token diamond itself.
-8. Implements the Diamond Standard so that passed proposals can add/replace/remove functions on itself.
+8. Implements the Diamond Standard so that passed proposals can add/replace/remove functions.
 
 ## Executable Proposals
 
